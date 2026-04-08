@@ -1,428 +1,711 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Social Media Agency</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Filip Social — Premium Social Media Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #080808;
+  --white: #f8f6f2;
+  --cream: #f0ece4;
+  --gold: #c9a84c;
+  --gold-light: #e8d5a3;
+  --gray: #8a8680;
+  --gray-light: #d4d0c8;
+  --border: rgba(201,168,76,0.2);
+}
 
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      color: #1a1a2e;
-      line-height: 1.7;
-    }
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
 
-    /* NAV */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 60px;
-      background: #fff;
-      border-bottom: 1px solid #eee;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .logo {
-      font-size: 22px;
-      font-weight: 700;
-      color: #6c47ff;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 32px;
-    }
-    nav ul a {
-      text-decoration: none;
-      color: #444;
-      font-size: 15px;
-      font-weight: 500;
-    }
-    nav ul a:hover { color: #6c47ff; }
+.display {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
 
-    /* HERO */
-    .hero {
-      background: linear-gradient(135deg, #6c47ff 0%, #3ec6e0 100%);
-      color: #fff;
-      text-align: center;
-      padding: 100px 40px;
-    }
-    .hero h1 {
-      font-size: 48px;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 20px;
-      opacity: 0.92;
-      max-width: 580px;
-      margin: 0 auto 36px;
-    }
-    .btn {
-      display: inline-block;
-      background: #fff;
-      color: #6c47ff;
-      font-weight: 700;
-      font-size: 16px;
-      padding: 14px 36px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: transform 0.2s;
-    }
-    .btn:hover { transform: scale(1.04); }
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 60px;
+  background: rgba(8,8,8,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.05em;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 40px; list-style: none; }
+.nav-links a {
+  text-decoration: none;
+  color: var(--gray);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-cta {
+  background: var(--gold);
+  color: var(--black);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
 
-    /* SERVICES */
-    .section {
-      padding: 80px 60px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .section-title {
-      text-align: center;
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: #1a1a2e;
-    }
-    .section-sub {
-      text-align: center;
-      color: #666;
-      font-size: 17px;
-      margin-bottom: 48px;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
-    }
-    .card {
-      background: #f9f7ff;
-      border: 1px solid #e8e0ff;
-      border-radius: 16px;
-      padding: 32px 28px;
-    }
-    .card-icon {
-      font-size: 36px;
-      margin-bottom: 16px;
-    }
-    .card h3 {
-      font-size: 19px;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: #1a1a2e;
-    }
-    .card p {
-      color: #555;
-      font-size: 15px;
-    }
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 140px 40px 120px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 80% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
+}
+.hero-line {
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 1px; height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--gold));
+  opacity: 0.4;
+}
+.hero-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--border);
+  padding: 8px 20px;
+  border-radius: 100px;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.2s forwards;
+}
+.hero h1 {
+  font-size: clamp(52px, 8vw, 96px);
+  max-width: 900px;
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.4s forwards;
+}
+.hero h1 em { font-style: italic; color: var(--gold); }
+.hero-sub {
+  font-size: 18px;
+  color: var(--gray);
+  max-width: 500px;
+  line-height: 1.7;
+  margin-bottom: 56px;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.6s forwards;
+}
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.8s forwards;
+}
+.btn-primary {
+  background: var(--gold);
+  color: var(--black);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 18px 44px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-ghost {
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.2s, color 0.2s;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+}
+.btn-ghost:hover { gap: 14px; border-color: var(--gold); color: var(--gold); }
+.hero-stats {
+  position: absolute;
+  bottom: 60px; left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  opacity: 0;
+  animation: fadeUp 0.8s 1s forwards;
+}
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--white);
+}
+.stat-label {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-top: 4px;
+}
 
-    /* PRICING */
-    .pricing-bg {
-      background: #f5f3ff;
-      padding: 80px 40px;
-    }
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 28px;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-    .plan {
-      background: #fff;
-      border: 1px solid #e8e0ff;
-      border-radius: 16px;
-      padding: 36px 28px;
-      text-align: center;
-    }
-    .plan.popular {
-      border: 2px solid #6c47ff;
-      position: relative;
-    }
-    .plan.popular::before {
-      content: "Most Popular";
-      position: absolute;
-      top: -14px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #6c47ff;
-      color: #fff;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 4px 16px;
-      border-radius: 50px;
-    }
-    .plan h3 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .plan .price {
-      font-size: 40px;
-      font-weight: 800;
-      color: #6c47ff;
-      margin: 16px 0 4px;
-    }
-    .plan .price span {
-      font-size: 16px;
-      font-weight: 400;
-      color: #888;
-    }
-    .plan ul {
-      list-style: none;
-      margin: 20px 0 28px;
-      text-align: left;
-    }
-    .plan ul li {
-      padding: 6px 0;
-      color: #444;
-      font-size: 15px;
-    }
-    .plan ul li::before {
-      content: "✓  ";
-      color: #6c47ff;
-      font-weight: 700;
-    }
-    .btn-outline {
-      display: inline-block;
-      border: 2px solid #6c47ff;
-      color: #6c47ff;
-      font-weight: 700;
-      font-size: 15px;
-      padding: 11px 28px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: 0.2s;
-    }
-    .btn-outline:hover { background: #6c47ff; color: #fff; }
-    .btn-purple {
-      display: inline-block;
-      background: #6c47ff;
-      color: #fff;
-      font-weight: 700;
-      font-size: 15px;
-      padding: 13px 28px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: 0.2s;
-    }
-    .btn-purple:hover { background: #5535d4; }
+.marquee-section {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee-track {
+  display: inline-block;
+  animation: marquee 22s linear infinite;
+}
+.marquee-item {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray);
+  padding: 0 40px;
+}
+.marquee-item span { color: var(--gold); margin-right: 40px; }
 
-    /* ABOUT */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .about-grid h2 {
-      font-size: 30px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-    .about-grid p {
-      color: #555;
-      margin-bottom: 12px;
-      font-size: 16px;
-    }
-    .about-visual {
-      background: linear-gradient(135deg, #6c47ff, #3ec6e0);
-      border-radius: 20px;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 64px;
-    }
+.section {
+  padding: 140px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 32px; height: 1px;
+  background: var(--gold);
+}
+.section-title {
+  font-size: clamp(36px, 4vw, 56px);
+  max-width: 700px;
+  margin-bottom: 80px;
+  line-height: 1.1;
+}
 
-    /* CONTACT */
-    .contact-bg {
-      background: #1a1a2e;
-      color: #fff;
-      text-align: center;
-      padding: 80px 40px;
-    }
-    .contact-bg h2 {
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    .contact-bg p {
-      opacity: 0.8;
-      font-size: 17px;
-      margin-bottom: 32px;
-    }
-    .contact-bg a.btn-white {
-      display: inline-block;
-      background: #fff;
-      color: #1a1a2e;
-      font-weight: 700;
-      font-size: 16px;
-      padding: 14px 36px;
-      border-radius: 50px;
-      text-decoration: none;
-      margin: 0 8px;
-      transition: 0.2s;
-    }
-    .contact-bg a.btn-white:hover { background: #e0d8ff; }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border);
+}
+.service-card {
+  background: var(--black);
+  padding: 52px 44px;
+  transition: background 0.3s;
+}
+.service-card:hover { background: #0f0f0f; }
+.service-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  color: var(--gold);
+  margin-bottom: 32px;
+  opacity: 0.6;
+}
+.service-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+.service-card p { font-size: 15px; color: var(--gray); line-height: 1.7; }
+.service-arrow {
+  margin-top: 36px;
+  font-size: 20px;
+  color: var(--gold);
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  transform: translateX(-8px);
+}
+.service-card:hover .service-arrow { opacity: 1; transform: translateX(0); }
 
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 28px;
-      color: #999;
-      font-size: 14px;
-      border-top: 1px solid #eee;
-    }
+.process-section {
+  padding: 140px 60px;
+  background: #050505;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.process-inner { max-width: 1200px; margin: 0 auto; }
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 80px;
+  border: 1px solid var(--border);
+}
+.process-step {
+  padding: 52px 40px;
+  border-right: 1px solid var(--border);
+}
+.process-step:last-child { border-right: none; }
+.step-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--black);
+  -webkit-text-stroke: 1px rgba(201,168,76,0.2);
+  line-height: 1;
+  margin-bottom: 28px;
+}
+.process-step h3 { font-size: 16px; font-weight: 500; letter-spacing: 0.04em; margin-bottom: 12px; }
+.process-step p { font-size: 14px; color: var(--gray); line-height: 1.7; }
 
-    @media (max-width: 700px) {
-      nav { padding: 16px 20px; }
-      nav ul { display: none; }
-      .hero h1 { font-size: 32px; }
-      .section { padding: 60px 20px; }
-      .about-grid { grid-template-columns: 1fr; }
-      .about-visual { display: none; }
-    }
-  </style>
+.pricing-section {
+  padding: 140px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border);
+  margin-top: 80px;
+}
+.pricing-card {
+  background: var(--black);
+  padding: 56px 48px;
+  position: relative;
+}
+.pricing-card.featured { background: #0d0d0d; }
+.featured-badge {
+  position: absolute;
+  top: 32px; right: 32px;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--gold);
+  padding: 6px 14px;
+  border-radius: 2px;
+  font-weight: 500;
+}
+.plan-name {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+.plan-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.plan-price sup { font-size: 24px; font-weight: 400; vertical-align: super; }
+.plan-period { font-size: 13px; color: var(--gray); margin-bottom: 40px; letter-spacing: 0.06em; }
+.plan-divider { height: 1px; background: var(--border); margin-bottom: 36px; }
+.plan-features { list-style: none; margin-bottom: 48px; }
+.plan-features li {
+  font-size: 14px;
+  color: var(--gray);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  line-height: 1.5;
+}
+.plan-features li::before {
+  content: '';
+  width: 4px; height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.plan-features li.muted { color: rgba(138,134,128,0.35); }
+.plan-features li.muted::before { background: rgba(201,168,76,0.2); }
+.plan-btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 16px;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+.plan-btn-outline { border: 1px solid var(--border); color: var(--white); }
+.plan-btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+.plan-btn-filled { background: var(--gold); color: var(--black); }
+.plan-btn-filled:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+.testimonial-section {
+  padding: 140px 60px;
+  background: #050505;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.testimonial-section blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 400;
+  font-style: italic;
+  max-width: 860px;
+  margin: 60px auto 40px;
+  line-height: 1.4;
+}
+.testimonial-section blockquote::before { content: '\201C'; color: var(--gold); }
+.testimonial-section blockquote::after { content: '\201D'; color: var(--gold); }
+.testimonial-author { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); }
+.testimonial-author strong { color: var(--gold); }
+
+.cta-section {
+  padding: 160px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-section h2 { font-size: clamp(40px, 6vw, 80px); margin-bottom: 24px; }
+.cta-section p {
+  font-size: 18px;
+  color: var(--gray);
+  margin-bottom: 56px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); }
+.footer-logo span { color: var(--gold); }
+.footer-links { display: flex; gap: 32px; justify-content: center; list-style: none; }
+.footer-links a {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: 12px; color: var(--gray); text-align: right; opacity: 0.6; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (max-width: 900px) {
+  nav { padding: 20px 24px; }
+  .nav-links { display: none; }
+  .section { padding: 80px 24px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr 1fr; }
+  .process-step { border-bottom: 1px solid var(--border); }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-section, .process-section, .testimonial-section, .cta-section { padding: 80px 24px; }
+  .hero-stats { gap: 32px; }
+  footer { grid-template-columns: 1fr; text-align: center; padding: 40px 24px; }
+  .footer-links { flex-wrap: wrap; }
+  .footer-copy { text-align: center; }
+}
+</style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="logo">YourAgency</div>
-    <ul>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<nav>
+  <div class="nav-logo">Filip<span>Social</span></div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get Started</a>
+</nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Grow Your Brand on<br>Social Media</h1>
-    <p>We create content, manage your accounts, and grow your audience — so you can focus on running your business.</p>
-    <a href="#contact" class="btn">Get a Free Consultation</a>
-  </section>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-line"></div>
+  <div class="hero-tag">Premium Social Media Management</div>
+  <h1 class="display">Your brand deserves<br>to be <em>unforgettable.</em></h1>
+  <p class="hero-sub">We craft compelling social media presences that turn followers into loyal customers and brands into icons.</p>
+  <div class="hero-btns">
+    <a href="#pricing" class="btn-primary">View Packages</a>
+    <a href="#services" class="btn-ghost">See what we do &rarr;</a>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="stat-num">150+</div>
+      <div class="stat-label">Brands Grown</div>
+    </div>
+    <div>
+      <div class="stat-num">8M+</div>
+      <div class="stat-label">Reach Generated</div>
+    </div>
+    <div>
+      <div class="stat-num">4.9&#9733;</div>
+      <div class="stat-label">Client Rating</div>
+    </div>
+  </div>
+</section>
 
-  <!-- SERVICES -->
-  <section class="section" id="services">
-    <h2 class="section-title">What We Do</h2>
-    <p class="section-sub">Everything you need to win on social media.</p>
-    <div class="cards">
-      <div class="card">
-        <div class="card-icon">📱</div>
-        <h3>Content Creation</h3>
-        <p>Eye-catching posts, reels, and stories tailored to your brand voice and target audience.</p>
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item"><span>&#10022;</span> Instagram</span>
+    <span class="marquee-item"><span>&#10022;</span> TikTok</span>
+    <span class="marquee-item"><span>&#10022;</span> Facebook</span>
+    <span class="marquee-item"><span>&#10022;</span> LinkedIn</span>
+    <span class="marquee-item"><span>&#10022;</span> YouTube</span>
+    <span class="marquee-item"><span>&#10022;</span> Content Strategy</span>
+    <span class="marquee-item"><span>&#10022;</span> Paid Ads</span>
+    <span class="marquee-item"><span>&#10022;</span> Community Management</span>
+    <span class="marquee-item"><span>&#10022;</span> Brand Identity</span>
+    <span class="marquee-item"><span>&#10022;</span> Instagram</span>
+    <span class="marquee-item"><span>&#10022;</span> TikTok</span>
+    <span class="marquee-item"><span>&#10022;</span> Facebook</span>
+    <span class="marquee-item"><span>&#10022;</span> LinkedIn</span>
+    <span class="marquee-item"><span>&#10022;</span> YouTube</span>
+    <span class="marquee-item"><span>&#10022;</span> Content Strategy</span>
+    <span class="marquee-item"><span>&#10022;</span> Paid Ads</span>
+    <span class="marquee-item"><span>&#10022;</span> Community Management</span>
+    <span class="marquee-item"><span>&#10022;</span> Brand Identity</span>
+  </div>
+</div>
+
+<div id="services">
+<div class="section">
+  <div class="section-label">What we offer</div>
+  <h2 class="section-title display">Everything your brand needs to dominate social.</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <h3>Content Creation</h3>
+      <p>Scroll-stopping posts, reels, and stories crafted to reflect your brand voice and captivate your audience.</p>
+      <div class="service-arrow">&rarr;</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <h3>Account Management</h3>
+      <p>Full-service management of your profiles — posting, engagement, DMs, comments, and community building.</p>
+      <div class="service-arrow">&rarr;</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <h3>Growth Strategy</h3>
+      <p>Data-led strategies tailored to your goals. We identify what works and double down on it relentlessly.</p>
+      <div class="service-arrow">&rarr;</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <h3>Paid Advertising</h3>
+      <p>Precision-targeted ad campaigns on Meta, TikTok, and LinkedIn that maximise return on every euro spent.</p>
+      <div class="service-arrow">&rarr;</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <h3>Analytics &amp; Reporting</h3>
+      <p>Clear, detailed monthly reports so you always understand what's performing and where you're growing.</p>
+      <div class="service-arrow">&rarr;</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <h3>Brand Consulting</h3>
+      <p>Strategic one-on-one sessions to define your brand identity, tone of voice, and long-term social vision.</p>
+      <div class="service-arrow">&rarr;</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<section class="process-section" id="process">
+  <div class="process-inner">
+    <div class="section-label">How it works</div>
+    <h2 class="section-title display">A process built for results.</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <h3>Discovery Call</h3>
+        <p>We learn your brand, goals, audience, and competitors. No templates — every strategy starts here.</p>
       </div>
-      <div class="card">
-        <div class="card-icon">📅</div>
-        <h3>Account Management</h3>
-        <p>We handle your posting schedule, community engagement, and reply to comments and DMs.</p>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <h3>Strategy Build</h3>
+        <p>We create a bespoke content and growth strategy tailored entirely to your brand and objectives.</p>
       </div>
-      <div class="card">
-        <div class="card-icon">📈</div>
-        <h3>Growth Strategy</h3>
-        <p>Data-driven strategies to grow your followers, reach, and engagement month over month.</p>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <h3>Creation &amp; Launch</h3>
+        <p>Our team produces and publishes content on schedule. You review and approve before anything goes live.</p>
       </div>
-      <div class="card">
-        <div class="card-icon">💡</div>
-        <h3>Paid Ads</h3>
-        <p>Facebook, Instagram, and TikTok ad campaigns that bring real results within your budget.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">📊</div>
-        <h3>Analytics Reports</h3>
-        <p>Monthly reports so you always know what's working and where your audience is coming from.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🤝</div>
-        <h3>Brand Consulting</h3>
-        <p>One-on-one sessions to help you define your brand identity and social media goals.</p>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <h3>Optimise &amp; Grow</h3>
+        <p>We analyse performance weekly and continuously refine the approach to accelerate your growth.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PRICING -->
-  <section class="pricing-bg" id="pricing">
-    <div style="max-width:1100px; margin:0 auto;">
-      <h2 class="section-title">Simple, Transparent Pricing</h2>
-      <p class="section-sub">No hidden fees. Cancel anytime.</p>
-      <div class="pricing-grid">
-        <div class="plan">
-          <h3>Starter</h3>
-          <p style="color:#888;font-size:14px;">Great for small businesses</p>
-          <div class="price">$499<span>/mo</span></div>
-          <ul>
-            <li>2 social media platforms</li>
-            <li>12 posts per month</li>
-            <li>Community management</li>
-            <li>Monthly report</li>
-          </ul>
-          <a href="#contact" class="btn-outline">Get Started</a>
-        </div>
-        <div class="plan popular">
-          <h3>Growth</h3>
-          <p style="color:#888;font-size:14px;">Our most popular plan</p>
-          <div class="price">$899<span>/mo</span></div>
-          <ul>
-            <li>4 social media platforms</li>
-            <li>24 posts per month</li>
-            <li>Reels &amp; stories included</li>
-            <li>Community management</li>
-            <li>Ad campaign management</li>
-            <li>Bi-weekly reports</li>
-          </ul>
-          <a href="#contact" class="btn-purple">Get Started</a>
-        </div>
-        <div class="plan">
-          <h3>Pro</h3>
-          <p style="color:#888;font-size:14px;">For established brands</p>
-          <div class="price">$1,499<span>/mo</span></div>
-          <ul>
-            <li>All platforms</li>
-            <li>Unlimited posts</li>
-            <li>Full content production</li>
-            <li>Priority support</li>
-            <li>Ad budget management</li>
-            <li>Weekly strategy calls</li>
-          </ul>
-          <a href="#contact" class="btn-outline">Get Started</a>
-        </div>
-      </div>
+<section id="pricing" class="pricing-section">
+  <div class="section-label">Pricing</div>
+  <h2 class="section-title display">Transparent pricing.<br>Extraordinary results.</h2>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="plan-name">Starter</div>
+      <div class="plan-price"><sup>$</sup>499</div>
+      <div class="plan-period">per month</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>2 social media platforms</li>
+        <li>12 posts per month</li>
+        <li>Community management</li>
+        <li>Monthly analytics report</li>
+        <li>Email support</li>
+        <li class="muted">Paid ad management</li>
+        <li class="muted">Reels &amp; video content</li>
+        <li class="muted">Strategy calls</li>
+      </ul>
+      <a href="#contact" class="plan-btn plan-btn-outline">Get Started</a>
     </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="about-grid">
-      <div>
-        <h2>We're passionate about helping businesses grow online.</h2>
-        <p>We're a small, dedicated team of social media specialists who believe every business deserves a strong online presence — regardless of size or budget.</p>
-        <p>We've helped clients across retail, hospitality, fitness, and professional services build engaged communities and turn followers into paying customers.</p>
-        <p style="margin-top:20px;"><a href="#contact" class="btn-purple">Work With Us</a></p>
-      </div>
-      <div class="about-visual">📣</div>
+    <div class="pricing-card featured">
+      <div class="featured-badge">Most Popular</div>
+      <div class="plan-name">Growth</div>
+      <div class="plan-price"><sup>$</sup>899</div>
+      <div class="plan-period">per month</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>4 social media platforms</li>
+        <li>24 posts per month</li>
+        <li>Reels &amp; video content</li>
+        <li>Community management</li>
+        <li>Paid ad campaign management</li>
+        <li>Bi-weekly analytics reports</li>
+        <li>Monthly strategy call</li>
+        <li class="muted">Priority support</li>
+      </ul>
+      <a href="#contact" class="plan-btn plan-btn-filled">Get Started</a>
     </div>
-  </section>
+    <div class="pricing-card">
+      <div class="plan-name">Pro</div>
+      <div class="plan-price"><sup>$</sup>1,499</div>
+      <div class="plan-period">per month</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>All platforms</li>
+        <li>Unlimited posts</li>
+        <li>Full video production</li>
+        <li>Community management</li>
+        <li>Full ad budget management</li>
+        <li>Weekly analytics reports</li>
+        <li>Weekly strategy calls</li>
+        <li>Priority 24/7 support</li>
+      </ul>
+      <a href="#contact" class="plan-btn plan-btn-outline">Get Started</a>
+    </div>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section class="contact-bg" id="contact">
-    <h2>Ready to Grow Your Social Media?</h2>
-    <p>Book a free 30-minute consultation. No pressure, no commitment.</p>
-    <a href="mailto:hello@youragency.com" class="btn-white">Email Us</a>
-    <a href="https://wa.me/yourphonenumber" class="btn-white">WhatsApp</a>
-  </section>
+<section class="testimonial-section">
+  <div class="section-label" style="justify-content:center;">Client results</div>
+  <blockquote>Working with Filip Social transformed our Instagram from 800 followers to over 42,000 in eight months. Our sales doubled.</blockquote>
+  <div class="testimonial-author"><strong>Maria K.</strong> &mdash; Founder, Bloom Skincare</div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2026 YourAgency. All rights reserved.</p>
-  </footer>
+<section class="cta-section" id="contact">
+  <h2 class="display">Ready to grow?</h2>
+  <p>Book a free 30-minute strategy call. No commitment, no pressure &mdash; just a conversation about your brand.</p>
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;align-items:center;">
+    <a href="mailto:hello@filipsmm1.com" class="btn-primary">Email Us</a>
+    <a href="https://wa.me/yourphonenumber" class="btn-ghost">WhatsApp Us &rarr;</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Filip<span>Social</span></div>
+  <ul class="footer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="footer-copy">&copy; 2026 FilipSocial. All rights reserved.</div>
+</footer>
 
 </body>
 </html>
