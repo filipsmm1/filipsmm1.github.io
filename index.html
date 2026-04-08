@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Social Media Agency</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #1a1a2e;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #6c47ff;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+    nav ul a {
+      text-decoration: none;
+      color: #444;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    nav ul a:hover { color: #6c47ff; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #6c47ff 0%, #3ec6e0 100%);
+      color: #fff;
+      text-align: center;
+      padding: 100px 40px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 20px;
+      opacity: 0.92;
+      max-width: 580px;
+      margin: 0 auto 36px;
+    }
+    .btn {
+      display: inline-block;
+      background: #fff;
+      color: #6c47ff;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 14px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .btn:hover { transform: scale(1.04); }
+
+    /* SERVICES */
+    .section {
+      padding: 80px 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #1a1a2e;
+    }
+    .section-sub {
+      text-align: center;
+      color: #666;
+      font-size: 17px;
+      margin-bottom: 48px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .card {
+      background: #f9f7ff;
+      border: 1px solid #e8e0ff;
+      border-radius: 16px;
+      padding: 32px 28px;
+    }
+    .card-icon {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+    .card h3 {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #1a1a2e;
+    }
+    .card p {
+      color: #555;
+      font-size: 15px;
+    }
+
+    /* PRICING */
+    .pricing-bg {
+      background: #f5f3ff;
+      padding: 80px 40px;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .plan {
+      background: #fff;
+      border: 1px solid #e8e0ff;
+      border-radius: 16px;
+      padding: 36px 28px;
+      text-align: center;
+    }
+    .plan.popular {
+      border: 2px solid #6c47ff;
+      position: relative;
+    }
+    .plan.popular::before {
+      content: "Most Popular";
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #6c47ff;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 16px;
+      border-radius: 50px;
+    }
+    .plan h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .plan .price {
+      font-size: 40px;
+      font-weight: 800;
+      color: #6c47ff;
+      margin: 16px 0 4px;
+    }
+    .plan .price span {
+      font-size: 16px;
+      font-weight: 400;
+      color: #888;
+    }
+    .plan ul {
+      list-style: none;
+      margin: 20px 0 28px;
+      text-align: left;
+    }
+    .plan ul li {
+      padding: 6px 0;
+      color: #444;
+      font-size: 15px;
+    }
+    .plan ul li::before {
+      content: "✓  ";
+      color: #6c47ff;
+      font-weight: 700;
+    }
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid #6c47ff;
+      color: #6c47ff;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 11px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .btn-outline:hover { background: #6c47ff; color: #fff; }
+    .btn-purple {
+      display: inline-block;
+      background: #6c47ff;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 13px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .btn-purple:hover { background: #5535d4; }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-grid h2 {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .about-grid p {
+      color: #555;
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+    .about-visual {
+      background: linear-gradient(135deg, #6c47ff, #3ec6e0);
+      border-radius: 20px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 64px;
+    }
+
+    /* CONTACT */
+    .contact-bg {
+      background: #1a1a2e;
+      color: #fff;
+      text-align: center;
+      padding: 80px 40px;
+    }
+    .contact-bg h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .contact-bg p {
+      opacity: 0.8;
+      font-size: 17px;
+      margin-bottom: 32px;
+    }
+    .contact-bg a.btn-white {
+      display: inline-block;
+      background: #fff;
+      color: #1a1a2e;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 14px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      margin: 0 8px;
+      transition: 0.2s;
+    }
+    .contact-bg a.btn-white:hover { background: #e0d8ff; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 28px;
+      color: #999;
+      font-size: 14px;
+      border-top: 1px solid #eee;
+    }
+
+    @media (max-width: 700px) {
+      nav { padding: 16px 20px; }
+      nav ul { display: none; }
+      .hero h1 { font-size: 32px; }
+      .section { padding: 60px 20px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-visual { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">YourAgency</div>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Grow Your Brand on<br>Social Media</h1>
+    <p>We create content, manage your accounts, and grow your audience — so you can focus on running your business.</p>
+    <a href="#contact" class="btn">Get a Free Consultation</a>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <h2 class="section-title">What We Do</h2>
+    <p class="section-sub">Everything you need to win on social media.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <h3>Content Creation</h3>
+        <p>Eye-catching posts, reels, and stories tailored to your brand voice and target audience.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📅</div>
+        <h3>Account Management</h3>
+        <p>We handle your posting schedule, community engagement, and reply to comments and DMs.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📈</div>
+        <h3>Growth Strategy</h3>
+        <p>Data-driven strategies to grow your followers, reach, and engagement month over month.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💡</div>
+        <h3>Paid Ads</h3>
+        <p>Facebook, Instagram, and TikTok ad campaigns that bring real results within your budget.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Analytics Reports</h3>
+        <p>Monthly reports so you always know what's working and where your audience is coming from.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤝</div>
+        <h3>Brand Consulting</h3>
+        <p>One-on-one sessions to help you define your brand identity and social media goals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-bg" id="pricing">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 class="section-title">Simple, Transparent Pricing</h2>
+      <p class="section-sub">No hidden fees. Cancel anytime.</p>
+      <div class="pricing-grid">
+        <div class="plan">
+          <h3>Starter</h3>
+          <p style="color:#888;font-size:14px;">Great for small businesses</p>
+          <div class="price">$499<span>/mo</span></div>
+          <ul>
+            <li>2 social media platforms</li>
+            <li>12 posts per month</li>
+            <li>Community management</li>
+            <li>Monthly report</li>
+          </ul>
+          <a href="#contact" class="btn-outline">Get Started</a>
+        </div>
+        <div class="plan popular">
+          <h3>Growth</h3>
+          <p style="color:#888;font-size:14px;">Our most popular plan</p>
+          <div class="price">$899<span>/mo</span></div>
+          <ul>
+            <li>4 social media platforms</li>
+            <li>24 posts per month</li>
+            <li>Reels &amp; stories included</li>
+            <li>Community management</li>
+            <li>Ad campaign management</li>
+            <li>Bi-weekly reports</li>
+          </ul>
+          <a href="#contact" class="btn-purple">Get Started</a>
+        </div>
+        <div class="plan">
+          <h3>Pro</h3>
+          <p style="color:#888;font-size:14px;">For established brands</p>
+          <div class="price">$1,499<span>/mo</span></div>
+          <ul>
+            <li>All platforms</li>
+            <li>Unlimited posts</li>
+            <li>Full content production</li>
+            <li>Priority support</li>
+            <li>Ad budget management</li>
+            <li>Weekly strategy calls</li>
+          </ul>
+          <a href="#contact" class="btn-outline">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="about-grid">
+      <div>
+        <h2>We're passionate about helping businesses grow online.</h2>
+        <p>We're a small, dedicated team of social media specialists who believe every business deserves a strong online presence — regardless of size or budget.</p>
+        <p>We've helped clients across retail, hospitality, fitness, and professional services build engaged communities and turn followers into paying customers.</p>
+        <p style="margin-top:20px;"><a href="#contact" class="btn-purple">Work With Us</a></p>
+      </div>
+      <div class="about-visual">📣</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-bg" id="contact">
+    <h2>Ready to Grow Your Social Media?</h2>
+    <p>Book a free 30-minute consultation. No pressure, no commitment.</p>
+    <a href="mailto:hello@youragency.com" class="btn-white">Email Us</a>
+    <a href="https://wa.me/yourphonenumber" class="btn-white">WhatsApp</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 YourAgency. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
