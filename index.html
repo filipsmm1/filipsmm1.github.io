@@ -5,56 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content="FilipSocial offers professional social media management, website creation, business growth packages, and online courses. Grow your brand online with proven strategies."/>
 <meta name="keywords" content="social media management, social media agency, Instagram management, TikTok growth, website creation, business growth, online courses, content strategy"/>
-<meta property="og:title" content="FilipSocial - Social Media and Business Growth"/>
-<meta property="og:description" content="Professional social media management, website creation, and business growth packages. Let's build your online presence together."/>
+<meta property="og:title" content="FilipSocial - Social Media Management and Business Growth"/>
+<meta property="og:description" content="Professional social media management, website creation, and business growth packages."/>
 <meta property="og:type" content="website"/>
 <title>FilipSocial - Social Media Management and Business Growth</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://js.stripe.com/v3/"></script>
 <style>
-/* THEME */
 [data-theme="light"]{
   --bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef1f6;
-  --navy:#0d1f3c;--navy2:#1a3560;--navy3:#2a4f8a;
   --accent:#1a3560;--accent2:#2a4f8a;
   --text:#0d1f3c;--text2:#3a5080;--text3:#6a85b0;
   --border:rgba(13,31,60,0.12);--border2:rgba(13,31,60,0.05);
   --gold:#b8892a;--gold2:#d4a843;
   --shadow:0 4px 32px rgba(13,31,60,0.10);
-  --shadow2:0 2px 12px rgba(13,31,60,0.07);
   --card:#ffffff;--pill:rgba(13,31,60,0.06);
   --hero-grad:linear-gradient(135deg,#0d1f3c 0%,#1a3560 50%,#2a4f8a 100%);
-  --input-bg:rgba(13,31,60,0.04);--input-border:rgba(13,31,60,0.15);
-  --input-color:#0d1f3c;--input-ph:rgba(13,31,60,0.3);
+  --nav-bg:rgba(245,247,250,0.92);
+  --input-bg:rgba(13,31,60,0.04);--input-border:rgba(13,31,60,0.15);--input-color:#0d1f3c;--input-ph:rgba(13,31,60,0.3);
 }
 [data-theme="dark"]{
   --bg:#07101e;--bg2:#0d1a2e;--bg3:#111f35;
-  --navy:#e8f0ff;--navy2:#b8cef5;--navy3:#7aa0e0;
   --accent:#c9a84c;--accent2:#e8d5a3;
   --text:#e8f0ff;--text2:#9ab5e0;--text3:#5a7ab0;
   --border:rgba(201,168,76,0.15);--border2:rgba(201,168,76,0.06);
   --gold:#c9a84c;--gold2:#e8d5a3;
   --shadow:0 4px 32px rgba(0,0,0,0.5);
-  --shadow2:0 2px 12px rgba(0,0,0,0.3);
   --card:#0d1a2e;--pill:rgba(201,168,76,0.08);
   --hero-grad:linear-gradient(135deg,#050e1a 0%,#0d1a2e 50%,#111f35 100%);
-  --input-bg:rgba(255,255,255,0.04);--input-border:rgba(201,168,76,0.18);
-  --input-color:#e8f0ff;--input-ph:rgba(232,240,255,0.25);
+  --nav-bg:rgba(7,16,30,0.92);
+  --input-bg:rgba(255,255,255,0.04);--input-border:rgba(201,168,76,0.18);--input-color:#e8f0ff;--input-ph:rgba(232,240,255,0.25);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;font-weight:300;overflow-x:hidden;transition:background 0.4s,color 0.4s;}
+body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;font-weight:300;overflow-x:hidden;transition:background 0.4s,color 0.4s;line-height:1.6;}
 a{color:inherit;text-decoration:none;}
 ::-webkit-scrollbar{width:5px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
 ::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px;}
-
-/* PAGE SYSTEM */
-.page{display:none;}
-.page.active{display:block;}
-
-/* REVEAL */
+.page{display:none;}.page.active{display:block;}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal-l{opacity:0;transform:translateX(-28px);transition:opacity 0.65s ease,transform 0.65s ease;}
@@ -63,32 +53,29 @@ a{color:inherit;text-decoration:none;}
 .reveal-r.visible{opacity:1;transform:translateX(0);}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:70px;background:rgba(245,247,250,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border2);transition:all 0.3s;}
-[data-theme="dark"] nav{background:rgba(7,16,30,0.92);}
+nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:70px;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border2);transition:all 0.3s;}
 nav.scrolled{height:58px;border-bottom-color:var(--border);}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text);letter-spacing:0.04em;cursor:pointer;}
 .nav-logo span{color:var(--accent);font-style:italic;}
-.nav-links{display:flex;gap:32px;list-style:none;align-items:center;}
-.nav-links a{font-size:13px;font-weight:400;letter-spacing:0.06em;text-transform:uppercase;color:var(--text2);transition:color 0.2s;cursor:pointer;position:relative;}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center;}
+.nav-links a{font-size:12px;font-weight:400;letter-spacing:0.06em;text-transform:uppercase;color:var(--text2);transition:color 0.2s;cursor:pointer;position:relative;}
 .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--accent);transform:scaleX(0);transition:transform 0.2s;}
 .nav-links a:hover{color:var(--text);}
 .nav-links a:hover::after{transform:scaleX(1);}
-.nav-right{display:flex;align-items:center;gap:14px;}
+.nav-right{display:flex;align-items:center;gap:12px;}
 .theme-btn{width:42px;height:22px;background:var(--pill);border:1px solid var(--border);border-radius:11px;cursor:pointer;position:relative;flex-shrink:0;}
 .theme-btn::after{content:'';position:absolute;top:2px;left:2px;width:18px;height:18px;background:var(--accent);border-radius:50%;transition:transform 0.3s;}
 [data-theme="dark"] .theme-btn::after{transform:translateX(20px);}
-.nav-cta{background:var(--accent);color:var(--bg);font-size:12px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;padding:10px 22px;border-radius:3px;cursor:pointer;transition:all 0.2s;white-space:nowrap;}
+.nav-cta{background:var(--accent);color:var(--bg);font-size:11px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;padding:10px 20px;border-radius:3px;cursor:pointer;transition:all 0.2s;white-space:nowrap;}
 .nav-cta:hover{background:var(--accent2);transform:translateY(-1px);}
-
-/* HAMBURGER */
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
 .hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all 0.3s;}
 .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
-.mobile-menu{display:none;position:fixed;top:58px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--border);padding:20px 24px;z-index:998;flex-direction:column;gap:0;}
+.mobile-menu{display:none;position:fixed;top:58px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--border);padding:16px 24px;z-index:998;flex-direction:column;}
 .mobile-menu.open{display:flex;}
-.mobile-menu a{font-size:14px;font-weight:400;letter-spacing:0.06em;text-transform:uppercase;color:var(--text2);padding:14px 0;border-bottom:1px solid var(--border2);cursor:pointer;}
+.mobile-menu a{font-size:13px;font-weight:400;letter-spacing:0.06em;text-transform:uppercase;color:var(--text2);padding:13px 0;border-bottom:1px solid var(--border2);cursor:pointer;}
 .mobile-menu a:last-child{border-bottom:none;}
 
 /* HERO */
@@ -97,47 +84,46 @@ nav.scrolled{height:58px;border-bottom-color:var(--border);}
 .orb1{width:500px;height:500px;top:-150px;right:-100px;background:radial-gradient(circle,rgba(255,255,255,0.04) 0%,transparent 70%);}
 .orb2{width:380px;height:380px;bottom:-80px;left:-80px;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);}
 [data-theme="light"] .orb2{background:radial-gradient(circle,rgba(255,255,255,0.08) 0%,transparent 70%);}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.14);padding:7px 20px;border-radius:100px;margin-bottom:32px;opacity:0;animation:fadeUp 0.9s 0.1s forwards;}
-[data-theme="dark"] .hero-eyebrow{color:rgba(201,168,76,0.75);border-color:rgba(201,168,76,0.18);}
-.eyebrow-dot{width:5px;height:5px;border-radius:50%;background:var(--gold2);animation:blink 2s infinite;}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.14);padding:7px 20px;border-radius:100px;margin-bottom:32px;opacity:0;animation:fadeUp 0.9s 0.1s forwards;}
+[data-theme="dark"] .eyebrow{color:rgba(201,168,76,0.75);border-color:rgba(201,168,76,0.18);}
+.edot{width:5px;height:5px;border-radius:50%;background:var(--gold2);animation:blink 2s infinite;}
 .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(50px,8vw,100px);font-weight:600;line-height:1.02;color:#ffffff;margin-bottom:24px;opacity:0;animation:fadeUp 0.9s 0.25s forwards;}
 .hero h1 span{color:var(--gold2);font-style:italic;}
 [data-theme="dark"] .hero h1 span{color:#c9a84c;}
 .hero-sub{font-size:18px;color:rgba(255,255,255,0.6);max-width:500px;line-height:1.75;margin-bottom:48px;font-weight:300;opacity:0;animation:fadeUp 0.9s 0.4s forwards;}
 .hero-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:center;opacity:0;animation:fadeUp 0.9s 0.55s forwards;}
-.btn-white{background:#ffffff;color:var(--navy);font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;padding:16px 38px;border-radius:3px;cursor:pointer;transition:all 0.25s;}
+.btn-white{background:#ffffff;color:#0d1f3c;font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;padding:16px 38px;border-radius:3px;cursor:pointer;transition:all 0.25s;}
 [data-theme="dark"] .btn-white{background:var(--gold);color:#07101e;}
 .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.25);}
-.btn-outline-white{font-size:13px;font-weight:400;color:rgba(255,255,255,0.72);border-bottom:1px solid rgba(255,255,255,0.22);padding-bottom:2px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:7px;}
-.btn-outline-white:hover{color:#fff;border-color:#fff;gap:12px;}
-.hero-scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:7px;opacity:0;animation:fadeUp 0.9s 0.9s forwards;}
-.hero-scroll-hint span{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.3);}
+.btn-ghost-hero{font-size:13px;font-weight:400;color:rgba(255,255,255,0.72);border-bottom:1px solid rgba(255,255,255,0.22);padding-bottom:2px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:7px;}
+.btn-ghost-hero:hover{color:#fff;border-color:#fff;gap:12px;}
+.hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:7px;opacity:0;animation:fadeUp 0.9s 0.9s forwards;}
+.hero-scroll span{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.3);}
 .scroll-bar{width:1px;height:36px;background:linear-gradient(to bottom,rgba(255,255,255,0.35),transparent);animation:scrollAnim 2.2s ease-in-out infinite;}
 
 /* TRUST BAR */
-.trust-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:18px 60px;display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;}
-.trust-item{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:500;letter-spacing:0.06em;color:var(--text2);}
-.trust-icon{width:16px;height:16px;color:var(--accent);flex-shrink:0;}
+.trust-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:16px 60px;display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:400;letter-spacing:0.04em;color:var(--text2);}
+.t-icon{width:15px;height:15px;color:var(--accent);flex-shrink:0;}
 
 /* MARQUEE */
 .marquee-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:16px 0;overflow:hidden;white-space:nowrap;background:var(--bg2);}
 .marquee-inner{display:inline-block;animation:marquee 30s linear infinite;}
-.m-item{display:inline-block;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text3);padding:0 32px;}
-.m-dot{color:var(--accent);font-size:7px;margin-right:32px;}
+.m-item{display:inline-block;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text3);padding:0 30px;}
+.m-dot{color:var(--accent);font-size:7px;margin-right:30px;}
 
-/* SECTIONS */
+/* SHARED SECTION */
 .sw{padding:110px 60px;max-width:1220px;margin:0 auto;}
 .kicker{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;}
 .kicker::before{content:'';display:block;width:26px;height:1px;background:var(--accent);}
-.sh{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4.2vw,58px);font-weight:600;line-height:1.08;color:var(--text);margin-bottom:18px;}
+.sh{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,56px);font-weight:600;line-height:1.08;color:var(--text);margin-bottom:16px;}
 .sh span{color:var(--accent);font-style:italic;}
 .ssub{font-size:16px;color:var(--text2);line-height:1.75;max-width:560px;}
 .divider{height:1px;background:var(--border);}
 .bg2{background:var(--bg2);}
-.bg3{background:var(--bg);}
 
 /* SERVICES */
-.svc-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px;gap:24px;flex-wrap:wrap;}
+.svc-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;gap:24px;flex-wrap:wrap;}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
 .svc-card{background:var(--card);padding:44px 36px;transition:background 0.3s;position:relative;overflow:hidden;}
 .svc-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transition:transform 0.3s;transform-origin:left;}
@@ -146,194 +132,249 @@ nav.scrolled{height:58px;border-bottom-color:var(--border);}
 .svc-num{font-family:'Cormorant Garamond',serif;font-size:12px;color:var(--accent);opacity:0.5;margin-bottom:24px;letter-spacing:0.1em;}
 .svc-card h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;margin-bottom:12px;color:var(--text);}
 .svc-card p{font-size:14px;color:var(--text2);line-height:1.72;}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px;}
-.tag{font-size:11px;letter-spacing:0.05em;background:var(--pill);color:var(--text2);padding:3px 11px;border-radius:100px;border:1px solid var(--border);}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:16px;}
+.tag{font-size:11px;background:var(--pill);color:var(--text2);padding:3px 11px;border-radius:100px;border:1px solid var(--border);}
+
+/* QUICK SERVICES */
+.qs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px;}
+.qs-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:32px 28px;transition:transform 0.3s,box-shadow 0.3s;position:relative;}
+.qs-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
+.qs-cat{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+.qs-card h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--text);margin-bottom:10px;}
+.qs-card p{font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:20px;}
+.qs-price{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--text);margin-bottom:18px;}
+.qs-price span{font-size:14px;font-weight:300;color:var(--text3);}
+.qs-btn{display:block;text-align:center;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:12px;border-radius:3px;cursor:pointer;transition:all 0.2s;border:1px solid var(--border);color:var(--text);}
+.qs-btn:hover{border-color:var(--accent);color:var(--accent);}
+.qs-btn.fill{background:var(--accent);color:var(--bg);border-color:var(--accent);}
+.qs-btn.fill:hover{background:var(--accent2);transform:translateY(-1px);}
+.qs-badge{position:absolute;top:20px;right:20px;font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:var(--accent);color:var(--bg);padding:4px 10px;border-radius:2px;}
+
+/* HOW IT WORKS */
+.hiw-tabs{display:flex;gap:4px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:4px;width:fit-content;margin-bottom:52px;flex-wrap:wrap;}
+.hiw-tab{font-size:12px;font-weight:400;letter-spacing:0.04em;padding:9px 20px;border-radius:4px;cursor:pointer;color:var(--text2);transition:all 0.2s;}
+.hiw-tab.on{background:var(--accent);color:var(--bg);font-weight:500;}
+.hiw-panel{display:none;}
+.hiw-panel.on{display:block;}
+.hiw-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);margin-bottom:40px;}
+.hiw-step{padding:40px 32px;border-right:1px solid var(--border);}
+.hiw-step:last-child{border-right:none;}
+.hiw-step-num{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:600;color:var(--bg);-webkit-text-stroke:1px var(--border);line-height:1;margin-bottom:20px;}
+.hiw-step h4{font-size:15px;font-weight:500;color:var(--text);margin-bottom:10px;}
+.hiw-step p{font-size:13px;color:var(--text2);line-height:1.7;}
+.hiw-detail{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:36px 40px;}
+.hiw-detail h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text);margin-bottom:16px;}
+.hiw-detail-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:24px;}
+.hiw-item{padding:20px;background:var(--bg3);border-radius:8px;border:1px solid var(--border2);}
+.hiw-item-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:6px;}
+.hiw-item-desc{font-size:12px;color:var(--text3);line-height:1.65;}
 
 /* PACKS */
-.packs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:60px;}
+.packs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px;}
 .pack{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:44px 36px;position:relative;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;}
 .pack:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
 .pack.featured{border-color:var(--accent);}
 .pack-badge{position:absolute;top:22px;right:22px;font-size:9px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;background:var(--accent);color:var(--bg);padding:4px 12px;border-radius:2px;}
 .pack-tier{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
-.pack-name{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;color:var(--text);margin-bottom:7px;}
-.pack-desc{font-size:14px;color:var(--text3);margin-bottom:28px;line-height:1.65;}
-.pack-hr{height:1px;background:var(--border);margin-bottom:24px;}
-.pack-label{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text3);margin-bottom:14px;}
-.pack-list{list-style:none;margin-bottom:28px;}
-.pack-list li{font-size:14px;color:var(--text2);padding:8px 0;border-bottom:1px solid var(--border2);display:flex;align-items:flex-start;gap:9px;line-height:1.5;}
+.pack-name{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--text);margin-bottom:6px;}
+.pack-desc{font-size:14px;color:var(--text3);margin-bottom:24px;line-height:1.65;}
+.pack-hr{height:1px;background:var(--border);margin-bottom:20px;}
+.pack-label{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text3);margin-bottom:12px;}
+.pack-list{list-style:none;margin-bottom:24px;}
+.pack-list li{font-size:13px;color:var(--text2);padding:7px 0;border-bottom:1px solid var(--border2);display:flex;align-items:flex-start;gap:9px;line-height:1.5;}
 .pack-list li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent);margin-top:8px;flex-shrink:0;}
-.pack-note{font-size:12px;color:var(--text3);background:var(--pill);border-radius:6px;padding:10px 13px;margin-bottom:24px;line-height:1.6;border:1px solid var(--border2);}
-.pack-btn{display:block;text-align:center;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:14px;border-radius:3px;cursor:pointer;transition:all 0.2s;}
+.pack-note{font-size:12px;color:var(--text3);background:var(--pill);border-radius:6px;padding:10px 13px;margin-bottom:22px;line-height:1.6;border:1px solid var(--border2);}
+.pack-btn{display:block;text-align:center;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:13px;border-radius:3px;cursor:pointer;transition:all 0.2s;}
 .btn-outline{border:1px solid var(--border);color:var(--text);}
 .btn-outline:hover{border-color:var(--accent);color:var(--accent);}
 .btn-fill{background:var(--accent);color:var(--bg);}
 .btn-fill:hover{background:var(--accent2);transform:translateY(-1px);}
 
 /* PRICING */
-.ptabs{display:flex;gap:4px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:4px;width:fit-content;margin-bottom:56px;}
-.ptab{font-size:13px;font-weight:400;letter-spacing:0.04em;padding:9px 22px;border-radius:4px;cursor:pointer;color:var(--text2);transition:all 0.2s;}
+.ptabs{display:flex;gap:4px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:4px;width:fit-content;margin-bottom:52px;flex-wrap:wrap;}
+.ptab{font-size:12px;font-weight:400;letter-spacing:0.04em;padding:9px 20px;border-radius:4px;cursor:pointer;color:var(--text2);transition:all 0.2s;}
 .ptab.on{background:var(--accent);color:var(--bg);font-weight:500;}
-.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
-.price-card{background:var(--card);padding:48px 40px;position:relative;}
+.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);}
+.price-card{background:var(--card);padding:40px 32px;position:relative;}
 .price-card.featured{background:var(--bg3);}
-.price-badge{position:absolute;top:24px;right:24px;font-size:9px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;background:var(--accent);color:var(--bg);padding:4px 12px;border-radius:2px;}
-.price-plan{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;}
-.price-num{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;line-height:1;color:var(--text);margin-bottom:6px;}
-.price-num sup{font-size:24px;font-weight:400;vertical-align:super;}
-.price-period{font-size:13px;color:var(--text3);margin-bottom:32px;}
-.price-hr{height:1px;background:var(--border);margin-bottom:28px;}
-.price-list{list-style:none;margin-bottom:40px;}
-.price-list li{font-size:14px;color:var(--text2);padding:9px 0;border-bottom:1px solid var(--border2);display:flex;align-items:center;gap:9px;}
+.price-badge{position:absolute;top:22px;right:22px;font-size:9px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;background:var(--accent);color:var(--bg);padding:4px 12px;border-radius:2px;}
+.price-plan{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+.price-num{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:600;line-height:1;color:var(--text);margin-bottom:4px;}
+.price-num sup{font-size:22px;font-weight:400;vertical-align:super;}
+.price-period{font-size:12px;color:var(--text3);margin-bottom:28px;}
+.price-hr{height:1px;background:var(--border);margin-bottom:24px;}
+.price-list{list-style:none;margin-bottom:36px;}
+.price-list li{font-size:13px;color:var(--text2);padding:8px 0;border-bottom:1px solid var(--border2);display:flex;align-items:center;gap:8px;}
 .price-list li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0;}
 .price-list li.off{color:var(--text3);opacity:0.35;}
 .price-list li.off::before{background:var(--border);}
-.price-cta{display:block;text-align:center;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:14px;border-radius:3px;cursor:pointer;transition:all 0.2s;}
+.price-cta{display:block;text-align:center;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:13px;border-radius:3px;cursor:pointer;transition:all 0.2s;}
 .pcta-o{border:1px solid var(--border);color:var(--text);}
 .pcta-o:hover{border-color:var(--accent);color:var(--accent);}
 .pcta-f{background:var(--accent);color:var(--bg);}
 .pcta-f:hover{background:var(--accent2);transform:translateY(-1px);}
+.duration-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-top:36px;}
+.dur-card{background:var(--card);padding:28px 24px;text-align:center;}
+.dur-card.best{background:var(--bg3);}
+.dur-label{font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+.dur-save{font-size:11px;color:var(--gold);background:rgba(180,140,40,0.08);padding:3px 10px;border-radius:100px;border:1px solid rgba(180,140,40,0.15);margin-bottom:12px;display:inline-block;}
+.dur-price{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:var(--text);}
+.dur-sub{font-size:11px;color:var(--text3);margin-top:4px;}
 
 /* COURSES */
-.courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:60px;}
+.courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px;}
 .course-card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;}
 .course-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
-.course-thumb{height:170px;background:var(--bg3);display:flex;align-items:center;justify-content:center;position:relative;}
-.course-thumb-txt{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);}
+.course-thumb{height:160px;background:var(--bg3);display:flex;align-items:center;justify-content:center;position:relative;}
+.course-thumb-txt{font-size:11px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);}
 .course-bar{position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));}
-.course-body{padding:24px 26px 28px;}
-.course-cat{font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
-.course-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--text);margin-bottom:9px;line-height:1.3;}
-.course-desc{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:18px;}
-.course-foot{display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid var(--border2);}
-.course-price{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text);}
+.course-body{padding:22px 24px 26px;}
+.course-cat{font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:9px;}
+.course-title{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--text);margin-bottom:8px;line-height:1.3;}
+.course-desc{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:16px;}
+.course-foot{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--border2);}
+.course-price{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--text);}
 .coming-badge{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);background:var(--pill);padding:4px 11px;border-radius:100px;border:1px solid var(--border);}
 
-/* ABOUT */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:0;}
-.about-visual{background:var(--hero-grad);border-radius:12px;height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;color:rgba(255,255,255,0.6);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;}
-.about-values{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px;}
-.av{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:18px 20px;}
-.av-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:5px;}
-.av-desc{font-size:12px;color:var(--text3);line-height:1.6;}
-
 /* TESTIMONIALS */
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:60px;}
-.testi-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:32px 28px;}
-.testi-stars{color:var(--gold);font-size:14px;margin-bottom:16px;letter-spacing:2px;}
-.testi-text{font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:20px;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px;}
+.testi-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:30px 26px;}
+.testi-stars{color:var(--gold);font-size:13px;margin-bottom:14px;letter-spacing:2px;}
+.testi-text{font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:18px;}
 .testi-author{font-size:12px;font-weight:500;color:var(--text);}
 .testi-role{font-size:11px;color:var(--text3);margin-top:2px;}
-.testi-placeholder{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);background:var(--pill);border:1px solid var(--border);border-radius:6px;padding:8px 14px;display:inline-block;margin-bottom:16px;}
+.testi-placeholder{font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);background:var(--pill);border:1px solid var(--border);border-radius:4px;padding:6px 12px;display:inline-block;margin-bottom:14px;}
 
-/* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start;margin-top:60px;}
-.contact-info{display:flex;flex-direction:column;gap:24px;}
-.ci-item{display:flex;align-items:flex-start;gap:14px;padding:20px;background:var(--card);border:1px solid var(--border);border-radius:8px;}
-.ci-icon{width:36px;height:36px;background:var(--pill);border:1px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.ci-icon svg{width:16px;height:16px;color:var(--accent);}
-.ci-label{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text3);margin-bottom:4px;}
-.ci-val{font-size:14px;color:var(--text);}
-
-/* PAYMENT / CHECKOUT */
-.pay-bg{background:var(--navy);}
+/* PAYMENT SECTION */
+.pay-bg{background:#0d1f3c;}
 [data-theme="dark"] .pay-bg{background:var(--bg2);}
 .pay-inner{max-width:1220px;margin:0 auto;padding:110px 60px;}
-.pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:56px;}
-.pay-left h2{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,3.5vw,50px);font-weight:600;line-height:1.1;color:#ffffff;margin-bottom:18px;}
+.pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:52px;}
+.pay-left h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3.5vw,48px);font-weight:600;line-height:1.1;color:#ffffff;margin-bottom:16px;}
 [data-theme="dark"] .pay-left h2{color:var(--text);}
-.pay-left p{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:32px;}
-[data-theme="dark"] .pay-left p{color:var(--text2);}
-.pm-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
-.pm-badge{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:400;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.13);padding:7px 14px;border-radius:5px;color:rgba(255,255,255,0.7);}
+.pay-left-sub{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:28px;}
+[data-theme="dark"] .pay-left-sub{color:var(--text2);}
+.pay-notice{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:18px 20px;margin-bottom:28px;}
+[data-theme="dark"] .pay-notice{background:var(--bg3);border-color:var(--border);}
+.pay-notice-title{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px;}
+[data-theme="dark"] .pay-notice-title{color:var(--text3);}
+.pay-notice p{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.65;}
+[data-theme="dark"] .pay-notice p{color:var(--text2);}
+.pm-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
+.pm-badge{display:flex;align-items:center;gap:6px;font-size:12px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.13);padding:7px 13px;border-radius:5px;color:rgba(255,255,255,0.7);}
 [data-theme="dark"] .pm-badge{background:var(--pill);border-color:var(--border);color:var(--text2);}
 .pm-dot{width:7px;height:7px;border-radius:50%;background:var(--gold2);}
 .pay-secure{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,0.35);}
 [data-theme="dark"] .pay-secure{color:var(--text3);}
-.pay-right{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:40px 36px;}
+.pay-right{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:36px 32px;}
 [data-theme="dark"] .pay-right{background:var(--bg3);border-color:var(--border);}
-.pay-form-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:#fff;margin-bottom:6px;}
+.pay-form-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:#fff;margin-bottom:5px;}
 [data-theme="dark"] .pay-form-title{color:var(--text);}
-.pay-form-sub{font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:28px;line-height:1.6;}
+.pay-form-sub{font-size:13px;color:rgba(255,255,255,0.38);margin-bottom:24px;line-height:1.6;}
 [data-theme="dark"] .pay-form-sub{color:var(--text3);}
-.frow{margin-bottom:14px;}
-.flabel{display:block;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:7px;}
+.frow{margin-bottom:13px;}
+.frow2{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
+.flabel{display:block;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:6px;}
 [data-theme="dark"] .flabel{color:var(--text3);}
-.finput{width:100%;background:var(--input-bg);border:1px solid var(--input-border);border-radius:6px;padding:12px 15px;font-family:'Outfit',sans-serif;font-size:14px;color:var(--input-color);outline:none;transition:border-color 0.2s;}
-[data-theme="light"] .finput{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.14);color:#fff;}
-[data-theme="light"] .pay-bg .finput{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.14);color:#ffffff;}
-.finput::placeholder{color:rgba(255,255,255,0.22);}
+.finput,.fselect{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.13);border-radius:6px;padding:11px 14px;font-family:'Outfit',sans-serif;font-size:14px;color:#fff;outline:none;transition:border-color 0.2s;}
+[data-theme="dark"] .finput,[data-theme="dark"] .fselect{background:var(--bg);border-color:var(--border);color:var(--text);}
+.finput::placeholder{color:rgba(255,255,255,0.2);}
 [data-theme="dark"] .finput::placeholder{color:var(--input-ph);}
-.finput:focus{border-color:rgba(255,255,255,0.38);}
-[data-theme="dark"] .finput:focus{border-color:var(--accent);}
-.fselect{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:6px;padding:12px 15px;font-family:'Outfit',sans-serif;font-size:14px;color:#fff;outline:none;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='rgba(255,255,255,0.35)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;transition:border-color 0.2s;}
-[data-theme="dark"] .fselect{background-color:var(--bg);border-color:var(--border);color:var(--text);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='rgba(201,168,76,0.4)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");}
-.fselect option{background:#1a3560;}
+.finput:focus,.fselect:focus{border-color:rgba(255,255,255,0.36);}
+[data-theme="dark"] .finput:focus,[data-theme="dark"] .fselect:focus{border-color:var(--accent);}
+.fselect{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='rgba(255,255,255,0.3)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;}
+[data-theme="dark"] .fselect{background-color:var(--bg);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='rgba(201,168,76,0.4)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");}
+.fselect option{background:#1a3560;color:#fff;}
 [data-theme="dark"] .fselect option{background:#0d1a2e;}
-.frow2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-#card-element{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:6px;padding:13px 15px;}
+#card-element{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.13);border-radius:6px;padding:12px 14px;transition:border-color 0.2s;}
 [data-theme="dark"] #card-element{background:var(--bg);border-color:var(--border);}
-#card-errors{color:#ff6b6b;font-size:12px;margin-top:8px;min-height:16px;}
-.pay-btn{width:100%;margin-top:10px;background:linear-gradient(135deg,#ffffff,#e8f0ff);color:var(--navy);font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:16px;border:none;border-radius:6px;cursor:pointer;transition:all 0.25s;font-family:'Outfit',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;}
+#card-errors{color:#ff6b6b;font-size:12px;margin-top:7px;min-height:16px;}
+.pay-btn{width:100%;margin-top:10px;background:linear-gradient(135deg,#ffffff,#e8f0ff);color:#0d1f3c;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:15px;border:none;border-radius:6px;cursor:pointer;transition:all 0.25s;font-family:'Outfit',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;}
 [data-theme="dark"] .pay-btn{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#07101e;}
 .pay-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.3);}
 .pay-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
-.stripe-note{text-align:center;margin-top:14px;font-size:11px;color:rgba(255,255,255,0.28);display:flex;align-items:center;justify-content:center;gap:5px;}
+.stripe-note{text-align:center;margin-top:12px;font-size:11px;color:rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;gap:5px;}
 [data-theme="dark"] .stripe-note{color:var(--text3);}
-.success-msg{display:none;text-align:center;padding:28px;background:rgba(255,255,255,0.05);border-radius:8px;border:1px solid rgba(255,255,255,0.15);}
+.success-msg{display:none;text-align:center;padding:28px;background:rgba(255,255,255,0.04);border-radius:8px;border:1px solid rgba(255,255,255,0.12);}
 [data-theme="dark"] .success-msg{background:var(--bg3);border-color:var(--border);}
 .success-msg h3{font-family:'Cormorant Garamond',serif;font-size:26px;color:#fff;margin-bottom:8px;}
 [data-theme="dark"] .success-msg h3{color:var(--text);}
 .success-msg p{font-size:14px;color:rgba(255,255,255,0.5);}
 [data-theme="dark"] .success-msg p{color:var(--text2);}
 
-/* CONTACT FORM */
-.cf-input{width:100%;background:var(--input-bg);border:1px solid var(--input-border);border-radius:6px;padding:12px 15px;font-family:'Outfit',sans-serif;font-size:14px;color:var(--input-color);outline:none;transition:border-color 0.2s;}
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start;margin-top:52px;}
+.contact-info{display:flex;flex-direction:column;gap:18px;}
+.ci-item{display:flex;align-items:flex-start;gap:14px;padding:18px;background:var(--card);border:1px solid var(--border);border-radius:8px;}
+.ci-icon{width:34px;height:34px;background:var(--pill);border:1px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ci-icon svg{width:15px;height:15px;color:var(--accent);}
+.ci-label{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text3);margin-bottom:3px;}
+.ci-val{font-size:14px;color:var(--text);}
+.cf-input{width:100%;background:var(--input-bg);border:1px solid var(--input-border);border-radius:6px;padding:11px 14px;font-family:'Outfit',sans-serif;font-size:14px;color:var(--input-color);outline:none;transition:border-color 0.2s;}
 .cf-input::placeholder{color:var(--input-ph);}
 .cf-input:focus{border-color:var(--accent);}
-textarea.cf-input{resize:vertical;min-height:120px;}
-.cf-label{display:block;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text3);margin-bottom:7px;}
-.cf-row{margin-bottom:14px;}
-.cf-btn{background:var(--accent);color:var(--bg);font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:15px 36px;border:none;border-radius:3px;cursor:pointer;font-family:'Outfit',sans-serif;transition:all 0.2s;}
+textarea.cf-input{resize:vertical;min-height:110px;}
+.cf-label{display:block;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text3);margin-bottom:6px;}
+.cf-row{margin-bottom:13px;}
+.cf-btn{background:var(--accent);color:var(--bg);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:14px 32px;border:none;border-radius:3px;cursor:pointer;font-family:'Outfit',sans-serif;transition:all 0.2s;}
 .cf-btn:hover{background:var(--accent2);transform:translateY(-1px);}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.about-visual{background:var(--hero-grad);border-radius:12px;height:400px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:rgba(255,255,255,0.4);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;}
+.about-values{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px;}
+.av{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:16px 18px;}
+.av-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:4px;}
+.av-desc{font-size:12px;color:var(--text3);line-height:1.6;}
 
 /* CTA BANNER */
 .cta-banner{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-.cta-inner{max-width:740px;margin:0 auto;padding:120px 40px;text-align:center;}
-.cta-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5.5vw,70px);font-weight:600;line-height:1.06;color:var(--text);margin-bottom:18px;}
+.cta-inner{max-width:740px;margin:0 auto;padding:110px 40px;text-align:center;}
+.cta-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,68px);font-weight:600;line-height:1.06;color:var(--text);margin-bottom:16px;}
 .cta-inner h2 span{font-style:italic;color:var(--accent);}
-.cta-inner p{font-size:16px;color:var(--text2);line-height:1.75;margin-bottom:44px;}
+.cta-inner p{font-size:16px;color:var(--text2);line-height:1.75;margin-bottom:40px;}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center;}
-.btn-accent{background:var(--accent);color:var(--bg);font-size:13px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;padding:16px 40px;border-radius:3px;cursor:pointer;transition:all 0.2s;}
+.btn-accent{background:var(--accent);color:var(--bg);font-size:12px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;padding:15px 38px;border-radius:3px;cursor:pointer;transition:all 0.2s;}
 .btn-accent:hover{background:var(--accent2);transform:translateY(-2px);}
 .btn-ghost-a{font-size:13px;font-weight:400;color:var(--text2);border-bottom:1px solid var(--border);padding-bottom:2px;cursor:pointer;display:flex;align-items:center;gap:7px;transition:all 0.2s;}
 .btn-ghost-a:hover{color:var(--accent);border-color:var(--accent);gap:12px;}
 
 /* FOOTER */
-footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px 36px;}
-.foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:44px;margin-bottom:52px;}
-.foot-logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--text);margin-bottom:12px;cursor:pointer;}
+footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 60px 32px;}
+.foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+.foot-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text);margin-bottom:11px;cursor:pointer;}
 .foot-logo span{color:var(--accent);font-style:italic;}
-.foot-desc{font-size:14px;color:var(--text3);line-height:1.7;max-width:260px;}
-.foot-col h4{font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--text);margin-bottom:18px;}
+.foot-desc{font-size:13px;color:var(--text3);line-height:1.7;max-width:260px;}
+.foot-col h4{font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--text);margin-bottom:16px;}
 .foot-col ul{list-style:none;}
-.foot-col li{margin-bottom:9px;}
-.foot-col a{font-size:14px;color:var(--text3);transition:color 0.2s;cursor:pointer;}
+.foot-col li{margin-bottom:8px;}
+.foot-col a{font-size:13px;color:var(--text3);transition:color 0.2s;cursor:pointer;}
 .foot-col a:hover{color:var(--accent);}
-.foot-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.foot-bottom{border-top:1px solid var(--border);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
 .foot-copy{font-size:12px;color:var(--text3);}
-.foot-legal{display:flex;gap:22px;}
+.foot-legal{display:flex;gap:20px;}
 .foot-legal a{font-size:12px;color:var(--text3);cursor:pointer;transition:color 0.2s;}
 .foot-legal a:hover{color:var(--accent);}
 
-/* LEGAL PAGES */
-.legal-content{max-width:840px;margin:0 auto;padding:110px 60px;}
-.legal-content h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,56px);font-weight:600;color:var(--text);margin-bottom:10px;}
-.legal-date{font-size:13px;color:var(--text3);margin-bottom:48px;}
-.legal-content h2{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--text);margin:36px 0 12px;}
-.legal-content p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px;}
-.legal-content ul{margin:12px 0 16px 20px;}
-.legal-content li{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:6px;}
+/* COOKIE BANNER */
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--bg2);border-top:1px solid var(--border);padding:20px 60px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.08);transform:translateY(100%);transition:transform 0.4s ease;}
+.cookie-banner.show{transform:translateY(0);}
+.cookie-text{font-size:13px;color:var(--text2);line-height:1.65;max-width:700px;}
+.cookie-text a{color:var(--accent);text-decoration:underline;cursor:pointer;}
+.cookie-btns{display:flex;gap:10px;flex-shrink:0;}
+.cookie-accept{background:var(--accent);color:var(--bg);font-size:11px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;padding:10px 22px;border-radius:3px;cursor:pointer;border:none;font-family:'Outfit',sans-serif;transition:all 0.2s;}
+.cookie-accept:hover{background:var(--accent2);}
+.cookie-decline{background:transparent;color:var(--text3);font-size:11px;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;padding:10px 18px;border-radius:3px;cursor:pointer;border:1px solid var(--border);font-family:'Outfit',sans-serif;transition:all 0.2s;}
+.cookie-decline:hover{border-color:var(--accent);color:var(--text);}
+
+/* LEGAL */
+.legal-content{max-width:820px;margin:0 auto;padding:110px 60px;}
+.legal-content h1{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,52px);font-weight:600;color:var(--text);margin-bottom:8px;}
+.legal-date{font-size:13px;color:var(--text3);margin-bottom:44px;}
+.legal-content h2{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text);margin:32px 0 10px;}
+.legal-content p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:14px;}
+.legal-content ul{margin:10px 0 14px 18px;}
+.legal-content li{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:5px;}
 
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
@@ -348,9 +389,15 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
   .packs-grid{grid-template-columns:repeat(2,1fr);}
   .courses-grid{grid-template-columns:repeat(2,1fr);}
   .testi-grid{grid-template-columns:repeat(2,1fr);}
+  .qs-grid{grid-template-columns:repeat(2,1fr);}
   .foot-top{grid-template-columns:1fr 1fr;}
-  .about-grid{grid-template-columns:1fr;gap:40px;}
+  .about-grid{grid-template-columns:1fr;gap:36px;}
   .contact-grid{grid-template-columns:1fr;}
+  .hiw-steps{grid-template-columns:repeat(2,1fr);}
+  .hiw-step:nth-child(2){border-right:none;}
+  .hiw-step:nth-child(3){border-top:1px solid var(--border);border-right:1px solid var(--border);}
+  .hiw-step:nth-child(4){border-top:1px solid var(--border);}
+  .hiw-detail-grid{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:768px){
   nav{padding:0 20px;}
@@ -358,15 +405,21 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
   .hamburger{display:flex;}
   .sw{padding:72px 24px;}
   .pay-inner,.legal-content{padding:72px 24px;}
-  .svc-grid,.price-grid,.packs-grid,.courses-grid,.testi-grid{grid-template-columns:1fr;}
+  .svc-grid,.price-grid,.packs-grid,.courses-grid,.testi-grid,.qs-grid{grid-template-columns:1fr;}
   .pay-grid{grid-template-columns:1fr;}
-  .foot-top{grid-template-columns:1fr 1fr;gap:28px;}
+  .foot-top{grid-template-columns:1fr 1fr;gap:24px;}
   .foot-bottom{flex-direction:column;text-align:center;}
   .cta-inner{padding:72px 24px;}
-  footer{padding:44px 24px 28px;}
-  .trust-bar{padding:14px 20px;gap:20px;}
+  footer{padding:40px 24px 24px;}
+  .trust-bar{padding:14px 20px;gap:16px;}
   .frow2{grid-template-columns:1fr;}
   .about-values{grid-template-columns:1fr;}
+  .hiw-steps{grid-template-columns:1fr;}
+  .hiw-step{border-right:none;border-bottom:1px solid var(--border);}
+  .hiw-step:last-child{border-bottom:none;}
+  .hiw-detail-grid{grid-template-columns:1fr;}
+  .duration-grid{grid-template-columns:1fr;}
+  .cookie-banner{padding:20px 24px;}
 }
 @media(max-width:480px){
   .packs-grid{grid-template-columns:1fr;}
@@ -377,73 +430,83 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
 </head>
 <body>
 
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-text">
+    We use cookies to improve your experience on this site. Cookies help us understand how visitors use our site and allow payment processing to work correctly. By clicking Accept, you agree to our use of cookies. You can learn more in our <a onclick="goTo('cookies')">Cookie Policy</a>.
+  </div>
+  <div class="cookie-btns">
+    <button class="cookie-decline" onclick="cookieChoice(false)">Decline</button>
+    <button class="cookie-accept" onclick="cookieChoice(true)">Accept All</button>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-logo" onclick="goTo('home')">Filip<span>Social</span></div>
   <ul class="nav-links">
-    <li><a onclick="goTo('home');scrollTo('services')">Services</a></li>
-    <li><a onclick="goTo('home');scrollTo('packs')">Business Packs</a></li>
-    <li><a onclick="goTo('home');scrollTo('pricing')">Pricing</a></li>
-    <li><a onclick="goTo('home');scrollTo('courses')">Courses</a></li>
+    <li><a onclick="goTo('home');scrollSec('services')">Services</a></li>
+    <li><a onclick="goTo('home');scrollSec('quick')">Quick Services</a></li>
+    <li><a onclick="goTo('home');scrollSec('packs')">Business Packs</a></li>
+    <li><a onclick="goTo('home');scrollSec('pricing')">Pricing</a></li>
+    <li><a onclick="goTo('home');scrollSec('courses')">Courses</a></li>
     <li><a onclick="goTo('about')">About</a></li>
     <li><a onclick="goTo('contact')">Contact</a></li>
   </ul>
   <div class="nav-right">
     <div class="theme-btn" id="themeBtn"></div>
-    <div class="nav-cta" onclick="goTo('home');scrollTo('pay')">Work With Me</div>
+    <div class="nav-cta" onclick="goTo('home');scrollSec('pay')">Work With Me</div>
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </div>
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a onclick="closeMenu();goTo('home');scrollTo('services')">Services</a>
-  <a onclick="closeMenu();goTo('home');scrollTo('packs')">Business Packs</a>
-  <a onclick="closeMenu();goTo('home');scrollTo('pricing')">Pricing</a>
-  <a onclick="closeMenu();goTo('home');scrollTo('courses')">Courses</a>
-  <a onclick="closeMenu();goTo('about')">About</a>
-  <a onclick="closeMenu();goTo('contact')">Contact</a>
-  <a onclick="closeMenu();goTo('home');scrollTo('pay')">Work With Me</a>
+  <a onclick="cm();goTo('home');scrollSec('services')">Services</a>
+  <a onclick="cm();goTo('home');scrollSec('quick')">Quick Services</a>
+  <a onclick="cm();goTo('home');scrollSec('packs')">Business Packs</a>
+  <a onclick="cm();goTo('home');scrollSec('pricing')">Pricing</a>
+  <a onclick="cm();goTo('home');scrollSec('courses')">Courses</a>
+  <a onclick="cm();goTo('about')">About</a>
+  <a onclick="cm();goTo('contact')">Contact</a>
+  <a onclick="cm();goTo('home');scrollSec('pay')">Work With Me</a>
 </div>
 
-<!-- ======= HOME PAGE ======= -->
+<!-- ========== HOME PAGE ========== -->
 <div class="page active" id="page-home">
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-orb orb1"></div>
   <div class="hero-orb orb2"></div>
-  <div class="hero-eyebrow"><span class="eyebrow-dot"></span>Social Media and Business Growth</div>
+  <div class="eyebrow"><span class="edot"></span>Social Media and Business Growth</div>
   <h1>Build a brand the<br>world <span>remembers.</span></h1>
   <p class="hero-sub">From social media management to full business launches, I help you grow online with strategy, content, and results that speak for themselves.</p>
   <div class="hero-actions">
-    <div class="btn-white" onclick="scrollTo('packs')">See Packages</div>
-    <div class="btn-outline-white" onclick="scrollTo('services')">All Services &rarr;</div>
+    <div class="btn-white" onclick="scrollSec('packs')">See Packages</div>
+    <div class="btn-ghost-hero" onclick="scrollSec('services')">All Services &rarr;</div>
   </div>
-  <div class="hero-scroll-hint"><span>Scroll</span><div class="scroll-bar"></div></div>
+  <div class="hero-scroll"><span>Scroll</span><div class="scroll-bar"></div></div>
 </section>
 
-<!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-item">
-    <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <svg class="t-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
     SSL Secured
   </div>
   <div class="trust-item">
-    <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+    <svg class="t-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
     Secure Payments via Stripe
   </div>
   <div class="trust-item">
-    <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.85 10.8 19.79 19.79 0 01.77 2.18 2 2 0 012.75 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.07 6.07l1.07-1.07a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    <svg class="t-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.85 10.8 19.79 19.79 0 01.77 2.18 2 2 0 012.75 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.07 6.07l1.07-1.07a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
     Response Within 24 Hours
   </div>
   <div class="trust-item">
-    <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-    Dedicated Account Manager
+    <svg class="t-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    Cancel Anytime
   </div>
 </div>
 
-<!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-inner">
     <span class="m-item"><span class="m-dot">&#9670;</span>Instagram</span>
@@ -456,7 +519,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
     <span class="m-item"><span class="m-dot">&#9670;</span>Paid Ads</span>
     <span class="m-item"><span class="m-dot">&#9670;</span>Content Strategy</span>
     <span class="m-item"><span class="m-dot">&#9670;</span>Online Courses</span>
-    <span class="m-item"><span class="m-dot">&#9670;</span>Business Packs</span>
     <span class="m-item"><span class="m-dot">&#9670;</span>Instagram</span>
     <span class="m-item"><span class="m-dot">&#9670;</span>TikTok</span>
     <span class="m-item"><span class="m-dot">&#9670;</span>Facebook</span>
@@ -467,7 +529,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
     <span class="m-item"><span class="m-dot">&#9670;</span>Paid Ads</span>
     <span class="m-item"><span class="m-dot">&#9670;</span>Content Strategy</span>
     <span class="m-item"><span class="m-dot">&#9670;</span>Online Courses</span>
-    <span class="m-item"><span class="m-dot">&#9670;</span>Business Packs</span>
   </div>
 </div>
 
@@ -479,7 +540,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
       <div class="kicker">What I Offer</div>
       <h2 class="sh">Every platform.<br>Every <span>strategy.</span></h2>
     </div>
-    <p class="ssub reveal-r" style="max-width:320px;font-size:15px;">Full-service social media management across every major platform, plus website creation for businesses ready to build their online presence.</p>
+    <p class="ssub reveal-r" style="max-width:310px;font-size:15px;">Full-service social media management across every major platform, plus website creation for businesses ready to grow.</p>
   </div>
   <div class="svc-grid">
     <div class="svc-card reveal">
@@ -494,7 +555,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
     <div class="svc-card reveal">
       <div class="svc-num">02</div>
       <h3>Content Creation</h3>
-      <p>Scroll-stopping posts, reels, carousels, and stories crafted to match your brand voice and help your audience connect with you.</p>
+      <p>Scroll-stopping posts, reels, carousels, and stories crafted to match your brand voice and connect with your audience.</p>
     </div>
     <div class="svc-card reveal">
       <div class="svc-num">03</div>
@@ -504,7 +565,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
     <div class="svc-card reveal">
       <div class="svc-num">04</div>
       <h3>Growth Strategy</h3>
-      <p>Data-driven growth plans built around your niche, audience, and goals. Clear direction on what to post, when, and why it works.</p>
+      <p>Data-driven growth plans built around your niche, audience, and goals. Clear direction on what to post, when, and why.</p>
     </div>
     <div class="svc-card reveal">
       <div class="svc-num">05</div>
@@ -522,13 +583,162 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
 
 <div class="divider"></div>
 
+<!-- QUICK SERVICES -->
+<div id="quick">
+<div class="sw">
+  <div class="reveal">
+    <div class="kicker">Quick Services</div>
+    <h2 class="sh">Start small.<br>See the <span>difference.</span></h2>
+    <p class="ssub" style="margin-top:14px;">Not ready for a full package yet? These affordable one-off services let you test the quality of my work with zero risk and no commitment.</p>
+  </div>
+  <div class="qs-grid">
+    <div class="qs-card reveal">
+      <div class="qs-badge">Most Popular</div>
+      <div class="qs-cat">Audit</div>
+      <h3>Social Media Audit</h3>
+      <p>I review your current accounts in depth and deliver a written report showing exactly what is working, what is not, and what I would change. The fastest way to understand why your growth has stalled.</p>
+      <div class="qs-price">$99 <span>one-time</span></div>
+      <div class="qs-btn fill" onclick="selectService('Social Media Audit - $99')">Order Now</div>
+    </div>
+    <div class="qs-card reveal">
+      <div class="qs-cat">Management</div>
+      <h3>1 Account Management</h3>
+      <p>Full management of a single social media account for one month. Posting, engagement, DMs, and a performance report at the end. Perfect for testing before committing to a full plan.</p>
+      <div class="qs-price">$199 <span>per month</span></div>
+      <div class="qs-btn fill" onclick="selectService('1 Account Management - $199/mo')">Order Now</div>
+    </div>
+    <div class="qs-card reveal">
+      <div class="qs-cat">Content</div>
+      <h3>Content Calendar</h3>
+      <p>A full one-month content calendar for your business. Every post planned, captioned, and ready to schedule. You just approve and post.</p>
+      <div class="qs-price">$59 <span>one-time</span></div>
+      <div class="qs-btn" onclick="selectService('Content Calendar - $59')">Order Now</div>
+    </div>
+    <div class="qs-card reveal">
+      <div class="qs-cat">Branding</div>
+      <h3>Profile Bio and Setup</h3>
+      <p>A professionally written bio, optimised profile photo guidelines, link setup, and highlights structure for your chosen platform.</p>
+      <div class="qs-price">$39 <span>one-time</span></div>
+      <div class="qs-btn" onclick="selectService('Profile Bio and Setup - $39')">Order Now</div>
+    </div>
+    <div class="qs-card reveal">
+      <div class="qs-cat">Research</div>
+      <h3>Hashtag Strategy</h3>
+      <p>A custom researched set of hashtags for your niche, organised by category and reach level. Stop guessing and start using hashtags that actually work.</p>
+      <div class="qs-price">$29 <span>one-time</span></div>
+      <div class="qs-btn" onclick="selectService('Hashtag Strategy - $29')">Order Now</div>
+    </div>
+    <div class="qs-card reveal">
+      <div class="qs-cat">Design</div>
+      <h3>Story and Reel Templates</h3>
+      <p>A pack of 5 professionally designed, branded story and reel templates you can edit yourself in Canva. Consistent, polished visuals for your feed.</p>
+      <div class="qs-price">$44 <span>one-time</span></div>
+      <div class="qs-btn" onclick="selectService('Story and Reel Templates Pack - $44')">Order Now</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- HOW IT WORKS -->
+<div class="bg2" id="how">
+<div class="sw">
+  <div class="reveal">
+    <div class="kicker">How It Works</div>
+    <h2 class="sh">Exactly what happens<br>when you <span>hire me.</span></h2>
+    <p class="ssub" style="margin-top:14px;">Every plan follows the same core process. Here is what it looks like in detail for each tier, so you know precisely what you are getting.</p>
+  </div>
+  <div class="hiw-tabs reveal">
+    <div class="hiw-tab on" onclick="switchHiw(this,'trial')">Trial</div>
+    <div class="hiw-tab" onclick="switchHiw(this,'starter')">Starter</div>
+    <div class="hiw-tab" onclick="switchHiw(this,'growth')">Growth</div>
+    <div class="hiw-tab" onclick="switchHiw(this,'pro')">Pro</div>
+  </div>
+
+  <div class="hiw-panel on" id="hiw-trial">
+    <div class="hiw-steps">
+      <div class="hiw-step"><div class="hiw-step-num">01</div><h4>You Place Your Order</h4><p>You select the 1 Account Management trial and fill out a short form. I reach out within 24 hours.</p></div>
+      <div class="hiw-step"><div class="hiw-step-num">02</div><h4>Quick Onboarding</h4><p>We have a 20-minute call where I learn about your business, your audience, and your goals for the account.</p></div>
+      <div class="hiw-step"><div class="hiw-step-num">03</div><h4>I Take Over the Account</h4><p>You give me access and I begin creating and posting content immediately. You can approve posts before they go live.</p></div>
+      <div class="hiw-step"><div class="hiw-step-num">04</div><h4>End of Month Report</h4><p>After 30 days you receive a performance report. If you are happy, you can upgrade to a full plan at a discounted rate.</p></div>
+    </div>
+    <div class="hiw-detail">
+      <h4>What the trial includes in practice</h4>
+      <p style="font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:0;">You get one full month of professional account management on a single platform of your choice. I will post consistently, respond to comments and DMs, engage with relevant accounts in your niche, and deliver a clear report at the end. The goal is simple: show you what consistent, strategic management looks like compared to posting randomly. Most trial clients upgrade to a full plan after seeing the difference.</p>
+      <div class="hiw-detail-grid">
+        <div class="hiw-item"><div class="hiw-item-title">Posting</div><div class="hiw-item-desc">10 to 15 posts over the month, timed to your audience's peak activity hours.</div></div>
+        <div class="hiw-item"><div class="hiw-item-title">Engagement</div><div class="hiw-item-desc">Daily responses to comments and DMs to build community and signal activity to the algorithm.</div></div>
+        <div class="hiw-item"><div class="hiw-item-title">Reporting</div><div class="hiw-item-desc">A clear end-of-month performance PDF showing reach, engagement, follower change, and what worked.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hiw-panel" id="hiw-starter">
+    <div class="hiw-steps">
+      <div class="hiw-step"><div class="hiw-step-num">01</div><h4>Strategy Call</h4><p>We start with a 30-minute onboarding call. I learn your brand, your audience, your competitors, and your goals.</p></div>
+      <div class="hiw-step"><div class="hiw-step-num">02</div><h4>Content Plan Delivered</h4><p>Within 5 days I deliver a monthly content plan for your approval. You can request changes before anything is posted.</p></div>
+      <div class="hiw-step"><div class="hiw-step-num">03</div><h4>Ongoing Management</h4><p>I post, engage, and manage your 2 platforms daily throughout the month. You are updated every week.</p></div>
+      <div class="hiw-step"><div class="hiw-step-num">04</div><h4>Monthly Review</h4><p>At the end of each month we review performance together and I adjust the strategy for the following month.</p></div>
+    </div>
+    <div class="hiw-detail">
+      <h4>What Starter management looks like day to day</h4>
+      <p style="font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:0;">I manage 2 platforms and post 12 times per month, averaging 3 posts per week. Each post includes a caption, hashtags, and a graphic or image. I respond to comments and DMs daily and engage with relevant accounts in your niche to grow your reach organically. You receive a monthly analytics report every 30 days.</p>
+      <div class="hiw-detail-grid">
+        <div class="hiw-item"><div class="hiw-item-title">2 Platforms</div><div class="hiw-item-desc">Your choice of any two platforms. Instagram and Facebook, Instagram and TikTok, or any combination.</div></div>
+        <div class="hiw-item"><div class="hiw-item-title">12 Posts Per Month</div><div class="hiw-item-desc">Designed, captioned, hashtagged, and posted at optimal times. All content is brand-aligned.</div></div>
+        <div class="hiw-item"><div class="hiw-item-title">Monthly Report</div><div class="hiw-item-desc">A clear PDF showing reach, impressions, follower growth, engagement rate, and top-performing content.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hiw-panel" id="hiw-growth">
+    <div class="hiw-steps">
+      <div class="hiw-step"><div class="hiw-step-num">01</div><h4>Deep Dive Onboarding</h4><p>A 45-minute strategy call covering your brand, competitors, target audience, tone of voice, and 90-day growth goals.</p></div>
+      <div class="hiw-step"><div class="hiw-step-num">02</div><h4>Full Content Strategy</h4><p>I build a complete monthly content plan across all 4 platforms with platform-specific formats, captions, and creative direction.</p></div>
+      <div class="hiw-step"><div class="hiw-step-num">03</div><h4>Daily Management</h4><p>Posting, engagement, community management, and ad campaign monitoring across all 4 platforms every single day.</p></div>
+      <div class="hiw-step"><div class="hiw-step-num">04</div><h4>Monthly Strategy Call</h4><p>We meet once a month to review data, discuss what is working, and plan the next month's direction together.</p></div>
+    </div>
+    <div class="hiw-detail">
+      <h4>What Growth management looks like day to day</h4>
+      <p style="font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:0;">I manage 4 platforms and create 24 posts per month including static posts, reels, stories, and carousels. Each piece of content is tailored to the platform it lives on. I run one paid ad campaign on your best-performing platform and deliver a bi-weekly analytics report so you always know where things stand. We talk once a month to align on strategy.</p>
+      <div class="hiw-detail-grid">
+        <div class="hiw-item"><div class="hiw-item-title">4 Platforms</div><div class="hiw-item-desc">Full management across Instagram, TikTok, Facebook, and a fourth platform of your choice.</div></div>
+        <div class="hiw-item"><div class="hiw-item-title">Reels and Video</div><div class="hiw-item-desc">Short-form video content created and edited for Instagram Reels and TikTok to maximise organic reach.</div></div>
+        <div class="hiw-item"><div class="hiw-item-title">Paid Ad Campaign</div><div class="hiw-item-desc">One ad campaign managed on your top platform. I set the targeting, creative, and budget allocation.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hiw-panel" id="hiw-pro">
+    <div class="hiw-steps">
+      <div class="hiw-step"><div class="hiw-step-num">01</div><h4>Full Brand Immersion</h4><p>A 60-minute onboarding session plus a brand questionnaire. I learn every detail of your business before touching anything.</p></div>
+      <div class="hiw-step"><div class="hiw-step-num">02</div><h4>Comprehensive Strategy</h4><p>A full social media strategy document covering all platforms, content pillars, posting cadence, ad budget allocation, and 6-month growth targets.</p></div>
+      <div class="hiw-step"><div class="hiw-step-num">03</div><h4>Full Daily Management</h4><p>I manage all platforms daily. Unlimited posts, full video production, ad management across all platforms, and priority support.</p></div>
+      <div class="hiw-step"><div class="hiw-step-num">04</div><h4>Weekly Review Calls</h4><p>Every week we review performance data and I walk you through exactly what happened, what is coming, and why.</p></div>
+    </div>
+    <div class="hiw-detail">
+      <h4>What Pro management looks like day to day</h4>
+      <p style="font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:0;">This is the closest thing to having a full-time social media team without the cost of one. I manage all platforms with no post limit, produce video content, run ad campaigns across Meta, TikTok, and Google, and give you weekly reports and calls. You get a dedicated WhatsApp line for direct communication and I respond to priority messages within 2 hours during business hours.</p>
+      <div class="hiw-detail-grid">
+        <div class="hiw-item"><div class="hiw-item-title">All Platforms</div><div class="hiw-item-desc">Every platform your business is on, managed consistently and professionally every day.</div></div>
+        <div class="hiw-item"><div class="hiw-item-title">Full Video Production</div><div class="hiw-item-desc">Reels, TikToks, YouTube Shorts, and Stories fully produced and edited for each platform's native format.</div></div>
+        <div class="hiw-item"><div class="hiw-item-title">Priority Support</div><div class="hiw-item-desc">Direct WhatsApp line, 2-hour response time during business hours, weekly calls, and weekly reports.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
 <!-- BUSINESS PACKS -->
-<div class="bg3" id="packs">
+<div id="packs">
 <div class="sw">
   <div class="reveal">
     <div class="kicker">Business Packs</div>
     <h2 class="sh">Everything you need<br>to launch and <span>scale.</span></h2>
-    <p class="ssub" style="margin-top:14px;">Complete business bundles combining social media management, a custom website, and a free digital product to help you keep growing long after we finish.</p>
+    <p class="ssub" style="margin-top:14px;">Complete bundles combining social media management, a custom website, and a free digital product to help you keep growing long after we finish.</p>
   </div>
   <div class="packs-grid">
     <div class="pack reveal">
@@ -546,7 +756,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
         <li>Free digital product: Beginner Growth Guide</li>
       </ul>
       <div class="pack-note">The free digital guide gives you a clear system to keep growing your presence after the pack ends.</div>
-      <div class="pack-btn btn-outline" onclick="goTo('home');scrollTo('pay')">Get This Pack</div>
+      <div class="pack-btn btn-outline" onclick="selectService('Basic Starter Pack - $799')">Get This Pack</div>
     </div>
     <div class="pack featured reveal">
       <div class="pack-badge">Most Popular</div>
@@ -565,12 +775,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
         <li>Free digital product: Advanced Content Playbook</li>
       </ul>
       <div class="pack-note">Includes a complete content system you own and can run independently after we finish.</div>
-      <div class="pack-btn btn-fill" onclick="goTo('home');scrollTo('pay')">Get This Pack</div>
+      <div class="pack-btn btn-fill" onclick="selectService('Ultra Growth Pack - $1,899')">Get This Pack</div>
     </div>
     <div class="pack reveal">
       <div class="pack-tier">Premium</div>
       <div class="pack-name">Elite Pack</div>
-      <div class="pack-desc">For established businesses ready to build a serious, long-term online presence across all channels.</div>
+      <div class="pack-desc">For established businesses ready to build a serious long-term online presence across all channels.</div>
       <div class="pack-hr"></div>
       <div class="pack-label">What Is Included</div>
       <ul class="pack-list">
@@ -583,8 +793,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
         <li>Priority support</li>
         <li>Free digital product: Brand Growth Blueprint</li>
       </ul>
-      <div class="pack-note">You will walk away with a fully documented brand strategy and content system built for long-term results.</div>
-      <div class="pack-btn btn-outline" onclick="goTo('home');scrollTo('pay')">Get This Pack</div>
+      <div class="pack-note">You will walk away with a documented brand strategy and content system built for long-term results.</div>
+      <div class="pack-btn btn-outline" onclick="selectService('Premium Elite Pack - $3,499')">Get This Pack</div>
     </div>
   </div>
 </div>
@@ -602,13 +812,31 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
   </div>
   <div class="ptabs reveal">
     <div class="ptab on" onclick="switchTab(this,'monthly')">Monthly</div>
-    <div class="ptab" onclick="switchTab(this,'quarterly')">Quarterly &nbsp;<span style="font-size:10px;opacity:0.55;">Save 10%</span></div>
+    <div class="ptab" onclick="switchTab(this,'quarterly')">Quarterly &nbsp;<span style="font-size:10px;opacity:0.55">Save 10%</span></div>
+    <div class="ptab" onclick="switchTab(this,'biannual')">6 Months &nbsp;<span style="font-size:10px;opacity:0.55">Save 20%</span></div>
   </div>
   <div class="price-grid">
     <div class="price-card reveal">
+      <div class="price-plan">Trial</div>
+      <div class="price-num"><sup>$</sup><span class="pn">199</span></div>
+      <div class="price-period" id="pp-trial">per month</div>
+      <div class="price-hr"></div>
+      <ul class="price-list">
+        <li>1 social media platform</li>
+        <li>10 to 15 posts</li>
+        <li>Community management</li>
+        <li>End-of-month report</li>
+        <li class="off">Content calendar planning</li>
+        <li class="off">Reels and video content</li>
+        <li class="off">Paid ads</li>
+        <li class="off">Strategy calls</li>
+      </ul>
+      <div class="price-cta pcta-o" onclick="selectService('Trial Plan')">Get Started</div>
+    </div>
+    <div class="price-card reveal">
       <div class="price-plan">Starter</div>
-      <div class="price-num"><sup>$</sup><span class="pn">499</span></div>
-      <div class="price-period">per month</div>
+      <div class="price-num"><sup>$</sup><span class="pn">349</span></div>
+      <div class="price-period" id="pp-starter">per month</div>
       <div class="price-hr"></div>
       <ul class="price-list">
         <li>2 social media platforms</li>
@@ -620,13 +848,13 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
         <li class="off">Paid ad management</li>
         <li class="off">Strategy calls</li>
       </ul>
-      <div class="price-cta pcta-o" onclick="goTo('home');scrollTo('pay')">Get Started</div>
+      <div class="price-cta pcta-o" onclick="selectService('Starter Plan')">Get Started</div>
     </div>
     <div class="price-card featured reveal">
       <div class="price-badge">Best Value</div>
       <div class="price-plan">Growth</div>
-      <div class="price-num"><sup>$</sup><span class="pn">899</span></div>
-      <div class="price-period">per month</div>
+      <div class="price-num"><sup>$</sup><span class="pn">649</span></div>
+      <div class="price-period" id="pp-growth">per month</div>
       <div class="price-hr"></div>
       <ul class="price-list">
         <li>4 social media platforms</li>
@@ -638,12 +866,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
         <li>Monthly strategy call</li>
         <li class="off">Priority 24/7 support</li>
       </ul>
-      <div class="price-cta pcta-f" onclick="goTo('home');scrollTo('pay')">Get Started</div>
+      <div class="price-cta pcta-f" onclick="selectService('Growth Plan')">Get Started</div>
     </div>
     <div class="price-card reveal">
       <div class="price-plan">Pro</div>
-      <div class="price-num"><sup>$</sup><span class="pn">1,499</span></div>
-      <div class="price-period">per month</div>
+      <div class="price-num"><sup>$</sup><span class="pn">1,099</span></div>
+      <div class="price-period" id="pp-pro">per month</div>
       <div class="price-hr"></div>
       <ul class="price-list">
         <li>All platforms</li>
@@ -655,16 +883,42 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
         <li>Weekly strategy calls</li>
         <li>Priority 24/7 support</li>
       </ul>
-      <div class="price-cta pcta-o" onclick="goTo('home');scrollTo('pay')">Get Started</div>
+      <div class="price-cta pcta-o" onclick="selectService('Pro Plan')">Get Started</div>
     </div>
   </div>
+
+  <div class="reveal" style="margin-top:56px;">
+    <div class="kicker">Duration Discounts</div>
+    <h3 class="sh" style="font-size:clamp(24px,3vw,36px);margin-bottom:8px;">Commit longer, save more.</h3>
+    <p class="ssub" style="font-size:14px;margin-bottom:0;">Buying 3 months upfront always costs less than buying 3 separate months. Here is how much you save on the Growth plan as an example.</p>
+  </div>
+  <div class="duration-grid reveal">
+    <div class="dur-card">
+      <div class="dur-label">1 Month</div>
+      <div class="dur-price">$649</div>
+      <div class="dur-sub">per month, billed monthly</div>
+    </div>
+    <div class="dur-card best">
+      <div class="dur-label">3 Months</div>
+      <div class="dur-save">You save $195 vs buying monthly</div>
+      <div class="dur-price">$584</div>
+      <div class="dur-sub">per month, billed as $1,752 upfront</div>
+    </div>
+    <div class="dur-card">
+      <div class="dur-label">6 Months</div>
+      <div class="dur-save">You save $780 vs buying monthly</div>
+      <div class="dur-price">$519</div>
+      <div class="dur-sub">per month, billed as $3,114 upfront</div>
+    </div>
+  </div>
+  <p class="reveal" style="font-size:13px;color:var(--text3);text-align:center;margin-top:16px;">Same discounts apply to all plans. Select your preferred duration in the checkout below.</p>
 </div>
 </div>
 
 <div class="divider"></div>
 
 <!-- COURSES -->
-<div class="bg3" id="courses">
+<div id="courses">
 <div class="sw">
   <div class="reveal">
     <div class="kicker">Online Courses</div>
@@ -672,60 +926,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
     <p class="ssub" style="margin-top:14px;">Self-paced courses on social media, business building, and success built from real experience. Launching soon.</p>
   </div>
   <div class="courses-grid">
-    <div class="course-card reveal">
-      <div class="course-thumb"><div class="course-thumb-txt">Thumbnail Coming Soon</div><div class="course-bar"></div></div>
-      <div class="course-body">
-        <div class="course-cat">Social Media</div>
-        <div class="course-title">Social Media Mastery: Zero to 10K</div>
-        <div class="course-desc">Everything you need to grow your first 10,000 followers on any platform. Strategy, content, and monetisation.</div>
-        <div class="course-foot"><div class="course-price">$97</div><div class="coming-badge">Coming Soon</div></div>
-      </div>
-    </div>
-    <div class="course-card reveal">
-      <div class="course-thumb"><div class="course-thumb-txt">Thumbnail Coming Soon</div><div class="course-bar"></div></div>
-      <div class="course-body">
-        <div class="course-cat">Business</div>
-        <div class="course-title">How to Start a Business from Scratch</div>
-        <div class="course-desc">A step-by-step system for launching your first business, from idea to first paying customer.</div>
-        <div class="course-foot"><div class="course-price">$147</div><div class="coming-badge">Coming Soon</div></div>
-      </div>
-    </div>
-    <div class="course-card reveal">
-      <div class="course-thumb"><div class="course-thumb-txt">Thumbnail Coming Soon</div><div class="course-bar"></div></div>
-      <div class="course-body">
-        <div class="course-cat">Content</div>
-        <div class="course-title">Content That Converts</div>
-        <div class="course-desc">The exact content frameworks that turn followers into buyers across Instagram, TikTok, and beyond.</div>
-        <div class="course-foot"><div class="course-price">$127</div><div class="coming-badge">Coming Soon</div></div>
-      </div>
-    </div>
-    <div class="course-card reveal">
-      <div class="course-thumb"><div class="course-thumb-txt">Thumbnail Coming Soon</div><div class="course-bar"></div></div>
-      <div class="course-body">
-        <div class="course-cat">Mindset and Success</div>
-        <div class="course-title">The Success Blueprint</div>
-        <div class="course-desc">The mindset, habits, and systems behind building a life of freedom through online business.</div>
-        <div class="course-foot"><div class="course-price">$97</div><div class="coming-badge">Coming Soon</div></div>
-      </div>
-    </div>
-    <div class="course-card reveal">
-      <div class="course-thumb"><div class="course-thumb-txt">Thumbnail Coming Soon</div><div class="course-bar"></div></div>
-      <div class="course-body">
-        <div class="course-cat">Paid Ads</div>
-        <div class="course-title">Meta Ads That Actually Work</div>
-        <div class="course-desc">Run profitable Facebook and Instagram ad campaigns from scratch, even with a small budget.</div>
-        <div class="course-foot"><div class="course-price">$197</div><div class="coming-badge">Coming Soon</div></div>
-      </div>
-    </div>
-    <div class="course-card reveal">
-      <div class="course-thumb"><div class="course-thumb-txt">Thumbnail Coming Soon</div><div class="course-bar"></div></div>
-      <div class="course-body">
-        <div class="course-cat">Branding</div>
-        <div class="course-title">Build a Brand People Trust</div>
-        <div class="course-desc">How to craft a recognisable and trusted brand from the ground up. Visuals, voice, and strategy.</div>
-        <div class="course-foot"><div class="course-price">$117</div><div class="coming-badge">Coming Soon</div></div>
-      </div>
-    </div>
+    <div class="course-card reveal"><div class="course-thumb"><div class="course-thumb-txt">Thumbnail Coming Soon</div><div class="course-bar"></div></div><div class="course-body"><div class="course-cat">Social Media</div><div class="course-title">Social Media Mastery: Zero to 10K</div><div class="course-desc">Everything you need to grow your first 10,000 followers on any platform. Strategy, content, and monetisation.</div><div class="course-foot"><div class="course-price">$97</div><div class="coming-badge">Coming Soon</div></div></div></div>
+    <div class="course-card reveal"><div class="course-thumb"><div class="course-thumb-txt">Thumbnail Coming Soon</div><div class="course-bar"></div></div><div class="course-body"><div class="course-cat">Business</div><div class="course-title">How to Start a Business from Scratch</div><div class="course-desc">A step-by-step system for launching your first business, from idea to first paying customer.</div><div class="course-foot"><div class="course-price">$147</div><div class="coming-badge">Coming Soon</div></div></div></div>
+    <div class="course-card reveal"><div class="course-thumb"><div class="course-thumb-txt">Thumbnail Coming Soon</div><div class="course-bar"></div></div><div class="course-body"><div class="course-cat">Content</div><div class="course-title">Content That Converts</div><div class="course-desc">The exact content frameworks that turn followers into buyers across Instagram, TikTok, and beyond.</div><div class="course-foot"><div class="course-price">$127</div><div class="coming-badge">Coming Soon</div></div></div></div>
+    <div class="course-card reveal"><div class="course-thumb"><div class="course-thumb-txt">Thumbnail Coming Soon</div><div class="course-bar"></div></div><div class="course-body"><div class="course-cat">Mindset</div><div class="course-title">The Success Blueprint</div><div class="course-desc">The mindset, habits, and systems behind building a life of freedom through online business.</div><div class="course-foot"><div class="course-price">$97</div><div class="coming-badge">Coming Soon</div></div></div></div>
+    <div class="course-card reveal"><div class="course-thumb"><div class="course-thumb-txt">Thumbnail Coming Soon</div><div class="course-bar"></div></div><div class="course-body"><div class="course-cat">Paid Ads</div><div class="course-title">Meta Ads That Actually Work</div><div class="course-desc">Run profitable Facebook and Instagram ad campaigns from scratch, even with a small budget.</div><div class="course-foot"><div class="course-price">$197</div><div class="coming-badge">Coming Soon</div></div></div></div>
+    <div class="course-card reveal"><div class="course-thumb"><div class="course-thumb-txt">Thumbnail Coming Soon</div><div class="course-bar"></div></div><div class="course-body"><div class="course-cat">Branding</div><div class="course-title">Build a Brand People Trust</div><div class="course-desc">How to craft a recognisable and trusted brand from the ground up. Visuals, voice, and strategy.</div><div class="course-foot"><div class="course-price">$117</div><div class="coming-badge">Coming Soon</div></div></div></div>
   </div>
 </div>
 </div>
@@ -738,30 +944,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
   <div class="reveal">
     <div class="kicker">Social Proof</div>
     <h2 class="sh">What clients will <span>say.</span></h2>
-    <p class="ssub" style="margin-top:14px;">Client testimonials will appear here as we grow. Results vary based on industry, budget, and effort. We are committed to doing great work for every client.</p>
+    <p class="ssub" style="margin-top:14px;">Client testimonials will appear here as we grow. We are committed to doing great work for every client. Results vary based on industry, budget, and effort.</p>
   </div>
-  <div class="testi-grid" style="margin-top:52px;">
-    <div class="testi-card reveal">
-      <div class="testi-placeholder">Your Review Here</div>
-      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="testi-text">This space is reserved for a verified client testimonial. Once you have worked with a client and received feedback, add their review here to build social proof and trust with new visitors.</div>
-      <div class="testi-author">Client Name</div>
-      <div class="testi-role">Business Owner, Industry</div>
-    </div>
-    <div class="testi-card reveal">
-      <div class="testi-placeholder">Your Review Here</div>
-      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="testi-text">Add a second real client testimonial here. Honest reviews from real clients are one of the most powerful ways to earn trust from new visitors considering working with you.</div>
-      <div class="testi-author">Client Name</div>
-      <div class="testi-role">Founder, Business Name</div>
-    </div>
-    <div class="testi-card reveal">
-      <div class="testi-placeholder">Your Review Here</div>
-      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="testi-text">A third testimonial here helps reinforce credibility across different types of clients. Replace these placeholders as soon as you receive real feedback from your first clients.</div>
-      <div class="testi-author">Client Name</div>
-      <div class="testi-role">CEO, Company Name</div>
-    </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal"><div class="testi-placeholder">Your Review Here</div><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="testi-text">This space is reserved for a verified client testimonial. Once you have worked with a client and received feedback, add their honest review here.</div><div class="testi-author">Client Name</div><div class="testi-role">Business Owner, Industry</div></div>
+    <div class="testi-card reveal"><div class="testi-placeholder">Your Review Here</div><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="testi-text">Add a second real client testimonial here. Honest reviews from real clients are one of the most powerful ways to earn trust from new visitors.</div><div class="testi-author">Client Name</div><div class="testi-role">Founder, Business Name</div></div>
+    <div class="testi-card reveal"><div class="testi-placeholder">Your Review Here</div><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="testi-text">A third testimonial here helps reinforce credibility across different types of clients. Replace these with real feedback as soon as you receive it.</div><div class="testi-author">Client Name</div><div class="testi-role">CEO, Company Name</div></div>
   </div>
 </div>
 </div>
@@ -771,16 +959,15 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
 <!-- PAYMENT -->
 <section class="pay-bg" id="pay">
 <div class="pay-inner">
-  <div class="reveal">
-    <div class="kicker" style="color:rgba(255,255,255,0.45);">
-      <span style="background:rgba(255,255,255,0.25);display:inline-block;width:26px;height:1px;"></span>
-      Secure Checkout
-    </div>
-  </div>
+  <div class="reveal"><div class="kicker" style="color:rgba(255,255,255,0.4);"><span style="background:rgba(255,255,255,0.2);display:inline-block;width:26px;height:1px;"></span>Secure Checkout</div></div>
   <div class="pay-grid">
     <div class="pay-left reveal-l">
       <h2>Ready to invest<br>in your growth?</h2>
-      <p>Select your package below and submit your details. I will review your order and reach out within 24 hours to confirm everything before any payment is processed.</p>
+      <p class="pay-left-sub">Select your package below and submit your details. I will review your order and reach out within 24 hours to confirm everything before any payment is finalised.</p>
+      <div class="pay-notice">
+        <div class="pay-notice-title">How Payment Works on This Site</div>
+        <p>When you click Pay below, your card details are collected securely by Stripe, a globally trusted payment processor used by millions of businesses worldwide. Your card information never touches this website or my servers. Before any charge is made, I will contact you within 24 hours to confirm the order details, answer any questions, and make sure everything is correct. Only then is the payment processed. You are always in control.</p>
+      </div>
       <div class="pm-row">
         <div class="pm-badge"><div class="pm-dot"></div>Visa and Mastercard</div>
         <div class="pm-badge"><div class="pm-dot"></div>PayPal</div>
@@ -795,330 +982,280 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
     </div>
     <div class="pay-right reveal-r">
       <div class="pay-form-title">Place Your Order</div>
-      <div class="pay-form-sub">Fill in your details and choose a service. I will be in touch within 24 hours to confirm details before charging you.</div>
+      <div class="pay-form-sub">Fill in your details. I will confirm everything before charging you.</div>
       <div id="checkout-form">
-        <div class="frow">
-          <label class="flabel">Full Name</label>
-          <input type="text" id="pay-name" class="finput" placeholder="Your full name"/>
-        </div>
-        <div class="frow">
-          <label class="flabel">Email Address</label>
-          <input type="email" id="pay-email" class="finput" placeholder="your@email.com"/>
-        </div>
-        <div class="frow">
-          <label class="flabel">Select Service or Package</label>
+        <div class="frow"><label class="flabel">Full Name</label><input type="text" id="pay-name" class="finput" placeholder="Your full name"/></div>
+        <div class="frow"><label class="flabel">Email Address</label><input type="email" id="pay-email" class="finput" placeholder="your@email.com"/></div>
+        <div class="frow"><label class="flabel">Select Service or Package</label>
           <select id="pay-service" class="fselect">
             <option value="" disabled selected>Choose a service...</option>
+            <optgroup label="Quick Services">
+              <option>Social Media Audit - $99</option>
+              <option>1 Account Management - $199/mo</option>
+              <option>Content Calendar - $59</option>
+              <option>Profile Bio and Setup - $39</option>
+              <option>Hashtag Strategy - $29</option>
+              <option>Story and Reel Templates - $44</option>
+            </optgroup>
             <optgroup label="Monthly Plans">
-              <option value="499">Starter Plan - $499 per month</option>
-              <option value="899">Growth Plan - $899 per month</option>
-              <option value="1499">Pro Plan - $1,499 per month</option>
+              <option>Trial Plan - $199/mo</option>
+              <option>Starter Plan - $349/mo</option>
+              <option>Growth Plan - $649/mo</option>
+              <option>Pro Plan - $1,099/mo</option>
             </optgroup>
             <optgroup label="Business Packs">
-              <option value="basic_pack">Basic Starter Pack</option>
-              <option value="ultra_pack">Ultra Growth Pack</option>
-              <option value="premium_pack">Premium Elite Pack</option>
+              <option>Basic Starter Pack - $799</option>
+              <option>Ultra Growth Pack - $1,899</option>
+              <option>Premium Elite Pack - $3,499</option>
             </optgroup>
             <optgroup label="One-Off Services">
-              <option value="website">Website Creation</option>
-              <option value="consult">Strategy Consultation</option>
-              <option value="audit">Content Audit</option>
+              <option>Website Creation - Custom Quote</option>
+              <option>Strategy Consultation - Custom Quote</option>
             </optgroup>
           </select>
         </div>
-        <div class="frow">
-          <label class="flabel">Tell Me About Your Business (optional)</label>
-          <input type="text" id="pay-msg" class="finput" placeholder="What does your business do and what are your goals?"/>
+        <div class="frow"><label class="flabel">Preferred Duration (for monthly plans)</label>
+          <select id="pay-duration" class="fselect">
+            <option value="monthly">Month to month (standard price)</option>
+            <option value="quarterly">3 months upfront (save 10%)</option>
+            <option value="biannual">6 months upfront (save 20%)</option>
+          </select>
         </div>
-        <div class="frow">
-          <label class="flabel">Card Details</label>
-          <div id="card-element"></div>
-          <div id="card-errors"></div>
-        </div>
+        <div class="frow"><label class="flabel">Tell Me About Your Business (optional)</label><input type="text" id="pay-msg" class="finput" placeholder="What does your business do and what are your goals?"/></div>
+        <div class="frow"><label class="flabel">Card Details</label><div id="card-element"></div><div id="card-errors"></div></div>
         <button class="pay-btn" id="pay-submit" onclick="handlePayment()">
-          <svg width="14" height="15" viewBox="0 0 14 15" fill="none"><path d="M7 1L1.5 3.75V7.5C1.5 10.75 4 13.5 7 14C10 13.5 12.5 10.75 12.5 7.5V3.75L7 1Z" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+          <svg width="13" height="14" viewBox="0 0 13 14" fill="none"><path d="M6.5 1L1 3.25V6.5C1 9.5 3.25 12 6.5 12.5C9.75 12 12 9.5 12 6.5V3.25L6.5 1Z" stroke="currentColor" stroke-width="1.1" fill="none"/></svg>
           Confirm and Pay Securely
         </button>
-        <div class="stripe-note">
-          <svg width="11" height="13" viewBox="0 0 11 13" fill="none"><path d="M5.5 1L1 3.25V6.5C1 9.5 3.25 12 5.5 12.5C7.75 12 10 9.5 10 6.5V3.25L5.5 1Z" stroke="currentColor" stroke-width="1" fill="none"/></svg>
-          Secured by Stripe. 256-bit SSL encryption.
-        </div>
+        <div class="stripe-note"><svg width="11" height="13" viewBox="0 0 11 13" fill="none"><path d="M5.5 1L1 3.25V6.5C1 9.5 3.25 12 5.5 12.5C7.75 12 10 9.5 10 6.5V3.25L5.5 1Z" stroke="currentColor" stroke-width="1" fill="none"/></svg>Secured by Stripe. 256-bit SSL encryption.</div>
       </div>
       <div class="success-msg" id="success-msg">
         <h3>Order Received!</h3>
-        <p>Thank you! I have received your order and will be in touch within 24 hours to confirm everything and get started.</p>
+        <p>Thank you! I have received your order and will be in touch within 24 hours at your email address to confirm everything and get started.</p>
       </div>
     </div>
   </div>
 </div>
 </section>
 
-<!-- CTA -->
 <div class="cta-banner">
   <div class="cta-inner">
     <h2 class="reveal">Not sure where<br>to <span>start?</span> Let us talk.</h2>
     <p class="reveal">Book a free 30-minute strategy call. No commitment, no pressure. Just an honest conversation about what would actually help your business grow.</p>
     <div class="cta-btns reveal">
       <div class="btn-accent" onclick="goTo('contact')">Get in Touch</div>
-      <div class="btn-ghost-a" onclick="goTo('home');scrollTo('pay')">View Packages &rarr;</div>
+      <div class="btn-ghost-a" onclick="scrollSec('pay')">View Packages &rarr;</div>
     </div>
   </div>
 </div>
 
-</div><!-- end home page -->
+</div><!-- end home -->
 
-<!-- ======= ABOUT PAGE ======= -->
+<!-- ========== ABOUT PAGE ========== -->
 <div class="page" id="page-about">
 <div style="padding-top:70px;">
-  <div class="sw">
-    <div class="reveal">
-      <div class="kicker">About</div>
-      <h2 class="sh">Who is behind<br><span>FilipSocial?</span></h2>
+<div class="sw">
+  <div class="reveal">
+    <div class="kicker">About</div>
+    <h2 class="sh">Who is behind<br><span>FilipSocial?</span></h2>
+  </div>
+  <div class="about-grid" style="margin-top:52px;">
+    <div class="reveal-l">
+      <p class="ssub" style="margin-bottom:22px;">Hi, I am Filip. I started FilipSocial because I saw too many great businesses struggling to get noticed online, not because their product was bad, but because their online presence was not working for them.</p>
+      <p style="font-size:15px;color:var(--text2);line-height:1.75;margin-bottom:22px;">Social media and the internet have completely changed how businesses grow. The businesses that show up consistently and connect genuinely with their audience are the ones winning. I am here to help you become one of them.</p>
+      <p style="font-size:15px;color:var(--text2);line-height:1.75;margin-bottom:32px;">Whether you are just starting out or looking to scale what you have already built, I work with you directly. No big agency layers, no passing you off to a junior. Just focused, honest work on your growth.</p>
+      <div class="about-values">
+        <div class="av"><div class="av-title">Honest Communication</div><div class="av-desc">No empty promises. I tell you exactly what I can deliver and what to realistically expect.</div></div>
+        <div class="av"><div class="av-title">Real Results Focus</div><div class="av-desc">Every strategy is built around what actually moves the needle for your specific business.</div></div>
+        <div class="av"><div class="av-title">Your Brand, Your Voice</div><div class="av-desc">I learn your business deeply so the content feels like you, not a generic agency template.</div></div>
+        <div class="av"><div class="av-title">Long-Term Thinking</div><div class="av-desc">I want to help you build something that lasts and grows, not short-term tricks.</div></div>
+      </div>
     </div>
-    <div class="about-grid" style="margin-top:56px;">
-      <div class="reveal-l">
-        <p class="ssub" style="margin-bottom:24px;">Hi, I am Filip. I started FilipSocial because I saw too many great businesses struggling to get noticed online, not because their product was bad, but because their online presence was not working for them.</p>
-        <p style="font-size:16px;color:var(--text2);line-height:1.75;margin-bottom:24px;">Social media and the internet have completely changed how businesses grow. The businesses that figure out how to show up consistently and connect genuinely with their audience are the ones winning. I am here to help you become one of them.</p>
-        <p style="font-size:16px;color:var(--text2);line-height:1.75;margin-bottom:36px;">Whether you are just starting out or looking to scale what you have already built, I work with you directly, no big agency layers, no passing you off to a junior team member. Just focused, honest work on your growth.</p>
-        <div class="about-values">
-          <div class="av"><div class="av-title">Honest Communication</div><div class="av-desc">No fluff, no empty promises. I tell you exactly what I can deliver and what to realistically expect.</div></div>
-          <div class="av"><div class="av-title">Real Results Focus</div><div class="av-desc">Every strategy is built around what actually moves the needle for your specific business.</div></div>
-          <div class="av"><div class="av-title">Your Brand, Your Voice</div><div class="av-desc">I learn your business deeply so the content feels like you, not like a generic agency template.</div></div>
-          <div class="av"><div class="av-title">Long-Term Thinking</div><div class="av-desc">I am not interested in quick tricks. I want to help you build something that lasts and grows over time.</div></div>
-        </div>
-      </div>
-      <div class="about-visual reveal-r">
-        <div style="font-size:48px;opacity:0.25;">FS</div>
-        <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;">Your photo or brand image here</div>
-      </div>
+    <div class="about-visual reveal-r">
+      <div style="font-size:40px;opacity:0.2;font-family:'Cormorant Garamond',serif;font-weight:600;">FS</div>
+      <div>Add your photo here</div>
     </div>
   </div>
-  <div class="cta-banner">
-    <div class="cta-inner">
-      <h2 class="reveal">Ready to work <span>together?</span></h2>
-      <p class="reveal">Let us start with a free 30-minute call to understand your business and figure out the best way forward.</p>
-      <div class="cta-btns reveal">
-        <div class="btn-accent" onclick="goTo('contact')">Get in Touch</div>
-        <div class="btn-ghost-a" onclick="goTo('home');scrollTo('packs')">See Packages &rarr;</div>
-      </div>
+</div>
+<div class="cta-banner">
+  <div class="cta-inner">
+    <h2 class="reveal">Ready to work <span>together?</span></h2>
+    <p class="reveal">Let us start with a free 30-minute call to understand your business and figure out the best path forward.</p>
+    <div class="cta-btns reveal">
+      <div class="btn-accent" onclick="goTo('contact')">Get in Touch</div>
+      <div class="btn-ghost-a" onclick="goTo('home');scrollSec('packs')">See Packages &rarr;</div>
     </div>
   </div>
+</div>
 </div>
 </div>
 
-<!-- ======= CONTACT PAGE ======= -->
+<!-- ========== CONTACT PAGE ========== -->
 <div class="page" id="page-contact">
 <div style="padding-top:70px;">
-  <div class="sw">
-    <div class="reveal">
-      <div class="kicker">Get in Touch</div>
-      <h2 class="sh">Let us talk about<br>your <span>growth.</span></h2>
-      <p class="ssub" style="margin-top:14px;">Have a question, want to book a free strategy call, or ready to get started? Fill in the form and I will get back to you within 24 hours.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info reveal-l" style="margin-top:52px;">
-        <div class="ci-item">
-          <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div><div class="ci-label">Email</div><div class="ci-val">hello@filipsocial.com</div></div>
-        </div>
-        <div class="ci-item">
-          <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.85 10.8 19.79 19.79 0 01.77 2.18 2 2 0 012.75 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.07 6.07l1.07-1.07a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-          <div><div class="ci-label">WhatsApp</div><div class="ci-val">Add your number here</div></div>
-        </div>
-        <div class="ci-item">
-          <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-          <div><div class="ci-label">Response Time</div><div class="ci-val">Within 24 hours</div></div>
-        </div>
-        <div class="ci-item">
-          <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-          <div><div class="ci-label">Free Strategy Call</div><div class="ci-val">30 minutes, no commitment</div></div>
-        </div>
+<div class="sw">
+  <div class="reveal">
+    <div class="kicker">Get in Touch</div>
+    <h2 class="sh">Let us talk about<br>your <span>growth.</span></h2>
+    <p class="ssub" style="margin-top:14px;">Have a question, want to book a free strategy call, or ready to get started? Fill in the form or reach out directly. I will respond within 24 hours.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info reveal-l" style="margin-top:48px;">
+      <div class="ci-item">
+        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div><div class="ci-label">Email</div><div class="ci-val">filiplovric41@gmail.com</div></div>
       </div>
-      <div class="reveal-r" style="margin-top:52px;">
-        <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:36px 32px;">
-          <div class="cf-row">
-            <label class="cf-label">Full Name</label>
-            <input type="text" id="cf-name" class="cf-input" placeholder="Your full name"/>
-          </div>
-          <div class="cf-row">
-            <label class="cf-label">Email Address</label>
-            <input type="email" id="cf-email" class="cf-input" placeholder="your@email.com"/>
-          </div>
-          <div class="cf-row">
-            <label class="cf-label">Subject</label>
-            <input type="text" id="cf-subject" class="cf-input" placeholder="What would you like to discuss?"/>
-          </div>
-          <div class="cf-row">
-            <label class="cf-label">Message</label>
-            <textarea id="cf-msg" class="cf-input" placeholder="Tell me about your business and what you are looking for..."></textarea>
-          </div>
-          <button class="cf-btn" onclick="sendContact()">Send Message &rarr;</button>
-        </div>
+      <div class="ci-item">
+        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.85 10.8 19.79 19.79 0 01.77 2.18 2 2 0 012.75 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.07 6.07l1.07-1.07a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div><div class="ci-label">WhatsApp</div><div class="ci-val">+385 092 391 0085</div></div>
+      </div>
+      <div class="ci-item">
+        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div><div class="ci-label">Response Time</div><div class="ci-val">Within 24 hours</div></div>
+      </div>
+      <div class="ci-item">
+        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div><div class="ci-label">Free Strategy Call</div><div class="ci-val">30 minutes, no commitment</div></div>
+      </div>
+    </div>
+    <div class="reveal-r" style="margin-top:48px;">
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:32px 28px;">
+        <div class="cf-row"><label class="cf-label">Full Name</label><input type="text" id="cf-name" class="cf-input" placeholder="Your full name"/></div>
+        <div class="cf-row"><label class="cf-label">Email Address</label><input type="email" id="cf-email" class="cf-input" placeholder="your@email.com"/></div>
+        <div class="cf-row"><label class="cf-label">Subject</label><input type="text" id="cf-subject" class="cf-input" placeholder="What would you like to discuss?"/></div>
+        <div class="cf-row"><label class="cf-label">Message</label><textarea id="cf-msg" class="cf-input" placeholder="Tell me about your business and what you are looking for..."></textarea></div>
+        <button class="cf-btn" onclick="sendContact()">Send Message &rarr;</button>
       </div>
     </div>
   </div>
 </div>
 </div>
+</div>
 
-<!-- ======= PRIVACY POLICY ======= -->
+<!-- ========== PRIVACY POLICY ========== -->
 <div class="page" id="page-privacy">
 <div style="padding-top:70px;">
 <div class="legal-content">
   <h1>Privacy Policy</h1>
-  <div class="legal-date">Last updated: January 2026</div>
-  <p>FilipSocial ("we", "us", "our") is committed to protecting your personal information. This Privacy Policy explains what data we collect, how we use it, and your rights regarding that data. By using this website or our services, you agree to the practices described in this policy.</p>
-
+  <div class="legal-date">Last updated: April 2026</div>
+  <p>FilipSocial, operated by Filip Lovric, is committed to protecting your personal information. This Privacy Policy explains what data we collect, how we use it, and your rights regarding that data. By using this website or our services, you agree to the practices described in this policy.</p>
   <h2>1. Information We Collect</h2>
-  <p>We collect information you provide directly to us, including:</p>
-  <ul>
-    <li>Name and email address when you contact us or place an order</li>
-    <li>Payment information processed securely through Stripe (we never store card details on our servers)</li>
-    <li>Business information you share when describing your needs</li>
-    <li>Communications between you and us via email or contact forms</li>
-  </ul>
-  <p>We also collect certain data automatically when you visit our website, including your IP address, browser type, pages visited, and time spent on the site, through standard web analytics tools.</p>
-
+  <p>We collect information you provide directly to us, including your name and email address when you contact us or place an order, payment information processed securely through Stripe (we never store card details on our servers), business information you share when describing your needs, and all communications between you and us via email or contact forms.</p>
+  <p>We also collect certain data automatically when you visit our website, including your IP address, browser type, pages visited, and time spent on the site. If you accept cookies, this data may be collected through standard analytics tools to help us improve the website.</p>
   <h2>2. How We Use Your Information</h2>
-  <p>We use the information we collect to:</p>
-  <ul>
-    <li>Provide and deliver the services you have purchased</li>
-    <li>Communicate with you about your order, project, or enquiry</li>
-    <li>Process payments securely through our payment provider</li>
-    <li>Improve our website and services based on usage patterns</li>
-    <li>Send service updates or relevant information (you can opt out at any time)</li>
-    <li>Comply with legal obligations</li>
-  </ul>
-
+  <p>We use the information we collect to provide and deliver the services you have purchased, communicate with you about your order or enquiry, process payments securely through Stripe, improve our website and services based on usage patterns, send relevant service updates, and comply with legal obligations. We do not use your data for automated decision-making or profiling.</p>
   <h2>3. How We Share Your Information</h2>
-  <p>We do not sell, rent, or trade your personal information to third parties. We may share your information only in these limited circumstances:</p>
-  <ul>
-    <li>With Stripe to process payments securely</li>
-    <li>With service providers who assist us in operating our website or delivering services, bound by confidentiality agreements</li>
-    <li>When required by law or to protect our legal rights</li>
-  </ul>
-
+  <p>We do not sell, rent, or trade your personal information to third parties. We may share your information only with Stripe to process payments securely, with service providers who assist in operating our website, bound by confidentiality agreements, and when required by law or to protect our legal rights.</p>
   <h2>4. Data Storage and Security</h2>
-  <p>We take reasonable technical and organisational measures to protect your personal data against unauthorised access, loss, or destruction. Our website uses HTTPS encryption. Payment data is handled exclusively by Stripe, which is PCI-DSS compliant. While we work hard to protect your data, no method of transmission over the internet is 100% secure.</p>
-
+  <p>We take reasonable technical and organisational measures to protect your personal data. Our website uses HTTPS encryption. Payment data is handled exclusively by Stripe, which is PCI-DSS compliant. While we work hard to protect your data, no method of transmission over the internet is 100% secure.</p>
   <h2>5. Your Rights</h2>
-  <p>Depending on your location, you may have the right to:</p>
-  <ul>
-    <li>Access the personal data we hold about you</li>
-    <li>Request correction of inaccurate data</li>
-    <li>Request deletion of your data</li>
-    <li>Object to or restrict how we process your data</li>
-    <li>Withdraw consent at any time where processing is based on consent</li>
-  </ul>
-  <p>To exercise any of these rights, please contact us at hello@filipsocial.com. We will respond within 30 days.</p>
-
+  <p>Depending on your location, you may have the right to access the personal data we hold about you, request correction of inaccurate data, request deletion of your data, object to or restrict how we process your data, and withdraw consent at any time. To exercise any of these rights, please contact us at filiplovric41@gmail.com. We will respond within 30 days.</p>
   <h2>6. Cookies</h2>
-  <p>Our website may use cookies and similar tracking technologies to improve your experience and analyse traffic. You can control cookie settings through your browser. Disabling cookies may affect the functionality of certain features on the site.</p>
-
-  <h2>7. Third-Party Links</h2>
-  <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of those sites and encourage you to review their policies before providing any personal information.</p>
-
+  <p>Our website uses cookies. You can read our full Cookie Policy to understand what cookies we use and how to manage them. If you decline cookies, essential functionality such as payment processing will still work, but certain analytics features may not.</p>
+  <h2>7. Data Retention</h2>
+  <p>We retain your personal data for as long as necessary to provide services to you and comply with legal obligations. Order records are kept for a minimum of 5 years for accounting purposes. You may request deletion of your data at any time, subject to legal retention requirements.</p>
   <h2>8. Children</h2>
   <p>Our services are not directed at children under the age of 16. We do not knowingly collect personal data from children. If you believe we have inadvertently collected such information, please contact us and we will delete it promptly.</p>
-
   <h2>9. Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by posting the updated policy on this page with a revised date. Your continued use of our services after changes constitutes acceptance of the updated policy.</p>
-
-  <h2>10. Contact Us</h2>
-  <p>If you have any questions about this Privacy Policy or how we handle your data, please contact us at hello@filipsocial.com.</p>
+  <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by posting the updated policy on this page with a revised date. Continued use of our services after changes constitutes acceptance of the updated policy.</p>
+  <h2>10. Contact</h2>
+  <p>For any questions about this Privacy Policy, please contact us at filiplovric41@gmail.com or via WhatsApp at +385 092 391 0085.</p>
 </div>
 </div>
 </div>
 
-<!-- ======= TERMS OF SERVICE ======= -->
+<!-- ========== TERMS OF SERVICE ========== -->
 <div class="page" id="page-terms">
 <div style="padding-top:70px;">
 <div class="legal-content">
   <h1>Terms of Service</h1>
-  <div class="legal-date">Last updated: January 2026</div>
-  <p>These Terms of Service govern your use of FilipSocial's website and services. By accessing our website or purchasing any service, you agree to these terms. Please read them carefully before proceeding.</p>
-
+  <div class="legal-date">Last updated: April 2026</div>
+  <p>These Terms of Service govern your use of FilipSocial's website and services, operated by Filip Lovric. By accessing our website or purchasing any service, you agree to these terms. Please read them carefully before proceeding.</p>
   <h2>1. Services Provided</h2>
-  <p>FilipSocial provides social media management, content creation, website development, paid advertising management, and online education services. The specific scope of work for each engagement is agreed upon in writing before work begins.</p>
-
+  <p>FilipSocial provides social media management, content creation, website development, paid advertising management, business growth packages, and online education services. The specific scope of work for each engagement is confirmed in writing before work begins and before any payment is charged.</p>
   <h2>2. No Guaranteed Results</h2>
-  <p>Social media marketing and digital growth involve many variables outside of our control, including platform algorithm changes, market conditions, audience behaviour, and the quality of the client's product or service. FilipSocial does not guarantee specific outcomes such as follower counts, engagement rates, leads, sales, or revenue increases. Any results mentioned in our materials are examples of what is possible and are not a promise of what you will achieve. Your results will depend on many factors unique to your business and audience.</p>
-
+  <p>Social media marketing and digital growth involve many variables outside of our control, including platform algorithm changes, market conditions, audience behaviour, and the quality of the client's product or service. FilipSocial does not guarantee specific outcomes such as follower counts, engagement rates, leads, sales, revenue increases, or any other measurable result. Any examples of results mentioned in our materials are illustrative only and are not a promise or prediction of what you will achieve. Your results will depend on many factors unique to your business, audience, and market.</p>
   <h2>3. Payment Terms</h2>
-  <p>Payment is required before work begins unless otherwise agreed in writing. Monthly plans are billed in advance at the start of each billing period. All prices are displayed in US dollars. Payments are processed securely through Stripe. By providing payment details, you authorise us to charge the agreed amount for the selected service.</p>
-
+  <p>After you submit an order through this website, I will contact you within 24 hours to confirm the details before any payment is processed. Payment is then required before work begins unless otherwise agreed in writing. Monthly plans are billed in advance at the start of each billing period. Multi-month upfront packages are billed in full at the agreed rate. All prices are displayed in US dollars. Payments are processed securely through Stripe.</p>
   <h2>4. Refund Policy</h2>
-  <p>Due to the time and resources invested in preparing for each client engagement, we do not offer refunds once work has begun. If you are unsatisfied with our services before work has started, please contact us within 48 hours of payment and we will review your situation fairly. For ongoing monthly plans, cancellation takes effect at the end of the current billing period. No partial refunds are issued for unused time within a billing period.</p>
-
+  <p>If you change your mind within 48 hours of payment being confirmed and before any work has started, please contact me and I will issue a full refund. Once work has commenced, including strategy sessions, content creation, account setup, or website development, refunds are not available for completed or in-progress work. Monthly plans can be cancelled with 30 days written notice and remain active until the end of the paid billing period. No partial refunds are issued for unused time within a billing period. Business packs are fixed-term engagements and are non-refundable once work has begun. For the full details please read our Refund Policy.</p>
   <h2>5. Cancellation</h2>
-  <p>Monthly plans can be cancelled with 30 days written notice sent to hello@filipsocial.com. Business packs are fixed-term engagements and cannot be cancelled mid-term once work has commenced. Cancellation does not affect any outstanding payment obligations.</p>
-
+  <p>Monthly plans can be cancelled with 30 days written notice sent to filiplovric41@gmail.com. Business packs are fixed-term engagements and cannot be cancelled mid-term once work has commenced. Cancellation does not affect any outstanding payment obligations.</p>
   <h2>6. Client Responsibilities</h2>
-  <p>To deliver effective services, we rely on timely responses, feedback, and access from clients. You agree to:</p>
-  <ul>
-    <li>Provide necessary account access and brand materials within 5 business days of project start</li>
-    <li>Respond to requests for feedback or approval within 3 business days</li>
-    <li>Ensure that all materials, logos, and information you provide do not infringe on third-party rights</li>
-    <li>Notify us promptly of any changes to your business that may affect the services</li>
-  </ul>
-  <p>Delays caused by a client's failure to meet these responsibilities may affect timelines and are not a basis for refunds.</p>
-
+  <p>To deliver effective services, we rely on timely responses and access from clients. You agree to provide necessary account access and brand materials within 5 business days of project start, respond to requests for feedback or approval within 3 business days, ensure that all materials and information you provide do not infringe on third-party rights, and notify us promptly of any changes to your business that may affect the services. Delays caused by a client's failure to meet these responsibilities may affect timelines and are not a basis for refunds.</p>
   <h2>7. Intellectual Property</h2>
-  <p>Upon full payment, you own the content created specifically for your business. FilipSocial retains the right to display work completed for you in our portfolio and marketing materials unless you request otherwise in writing. We retain ownership of any frameworks, templates, or systems used in delivering services.</p>
-
+  <p>Upon full payment, you own the content created specifically for your business as part of the agreed deliverables. FilipSocial retains the right to display completed work in our portfolio and marketing materials unless you request otherwise in writing. We retain ownership of any frameworks, templates, systems, or processes used in delivering services.</p>
   <h2>8. Confidentiality</h2>
   <p>Both parties agree to keep confidential any non-public information shared during the engagement. We will not share your business information, strategies, or data with third parties without your consent, except as required to deliver the services or comply with legal obligations.</p>
-
   <h2>9. Limitation of Liability</h2>
-  <p>FilipSocial's total liability for any claim arising from our services shall not exceed the amount paid by you in the 30 days preceding the claim. We are not liable for any indirect, incidental, or consequential damages, including lost profits, loss of data, or business interruption, even if we have been advised of the possibility of such damages.</p>
-
+  <p>FilipSocial's total liability for any claim arising from our services shall not exceed the total amount paid by you in the 30 days preceding the claim. We are not liable for any indirect, incidental, or consequential damages, including lost profits, loss of data, or business interruption, even if we have been advised of the possibility of such damages. We are not responsible for changes made by social media platforms to their algorithms, policies, or features that may affect the results of our work.</p>
   <h2>10. Platform Compliance</h2>
   <p>All social media management services will be carried out in compliance with the terms of service of the relevant platforms. FilipSocial is not liable for any account restrictions, suspensions, or changes imposed by third-party platforms, as these are outside of our control.</p>
-
   <h2>11. Governing Law</h2>
-  <p>These terms are governed by the laws of the jurisdiction in which FilipSocial operates. Any disputes shall be resolved through good-faith negotiation in the first instance. If a resolution cannot be reached, disputes shall be referred to the appropriate courts of that jurisdiction.</p>
-
+  <p>These terms are governed by the laws of the Republic of Croatia. Any disputes shall be resolved through good-faith negotiation in the first instance. If a resolution cannot be reached, disputes shall be referred to the appropriate courts of Croatia.</p>
   <h2>12. Changes to These Terms</h2>
   <p>We reserve the right to update these Terms of Service at any time. Changes will be posted on this page with a revised date. Continued use of our services after changes constitutes your acceptance of the new terms.</p>
-
   <h2>13. Contact</h2>
-  <p>For any questions about these terms, please contact us at hello@filipsocial.com.</p>
+  <p>For any questions about these terms, please contact us at filiplovric41@gmail.com or via WhatsApp at +385 092 391 0085.</p>
 </div>
 </div>
 </div>
 
-<!-- ======= REFUND POLICY ======= -->
+<!-- ========== REFUND POLICY ========== -->
 <div class="page" id="page-refund">
 <div style="padding-top:70px;">
 <div class="legal-content">
   <h1>Refund Policy</h1>
-  <div class="legal-date">Last updated: January 2026</div>
+  <div class="legal-date">Last updated: April 2026</div>
   <p>We want every client to feel confident working with FilipSocial. This policy explains clearly what you can expect regarding refunds and cancellations.</p>
-
   <h2>Before Work Begins</h2>
-  <p>If you change your mind within 48 hours of placing your order and before any work has started, please contact us at hello@filipsocial.com and we will review your request. If no work has been initiated, we will issue a full refund.</p>
-
+  <p>If you change your mind within 48 hours of payment being confirmed and before any work has started, please contact us at filiplovric41@gmail.com and we will issue a full refund with no questions asked.</p>
   <h2>After Work Has Begun</h2>
   <p>Once work has commenced, including strategy sessions, research, content creation, account setup, or website development, we are not able to offer refunds for completed or in-progress work. This is because significant time and resources are committed from the moment a project begins.</p>
-
   <h2>Monthly Plans</h2>
   <p>Monthly plans are billed in advance. If you cancel your plan, it will remain active until the end of the paid billing period. We do not provide pro-rated refunds for any unused portion of a billing period.</p>
-
+  <h2>Multi-Month Upfront Plans</h2>
+  <p>If you paid upfront for 3 or 6 months and wish to cancel before the term ends, the months already completed are non-refundable. If fewer than 30 days of the next billing month have passed, we will refund the remaining full months at the original per-month rate, minus a 10% administration fee.</p>
   <h2>Business Packs</h2>
-  <p>Business packs are fixed-term engagements paid in full or in agreed instalments. Once work has begun, the pack cannot be cancelled and payments already made are non-refundable. Any remaining instalments remain due as scheduled.</p>
-
+  <p>Business packs are fixed-term engagements. Once work has begun, the pack cannot be cancelled and payments already made are non-refundable. Any remaining instalments remain due as scheduled.</p>
+  <h2>Quick Services and One-Off Deliverables</h2>
+  <p>One-off services such as audits, content calendars, hashtag strategies, and template packs are non-refundable once the deliverable has been sent to you. If you believe there is a material error in the deliverable, please contact us within 7 days and we will correct it at no charge.</p>
   <h2>Courses and Digital Products</h2>
-  <p>Due to the digital nature of our courses and guides, all sales are final once access has been granted. If you experience a technical issue preventing you from accessing a product you have paid for, please contact us and we will resolve it promptly.</p>
-
+  <p>Due to the digital nature of our courses and guides, all sales are final once access has been granted or the file has been delivered. If you experience a technical issue preventing you from accessing a product you have paid for, please contact us and we will resolve it promptly.</p>
   <h2>Disputes</h2>
-  <p>If you are unhappy with any aspect of our service, please contact us first at hello@filipsocial.com. We take all concerns seriously and will work with you to find a fair resolution. We ask that you give us the opportunity to address any issue before raising a dispute with your bank or payment provider.</p>
+  <p>If you are unhappy with any aspect of our service, please contact us first at filiplovric41@gmail.com or via WhatsApp at +385 092 391 0085. We take all concerns seriously and will work with you to find a fair resolution. We ask that you give us the opportunity to address any issue before raising a dispute with your bank or payment provider.</p>
+</div>
+</div>
+</div>
 
+<!-- ========== COOKIE POLICY ========== -->
+<div class="page" id="page-cookies">
+<div style="padding-top:70px;">
+<div class="legal-content">
+  <h1>Cookie Policy</h1>
+  <div class="legal-date">Last updated: April 2026</div>
+  <p>This Cookie Policy explains what cookies are, which cookies this website uses, and how you can manage them. This site is operated by Filip Lovric trading as FilipSocial.</p>
+  <h2>What Are Cookies?</h2>
+  <p>Cookies are small text files that are placed on your device (computer, phone, or tablet) when you visit a website. They are widely used to make websites work correctly, work more efficiently, and to provide information to the owners of the site. Cookies do not give anyone access to your device or any personal information about you other than the data you choose to share. Most web browsers allow you to control cookies through their settings.</p>
+  <h2>Why Does This Website Use Cookies?</h2>
+  <p>This website uses cookies for the following reasons. First, to make the site work correctly. Certain features, including the payment form powered by Stripe, require cookies to function. These are called strictly necessary cookies and are used regardless of your cookie preferences. Second, to remember your preferences. For example, we use a cookie to remember whether you prefer the dark or light mode, and whether you have already accepted or declined our cookie notice. Third, to understand how visitors use the site. If you accept analytics cookies, we may use tools that track which pages are visited, how long visitors stay, and where they came from. This helps us improve the site over time. No personally identifiable information is collected through analytics cookies.</p>
+  <h2>Types of Cookies We Use</h2>
+  <p>Strictly necessary cookies are required for the website to function and cannot be switched off. They include cookies set by Stripe for secure payment processing, and a cookie that stores your theme preference (dark or light mode). These do not collect any personal data and are always active.</p>
+  <p>Analytics cookies are only placed if you click Accept on our cookie banner. These help us understand which pages are most popular and how visitors navigate the site. They do not identify you personally.</p>
+  <p>Preference cookies store choices you make on the site, such as your theme preference and your cookie consent decision. These are stored locally in your browser.</p>
+  <h2>Third-Party Cookies</h2>
+  <p>When you use our payment form, Stripe may set its own cookies on your device to enable secure payment processing and fraud prevention. These cookies are governed by Stripe's own privacy policy, which you can read at stripe.com/privacy.</p>
+  <h2>How to Manage Cookies</h2>
+  <p>You can control and manage cookies in several ways. You can use the Accept or Decline buttons on our cookie banner when you first visit the site. You can also clear cookies at any time through your browser settings. The steps vary by browser but are usually found under Settings, Privacy, or History. Please note that if you decline or delete cookies, some features of the site may not work as expected, including the payment form.</p>
+  <h2>Your Consent</h2>
+  <p>By clicking Accept on our cookie banner, you consent to the use of analytics and preference cookies as described above. Strictly necessary cookies are always active as they are required for the site to function. You can change your preference at any time by clearing your browser cookies and revisiting the site.</p>
   <h2>Contact</h2>
-  <p>For any refund enquiries, email us at hello@filipsocial.com. We aim to respond within 2 business days.</p>
+  <p>If you have any questions about how we use cookies, please contact us at filiplovric41@gmail.com or via WhatsApp at +385 092 391 0085.</p>
 </div>
 </div>
 </div>
 
-<!-- FOOTER (shared) -->
+<!-- FOOTER -->
 <footer>
   <div class="foot-top">
     <div>
@@ -1128,43 +1265,43 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 60px
     <div class="foot-col">
       <h4>Services</h4>
       <ul>
-        <li><a onclick="goTo('home');scrollTo('services')">Social Media</a></li>
-        <li><a onclick="goTo('home');scrollTo('services')">Content Creation</a></li>
-        <li><a onclick="goTo('home');scrollTo('services')">Website Creation</a></li>
-        <li><a onclick="goTo('home');scrollTo('services')">Paid Advertising</a></li>
+        <li><a onclick="goTo('home');scrollSec('services')">Social Media</a></li>
+        <li><a onclick="goTo('home');scrollSec('quick')">Quick Services</a></li>
+        <li><a onclick="goTo('home');scrollSec('services')">Website Creation</a></li>
+        <li><a onclick="goTo('home');scrollSec('services')">Paid Advertising</a></li>
       </ul>
     </div>
     <div class="foot-col">
       <h4>Packages</h4>
       <ul>
-        <li><a onclick="goTo('home');scrollTo('packs')">Basic Pack</a></li>
-        <li><a onclick="goTo('home');scrollTo('packs')">Ultra Pack</a></li>
-        <li><a onclick="goTo('home');scrollTo('packs')">Premium Pack</a></li>
-        <li><a onclick="goTo('home');scrollTo('pricing')">Monthly Plans</a></li>
+        <li><a onclick="goTo('home');scrollSec('packs')">Business Packs</a></li>
+        <li><a onclick="goTo('home');scrollSec('pricing')">Monthly Plans</a></li>
+        <li><a onclick="goTo('home');scrollSec('courses')">Courses</a></li>
+        <li><a onclick="goTo('home');scrollSec('pay')">Work With Me</a></li>
       </ul>
     </div>
     <div class="foot-col">
       <h4>Company</h4>
       <ul>
         <li><a onclick="goTo('about')">About</a></li>
-        <li><a onclick="goTo('home');scrollTo('courses')">Courses</a></li>
         <li><a onclick="goTo('contact')">Contact</a></li>
-        <li><a onclick="goTo('home');scrollTo('pay')">Work With Me</a></li>
+        <li><a href="mailto:filiplovric41@gmail.com">filiplovric41@gmail.com</a></li>
+        <li><a href="https://wa.me/385923910085">WhatsApp</a></li>
       </ul>
     </div>
   </div>
   <div class="foot-bottom">
-    <div class="foot-copy">&copy; 2026 FilipSocial. All rights reserved.</div>
+    <div class="foot-copy">&copy; 2026 FilipSocial by Filip Lovric. All rights reserved.</div>
     <div class="foot-legal">
       <a onclick="goTo('privacy')">Privacy Policy</a>
       <a onclick="goTo('terms')">Terms of Service</a>
       <a onclick="goTo('refund')">Refund Policy</a>
+      <a onclick="goTo('cookies')">Cookie Policy</a>
     </div>
   </div>
 </footer>
 
 <script>
-/* THEME */
 const html = document.documentElement;
 const themeBtn = document.getElementById('themeBtn');
 const saved = localStorage.getItem('fs-theme') || 'light';
@@ -1173,45 +1310,42 @@ themeBtn.addEventListener('click', () => {
   const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
   html.setAttribute('data-theme', next);
   localStorage.setItem('fs-theme', next);
-  if (stripe) initStripeElement();
+  if (typeof rebuildCard === 'function') rebuildCard();
 });
 
-/* NAV SCROLL */
 window.addEventListener('scroll', () => {
   document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
 });
 
-/* MOBILE MENU */
 function toggleMenu() {
   document.getElementById('hamburger').classList.toggle('open');
   document.getElementById('mobileMenu').classList.toggle('open');
 }
-function closeMenu() {
+function cm() {
   document.getElementById('hamburger').classList.remove('open');
   document.getElementById('mobileMenu').classList.remove('open');
 }
 
-/* PAGE ROUTER */
 function goTo(pageId) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + pageId).classList.add('active');
+  const pg = document.getElementById('page-' + pageId);
+  if (pg) { pg.classList.add('active'); }
   window.scrollTo(0, 0);
-  initReveal();
+  setTimeout(initReveal, 80);
 }
-function scrollTo(id) {
+function scrollSec(id) {
   setTimeout(() => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, 100);
+  }, 120);
 }
 
-/* REVEAL */
 function initReveal() {
   const els = document.querySelectorAll('.page.active .reveal, .page.active .reveal-l, .page.active .reveal-r');
   const obs = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 75);
+        setTimeout(() => e.target.classList.add('visible'), i * 70);
         obs.unobserve(e.target);
       }
     });
@@ -1220,76 +1354,96 @@ function initReveal() {
 }
 document.addEventListener('DOMContentLoaded', initReveal);
 
+/* HOW IT WORKS TABS */
+function switchHiw(el, plan) {
+  document.querySelectorAll('.hiw-tab').forEach(t => t.classList.remove('on'));
+  document.querySelectorAll('.hiw-panel').forEach(p => p.classList.remove('on'));
+  el.classList.add('on');
+  const panel = document.getElementById('hiw-' + plan);
+  if (panel) panel.classList.add('on');
+}
+
 /* PRICING TABS */
-const monthly = ['499','899','1,499'];
-const quarterly = ['449','809','1,349'];
+const pData = {
+  monthly:  { trial:'199', starter:'349', growth:'649', pro:'1,099', period:'per month' },
+  quarterly:{ trial:'179', starter:'314', growth:'584', pro:'989',   period:'per month, billed quarterly' },
+  biannual: { trial:'159', starter:'279', growth:'519', pro:'879',   period:'per month, billed every 6 months' }
+};
 function switchTab(el, mode) {
   document.querySelectorAll('.ptab').forEach(t => t.classList.remove('on'));
   el.classList.add('on');
-  const prices = mode === 'monthly' ? monthly : quarterly;
-  document.querySelectorAll('.pn').forEach((n, i) => {
+  const d = pData[mode];
+  const nums = document.querySelectorAll('.pn');
+  const plans = ['trial','starter','growth','pro'];
+  nums.forEach((n, i) => {
     n.style.opacity = '0';
-    setTimeout(() => { n.textContent = prices[i]; n.style.opacity = '1'; }, 220);
+    setTimeout(() => { n.textContent = d[plans[i]]; n.style.opacity = '1'; }, 220);
+  });
+  ['trial','starter','growth','pro'].forEach(p => {
+    const el2 = document.getElementById('pp-' + p);
+    if (el2) el2.textContent = d.period;
   });
 }
 
-/* STRIPE INTEGRATION */
-const STRIPE_KEY = 'pk_live_51RAcM8GBf9GhZ05NpBkiWT251qkeuGyVPNkL95NIxzrt3OnYISzsFYZSMiNEg1ldEbMFDV25WyHCKuXXJp0TCTk200jRRRaf7r';
-let stripe, elements, cardElement;
+/* PRE-SELECT SERVICE */
+function selectService(name) {
+  const sel = document.getElementById('pay-service');
+  if (!sel) return;
+  for (let i = 0; i < sel.options.length; i++) {
+    if (sel.options[i].text.includes(name.split(' - ')[0])) {
+      sel.selectedIndex = i;
+      break;
+    }
+  }
+  goTo('home');
+  scrollSec('pay');
+}
 
-function initStripeElement() {
+/* STRIPE */
+const STRIPE_KEY = 'pk_test_YOUR_PUBLISHABLE_KEY_HERE';
+let stripe, elements, cardElement;
+function rebuildCard() {
   try {
     if (!stripe) stripe = Stripe(STRIPE_KEY);
-    const isDark = html.getAttribute('data-theme') === 'dark';
-    elements = stripe.elements();
+    const dark = html.getAttribute('data-theme') === 'dark';
+    if (!elements) elements = stripe.elements();
     const style = {
       base: {
-        fontFamily: "'Outfit', sans-serif",
-        fontSize: '14px',
-        color: isDark ? '#e8f0ff' : '#ffffff',
-        '::placeholder': { color: isDark ? 'rgba(232,240,255,0.25)' : 'rgba(255,255,255,0.25)' },
-        iconColor: isDark ? '#c9a84c' : 'rgba(255,255,255,0.5)',
+        fontFamily: "'Outfit', sans-serif", fontSize: '14px',
+        color: dark ? '#e8f0ff' : '#ffffff',
+        '::placeholder': { color: dark ? 'rgba(232,240,255,0.22)' : 'rgba(255,255,255,0.22)' },
+        iconColor: dark ? '#c9a84c' : 'rgba(255,255,255,0.5)',
       },
       invalid: { color: '#ff6b6b' }
     };
-    if (cardElement) cardElement.destroy();
+    if (cardElement) { cardElement.destroy(); cardElement = null; }
     cardElement = elements.create('card', { style, hidePostalCode: true });
     cardElement.mount('#card-element');
     cardElement.on('change', e => {
       document.getElementById('card-errors').textContent = e.error ? e.error.message : '';
     });
-  } catch(e) { console.log('Stripe init: replace pk_test_YOUR_PUBLISHABLE_KEY_HERE with your real key'); }
+  } catch(e) { console.log('Stripe: replace pk_test_YOUR_PUBLISHABLE_KEY_HERE with your real key from stripe.com/dashboard'); }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(initStripeElement, 500);
-});
+document.addEventListener('DOMContentLoaded', () => setTimeout(rebuildCard, 600));
 
 async function handlePayment() {
   const name = document.getElementById('pay-name').value.trim();
   const email = document.getElementById('pay-email').value.trim();
   const service = document.getElementById('pay-service').value;
-  if (!name || !email || !service) {
-    alert('Please fill in your name, email, and select a service.');
-    return;
-  }
-  if (!stripe || !cardElement) {
-    alert('Payment system loading. Please wait a moment and try again.');
-    return;
-  }
+  if (!name || !email || !service) { alert('Please fill in your name, email address, and select a service.'); return; }
+  if (!stripe || !cardElement) { alert('Payment system is loading. Please wait a moment and try again.'); return; }
   const btn = document.getElementById('pay-submit');
   btn.disabled = true;
   btn.textContent = 'Processing...';
   try {
     const { paymentMethod, error } = await stripe.createPaymentMethod({
-      type: 'card',
-      card: cardElement,
+      type: 'card', card: cardElement,
       billing_details: { name, email }
     });
     if (error) {
       document.getElementById('card-errors').textContent = error.message;
       btn.disabled = false;
-      btn.innerHTML = '<svg width="14" height="15" viewBox="0 0 14 15" fill="none"><path d="M7 1L1.5 3.75V7.5C1.5 10.75 4 13.5 7 14C10 13.5 12.5 10.75 12.5 7.5V3.75L7 1Z" stroke="currentColor" stroke-width="1.2" fill="none"/></svg> Confirm and Pay Securely';
+      btn.innerHTML = '<svg width="13" height="14" viewBox="0 0 13 14" fill="none"><path d="M6.5 1L1 3.25V6.5C1 9.5 3.25 12 6.5 12.5C9.75 12 12 9.5 12 6.5V3.25L6.5 1Z" stroke="currentColor" stroke-width="1.1" fill="none"/></svg>Confirm and Pay Securely';
     } else {
       document.getElementById('checkout-form').style.display = 'none';
       document.getElementById('success-msg').style.display = 'block';
@@ -1297,7 +1451,7 @@ async function handlePayment() {
   } catch(e) {
     btn.disabled = false;
     btn.innerHTML = 'Confirm and Pay Securely';
-    alert('Something went wrong. Please try again or contact us directly.');
+    alert('Something went wrong. Please try again or contact us directly at filiplovric41@gmail.com');
   }
 }
 
@@ -1307,8 +1461,21 @@ function sendContact() {
   const email = document.getElementById('cf-email').value.trim();
   const msg = document.getElementById('cf-msg').value.trim();
   if (!name || !email || !msg) { alert('Please fill in all required fields.'); return; }
-  alert('Thank you, ' + name + '! Your message has been sent. I will be in touch within 24 hours.');
+  alert('Thank you, ' + name + '!\n\nYour message has been received. I will reply to ' + email + ' within 24 hours.\n\nYou can also reach me directly:\nEmail: filiplovric41@gmail.com\nWhatsApp: +385 092 391 0085');
 }
+
+/* COOKIE BANNER */
+function initCookies() {
+  const consent = localStorage.getItem('fs-cookies');
+  if (!consent) {
+    setTimeout(() => document.getElementById('cookieBanner').classList.add('show'), 1800);
+  }
+}
+function cookieChoice(accepted) {
+  localStorage.setItem('fs-cookies', accepted ? 'accepted' : 'declined');
+  document.getElementById('cookieBanner').classList.remove('show');
+}
+document.addEventListener('DOMContentLoaded', initCookies);
 </script>
 </body>
 </html>
