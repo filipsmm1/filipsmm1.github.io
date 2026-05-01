@@ -3,850 +3,810 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stylish & Healthy</title>
-  <meta name="description" content="Stylish & Healthy is your trusted home for scientifically backed skincare, motivation, self-improvement, and beautiful routines." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Stylishandhealthy. — Pretty Routines. Smarter Choices.</title>
+  <meta name="description" content="Research-backed skincare, wellness, and self-improvement that feels as beautiful as it should." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Baloo+2:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --pink: #f5b7c6;
-      --pink-light: #fde5eb;
-      --pink-soft: #fff4f7;
-      --matcha: #536c3d;
-      --matcha-dark: #314022;
-      --matcha-soft: #dfe8d4;
-      --cream: #fffaf1;
-      --espresso: #2d241b;
-      --muted: #74685e;
-      --white: #ffffff;
-      --shadow: 0 24px 70px rgba(49, 64, 34, 0.14);
-      --radius-xl: 34px;
-      --radius-lg: 24px;
-      --radius-md: 16px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Inter", sans-serif;
-      color: var(--espresso);
-      background:
-        radial-gradient(circle at top left, rgba(245, 183, 198, 0.55), transparent 34%),
-        radial-gradient(circle at 80% 20%, rgba(223, 232, 212, 0.85), transparent 32%),
-        linear-gradient(135deg, var(--pink-soft), var(--cream));
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .nav {
-      position: sticky;
-      top: 16px;
-      z-index: 50;
-      margin-top: 18px;
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 14px 18px;
-      border: 1px solid rgba(83, 108, 61, 0.13);
-      background: rgba(255, 250, 241, 0.78);
-      backdrop-filter: blur(18px);
-      border-radius: 999px;
-      box-shadow: 0 12px 38px rgba(49, 64, 34, 0.08);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      color: var(--matcha-dark);
-      letter-spacing: -0.03em;
-    }
-
-    .brand-mark {
-      display: grid;
-      place-items: center;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: var(--pink);
-      color: var(--matcha-dark);
-      font-family: "Playfair Display", serif;
-      font-weight: 700;
-      box-shadow: inset 0 0 0 2px rgba(83, 108, 61, 0.14);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--matcha-dark);
-    }
-
-    .nav-links a {
-      padding: 10px 14px;
-      border-radius: 999px;
-      transition: background 220ms ease, transform 220ms ease;
-    }
-
-    .nav-links a:hover {
-      background: rgba(245, 183, 198, 0.45);
-      transform: translateY(-1px);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 22px;
-      border: none;
-      border-radius: 999px;
-      background: var(--matcha-dark);
-      color: var(--pink-light);
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 14px 34px rgba(49, 64, 34, 0.2);
-      transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 44px rgba(49, 64, 34, 0.26);
-      background: var(--matcha);
-    }
-
-    .btn.secondary {
-      background: rgba(255, 255, 255, 0.58);
-      color: var(--matcha-dark);
-      border: 1px solid rgba(83, 108, 61, 0.16);
-      box-shadow: none;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 34px;
-      align-items: center;
-      padding: 78px 0 54px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 13px;
-      border: 1px solid rgba(83, 108, 61, 0.14);
-      background: rgba(255, 255, 255, 0.55);
-      color: var(--matcha-dark);
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 18px;
-      animation: floatIn 700ms ease both;
-    }
-
-    h1, h2, h3 {
-      font-family: "Playfair Display", serif;
-      color: var(--matcha-dark);
-      letter-spacing: -0.055em;
-      line-height: 0.96;
-    }
-
-    h1 {
-      font-size: clamp(54px, 8vw, 104px);
-      max-width: 820px;
-      animation: floatIn 820ms ease 90ms both;
-    }
-
-    .highlight {
-      color: var(--pink);
-      text-shadow: 0 2px 0 rgba(49, 64, 34, 0.08);
-    }
-
-    .hero p {
-      max-width: 640px;
-      margin-top: 24px;
-      font-size: clamp(17px, 2vw, 21px);
-      line-height: 1.7;
-      color: var(--muted);
-      animation: floatIn 860ms ease 170ms both;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-      animation: floatIn 900ms ease 250ms both;
-    }
-
-    .hero-card {
-      position: relative;
-      min-height: 560px;
-      border-radius: var(--radius-xl);
-      background:
-        linear-gradient(160deg, rgba(245, 183, 198, 0.85), rgba(255, 250, 241, 0.5)),
-        radial-gradient(circle at 70% 20%, rgba(83, 108, 61, 0.32), transparent 36%);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      animation: revealScale 900ms ease 220ms both;
-    }
-
-    .hero-card::before,
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      border-radius: 999px;
-      background: rgba(255, 250, 241, 0.35);
-      filter: blur(1px);
-    }
-
-    .hero-card::before {
-      width: 360px;
-      height: 360px;
-      right: -110px;
-      top: -110px;
-    }
-
-    .hero-card::after {
-      width: 280px;
-      height: 280px;
-      left: -100px;
-      bottom: -90px;
-    }
-
-    .liquid-word {
-      position: absolute;
-      inset: auto 28px 28px 28px;
-      padding: 28px;
-      border-radius: 28px;
-      background: rgba(255, 250, 241, 0.5);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.55);
-    }
-
-    .liquid-word strong {
-      display: block;
-      font-size: clamp(34px, 5vw, 60px);
-      color: var(--matcha-dark);
-      font-family: "Playfair Display", serif;
-      letter-spacing: -0.06em;
-      line-height: 1;
-    }
-
-    .liquid-word span {
-      display: block;
-      margin-top: 12px;
-      color: var(--matcha-dark);
-      line-height: 1.55;
-      font-weight: 600;
-    }
-
-    .orb {
-      position: absolute;
-      display: grid;
-      place-items: center;
-      width: 142px;
-      height: 142px;
-      border-radius: 50%;
-      background: var(--matcha-dark);
-      color: var(--pink-light);
-      font-family: "Playfair Display", serif;
-      font-size: 42px;
-      font-weight: 700;
-      right: 42px;
-      top: 52px;
-      box-shadow: 0 20px 60px rgba(49, 64, 34, 0.24);
-      animation: softFloat 5s ease-in-out infinite;
-    }
-
-    .thread {
-      position: absolute;
-      width: 76%;
-      height: 150px;
-      left: 11%;
-      top: 235px;
-      border-bottom: 6px solid var(--matcha-dark);
-      border-radius: 50%;
-      transform: rotate(-7deg);
-      opacity: 0.9;
-    }
-
-    .section {
-      padding: 74px 0;
-    }
-
-    .section-header {
-      max-width: 720px;
-      margin-bottom: 28px;
-    }
-
-    .section-header h2 {
-      font-size: clamp(40px, 6vw, 74px);
-    }
-
-    .section-header p {
-      margin-top: 16px;
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      position: relative;
-      padding: 28px;
-      min-height: 250px;
-      border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.58);
-      border: 1px solid rgba(83, 108, 61, 0.13);
-      box-shadow: 0 18px 54px rgba(49, 64, 34, 0.08);
-      overflow: hidden;
-      transition: transform 260ms ease, box-shadow 260ms ease, background 260ms ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 26px 70px rgba(49, 64, 34, 0.14);
-      background: rgba(255, 255, 255, 0.75);
-    }
-
-    .card .icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      background: var(--pink-light);
-      color: var(--matcha-dark);
-      font-size: 22px;
-      margin-bottom: 24px;
-    }
-
-    .card h3 {
-      font-size: 30px;
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .shop-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .feature {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 28px;
-      align-items: center;
-      padding: 28px;
-      border-radius: var(--radius-xl);
-      background: var(--matcha-dark);
-      color: var(--pink-light);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .feature h2,
-    .feature h3 {
-      color: var(--pink-light);
-    }
-
-    .feature p {
-      color: rgba(253, 229, 235, 0.8);
-      line-height: 1.7;
-      margin-top: 14px;
-    }
-
-    .mockup {
-      min-height: 360px;
-      border-radius: 28px;
-      background:
-        linear-gradient(135deg, rgba(245, 183, 198, 0.95), rgba(255, 250, 241, 0.76)),
-        repeating-linear-gradient(0deg, transparent 0 36px, rgba(49, 64, 34, 0.09) 37px 38px);
-      border: 1px solid rgba(253, 229, 235, 0.34);
-      box-shadow: inset 0 0 0 10px rgba(255, 250, 241, 0.25);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .mockup::after {
-      content: "S&H";
-      position: absolute;
-      right: 26px;
-      bottom: 20px;
-      font-family: "Playfair Display", serif;
-      font-size: 76px;
-      font-weight: 700;
-      color: rgba(49, 64, 34, 0.22);
-    }
-
-    .blog-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .post {
-      display: grid;
-      grid-template-columns: 150px 1fr auto;
-      align-items: center;
-      gap: 22px;
-      padding: 18px;
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.58);
-      border: 1px solid rgba(83, 108, 61, 0.13);
-      transition: transform 220ms ease, background 220ms ease;
-    }
-
-    .post:hover {
-      transform: translateX(7px);
-      background: rgba(255, 255, 255, 0.78);
-    }
-
-    .tag {
-      display: inline-flex;
-      width: fit-content;
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: var(--matcha-soft);
-      color: var(--matcha-dark);
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .post h3 {
-      font-size: 30px;
-      margin-top: 8px;
-    }
-
-    .post p {
-      color: var(--muted);
-      margin-top: 7px;
-    }
-
-    .arrow {
-      font-size: 28px;
-      color: var(--matcha-dark);
-    }
-
-    .about-contact {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .panel {
-      padding: 34px;
-      border-radius: var(--radius-xl);
-      background: rgba(255, 255, 255, 0.64);
-      border: 1px solid rgba(83, 108, 61, 0.13);
-      box-shadow: 0 18px 54px rgba(49, 64, 34, 0.08);
-    }
-
-    .panel h2 {
-      font-size: clamp(36px, 5vw, 58px);
-      margin-bottom: 16px;
-    }
-
-    .panel p,
-    .panel li {
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    .panel ul {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .panel li::before {
-      content: "✦";
-      color: var(--pink);
-      margin-right: 10px;
-    }
-
-    .newsletter {
-      margin: 70px 0 30px;
-      padding: 42px;
-      border-radius: var(--radius-xl);
-      background:
-        radial-gradient(circle at 10% 0%, rgba(245, 183, 198, 0.8), transparent 38%),
-        linear-gradient(135deg, var(--matcha-dark), var(--matcha));
-      color: var(--pink-light);
-      box-shadow: var(--shadow);
-      display: grid;
-      grid-template-columns: 1fr 0.9fr;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .newsletter h2 {
-      color: var(--pink-light);
-      font-size: clamp(38px, 5vw, 68px);
-    }
-
-    .newsletter p {
-      color: rgba(253, 229, 235, 0.8);
-      line-height: 1.7;
-      margin-top: 12px;
-    }
-
-    .form {
-      display: flex;
-      gap: 10px;
-      padding: 8px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.16);
-      border: 1px solid rgba(253, 229, 235, 0.24);
-    }
-
-    .form input {
-      flex: 1;
-      min-width: 0;
-      padding: 14px 16px;
-      border: 0;
-      outline: 0;
-      color: var(--pink-light);
-      background: transparent;
-      font: inherit;
-    }
-
-    .form input::placeholder {
-      color: rgba(253, 229, 235, 0.68);
-    }
-
-    .form .btn {
-      background: var(--pink-light);
-      color: var(--matcha-dark);
-      box-shadow: none;
-      white-space: nowrap;
-    }
-
-    footer {
-      padding: 26px 0 44px;
-      color: var(--muted);
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(83, 108, 61, 0.15);
-    }
-
-    .socials {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .socials a {
-      padding: 10px 13px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.56);
-      color: var(--matcha-dark);
-      font-weight: 700;
-      border: 1px solid rgba(83, 108, 61, 0.12);
-      transition: transform 220ms ease, background 220ms ease;
-    }
-
-    .socials a:hover {
-      transform: translateY(-3px);
-      background: var(--pink-light);
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 720ms ease, transform 720ms ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @keyframes floatIn {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes revealScale {
-      from { opacity: 0; transform: scale(0.96) translateY(24px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
-    }
-
-    @keyframes softFloat {
-      0%, 100% { transform: translateY(0) rotate(-4deg); }
-      50% { transform: translateY(-14px) rotate(4deg); }
-    }
-
-    @media (max-width: 900px) {
-      .nav-inner {
-        align-items: flex-start;
-        border-radius: 24px;
-        flex-direction: column;
-      }
-
-      .nav-links {
-        width: 100%;
-        overflow-x: auto;
-        padding-bottom: 2px;
-      }
-
-      .hero,
-      .feature,
-      .newsletter,
-      .about-contact,
-      .shop-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 54px;
-      }
-
-      .hero-card {
-        min-height: 460px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .post {
-        grid-template-columns: 1fr;
-      }
-
-      .form {
-        flex-direction: column;
-        border-radius: 24px;
-      }
-
-      .form .btn {
-        width: 100%;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
+      --pink:       #F8D6DE;
+      --pink-mid:   #F3AFC0;
+      --pink-deep:  #E8899A;
+      --green:      #556B3E;
+      --green-dk:   #3D4F2D;
+      --green-lt:   #A8B99A;
+      --cream:      #F7F1E8;
+      --cream-warm: #EDE4D5;
+      --brown:      #3A2A22;
+      --brown-lt:   #6B5045;
+      --ice:        #DCECF0;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'Baloo 2', sans-serif;
+      --body:  'DM Sans', sans-serif;
+      --ease:  cubic-bezier(0.22,1,0.36,1);
+      --easeb: cubic-bezier(0.34,1.56,0.64,1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--body);background:var(--cream);color:var(--brown);overflow-x:hidden;cursor:none}
+    ::selection{background:var(--pink);color:var(--green-dk)}
+    a{text-decoration:none;color:inherit}
+
+    /* CURSOR */
+    #cdot,#cring{position:fixed;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+    #cdot{width:7px;height:7px;background:var(--green);transition:transform .1s,background .2s}
+    #cring{width:30px;height:30px;border:1.5px solid var(--green);opacity:.5;background:transparent;transition:width .22s var(--easeb),height .22s var(--easeb),border-color .2s,opacity .2s}
+    body.ch #cring{width:50px;height:50px;border-color:var(--pink-deep);opacity:.9}
+    body.ch #cdot{background:var(--pink-deep);transform:translate(-50%,-50%) scale(1.8)}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:66px;transition:background .4s var(--ease),box-shadow .4s}
+    nav.solid{background:rgba(247,241,232,.94);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(85,107,62,.1)}
+    .nav-logo{font-family:var(--serif);font-size:1.45rem;font-weight:500;color:var(--green-dk);letter-spacing:-.02em}
+    .nav-logo b{font-weight:600;color:var(--green)}
+    .nav-logo span{color:var(--pink-deep)}
+    nav ul{list-style:none;display:flex;gap:34px;align-items:center}
+    nav ul li a{font-family:var(--body);font-size:.79rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dk);transition:color .2s}
+    nav ul li a:hover{color:var(--green)}
+    .npill{background:var(--green);color:var(--cream)!important;padding:9px 22px;border-radius:100px;font-size:.77rem!important;letter-spacing:.05em!important;transition:background .2s,transform .15s var(--easeb)!important}
+    .npill:hover{background:var(--green-dk)!important;transform:scale(1.04)!important}
+
+    /* HERO */
+    #hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding-top:66px;background:var(--cream);position:relative;overflow:hidden}
+    #hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(85,107,62,.065) .55px,transparent .55px);background-size:22px 22px;pointer-events:none}
+    .hero-shape{position:absolute;right:-100px;top:-60px;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle at 40% 40%,var(--pink) 0%,var(--cream) 68%);opacity:.5;animation:hshape 14s ease-in-out infinite}
+    @keyframes hshape{0%,100%{transform:scale(1) translateY(0)}50%{transform:scale(1.06) translateY(-18px)}}
+    .hero-left{padding:100px 68px 100px 80px;position:relative;z-index:2}
+    .eyebrow{font-family:var(--body);font-size:.71rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--green);display:inline-block;margin-bottom:22px;padding:6px 16px;border:1px solid rgba(85,107,62,.2);border-radius:100px;background:rgba(85,107,62,.05)}
+    .h1{font-family:var(--serif);font-size:clamp(3.2rem,5.8vw,5.8rem);font-weight:400;line-height:1.05;letter-spacing:-.03em;color:var(--green-dk);margin-bottom:10px}
+    .h1 em{font-style:italic;color:var(--green)}
+    .h1-sub{font-family:var(--serif);font-size:clamp(1.4rem,2.4vw,2rem);font-weight:300;font-style:italic;color:var(--pink-deep);margin-bottom:26px;display:block}
+    .hero-p{font-size:1rem;line-height:1.8;color:var(--brown-lt);max-width:470px;margin-bottom:36px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-size:.9rem;font-weight:600;border-radius:100px;transition:background .2s,transform .18s var(--easeb),box-shadow .2s,border-color .2s;cursor:none;border:0}
+    .btn-f{background:var(--green);color:var(--cream);padding:14px 32px;box-shadow:0 8px 26px rgba(85,107,62,.22)}
+    .btn-f:hover{background:var(--green-dk);transform:translateY(-2px);box-shadow:0 14px 36px rgba(85,107,62,.3)}
+    .btn-o{background:transparent;color:var(--green-dk);padding:13px 28px;border:1.5px solid rgba(85,107,62,.28)}
+    .btn-o:hover{border-color:var(--green);background:rgba(85,107,62,.05);transform:translateY(-2px)}
+    .hero-proof{display:flex;align-items:center;gap:14px;margin-top:34px}
+    .pavs{display:flex}
+    .pav{width:30px;height:30px;border-radius:50%;border:2px solid var(--cream);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:.9rem;font-style:italic;color:var(--cream);margin-left:-8px}
+    .pav:first-child{margin-left:0}
+    .pa1{background:var(--green)}.pa2{background:var(--pink-deep)}.pa3{background:var(--brown-lt)}
+    .proof-t{font-size:.79rem;color:var(--brown-lt);max-width:210px;line-height:1.5}
+    .hero-right{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;padding:80px 80px 80px 0}
+    .hcards{position:relative;width:350px;height:400px}
+    .hc{position:absolute;border-radius:22px;padding:28px;box-shadow:0 26px 52px rgba(58,42,34,.15)}
+    .hc1{width:270px;height:320px;background:var(--green-dk);top:0;left:0;transform:rotate(-5deg);animation:hcf1 9s ease-in-out infinite;display:flex;flex-direction:column;justify-content:flex-end}
+    .hc2{width:252px;height:288px;background:var(--pink);top:42px;left:66px;transform:rotate(3deg);animation:hcf2 11s ease-in-out infinite .8s;display:flex;flex-direction:column;justify-content:flex-end}
+    .hc3{width:234px;height:252px;background:var(--cream-warm);border:1px solid rgba(58,42,34,.07);top:84px;left:34px;transform:rotate(-.5deg);animation:hcf3 10s ease-in-out infinite .4s;display:flex;flex-direction:column;justify-content:flex-end}
+    @keyframes hcf1{0%,100%{transform:rotate(-5deg) translateY(0)}50%{transform:rotate(-5deg) translateY(-13px)}}
+    @keyframes hcf2{0%,100%{transform:rotate(3deg) translateY(0)}50%{transform:rotate(3deg) translateY(-9px)}}
+    @keyframes hcf3{0%,100%{transform:rotate(-.5deg) translateY(0)}50%{transform:rotate(-.5deg) translateY(-17px)}}
+    .hc-tag{font-family:var(--body);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
+    .hc1 .hc-tag{color:rgba(247,241,232,.4)}.hc2 .hc-tag{color:rgba(85,107,62,.6)}.hc3 .hc-tag{color:var(--brown-lt)}
+    .hc-name{font-family:var(--serif);font-size:1.35rem;font-weight:400;line-height:1.2}
+    .hc1 .hc-name{color:var(--cream)}.hc2 .hc-name{color:var(--green-dk)}.hc3 .hc-name{color:var(--brown)}
+
+    /* TICKER */
+    .ticker{background:var(--green);padding:13px 0;overflow:hidden;white-space:nowrap}
+    .ticker-t{display:inline-flex;animation:tick 30s linear infinite}
+    .ti{font-family:var(--serif);font-style:italic;font-size:1.08rem;font-weight:300;color:var(--pink);padding:0 26px;display:inline-flex;align-items:center;gap:26px}
+    .ti::after{content:'—';color:var(--green-lt);font-style:normal}
+    @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    /* SECTIONS */
+    .sec{padding:108px 80px}
+    .sl{font-family:var(--body);font-size:.69rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--green-lt);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+    .sl::before{content:'';width:26px;height:1px;background:var(--green-lt);flex-shrink:0}
+    .sh{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,3.2rem);font-weight:400;line-height:1.1;letter-spacing:-.03em;color:var(--green-dk)}
+    .sh em{font-style:italic;color:var(--pink-deep)}
+    .sp{font-size:1rem;line-height:1.8;color:var(--brown-lt);max-width:530px}
+    .rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+    .rv.in{opacity:1;transform:translateY(0)}
+    .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+
+    /* ABOUT — dark */
+    #about{background:var(--green-dk);padding:96px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .ast-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+    .ast{background:rgba(247,241,232,.04);border:1px solid rgba(247,241,232,.07);padding:34px 26px;transition:background .2s}
+    .ast:hover{background:rgba(247,241,232,.07)}
+    .ast-n{font-family:var(--serif);font-size:3rem;font-weight:300;color:var(--pink);line-height:1;margin-bottom:5px}
+    .ast-l{font-size:.77rem;color:rgba(247,241,232,.45);letter-spacing:.05em}
+    .about-copy .sl{color:var(--green-lt)}.about-copy .sl::before{background:var(--green-lt)}
+    .about-copy .sh{color:var(--cream)}.about-copy .sh em{color:var(--pink-mid)}
+    .about-copy p{color:rgba(247,241,232,.6);margin-bottom:18px;font-size:.96rem;line-height:1.8}
+    .aps{display:flex;flex-direction:column;gap:1px;margin-top:30px}
+    .ap{display:flex;align-items:flex-start;gap:16px;padding:17px;border:1px solid rgba(247,241,232,.07);transition:background .2s}
+    .ap:hover{background:rgba(247,241,232,.05)}
+    .ap-ic{font-size:1.25rem;flex-shrink:0;margin-top:2px}
+    .ap-t{font-family:var(--serif);font-size:1.08rem;font-weight:400;color:var(--cream);margin-bottom:2px}
+    .ap-s{font-size:.84rem;color:rgba(247,241,232,.48);line-height:1.6}
+
+    /* CATEGORIES */
+    #categories{background:var(--cream)}
+    .cats-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;gap:24px;flex-wrap:wrap}
+    .cats-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:16px}
+    .cat{background:var(--cream-warm);border-radius:20px;padding:34px 30px;transition:transform .25s var(--ease),box-shadow .25s;border:1px solid rgba(58,42,34,.07);cursor:none}
+    .cat:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(85,107,62,.1)}
+    .cat.tall{grid-row:span 2;display:flex;flex-direction:column;justify-content:flex-end;min-height:340px}
+    .cat.dark{background:var(--green)}
+    .cat.dark .cat-label,.cat.dark .cat-title,.cat.dark .cat-desc,.cat.dark .cat-arr{color:var(--cream)}
+    .cat.dark .cat-label{color:var(--green-lt)}
+    .cat.pink-bg{background:var(--pink)}
+    .cat-label{font-family:var(--body);font-size:.67rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green-lt);margin-bottom:9px;display:block}
+    .cat-title{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--green-dk);margin-bottom:9px;line-height:1.2}
+    .cat.tall .cat-title{font-size:2.1rem}
+    .cat-desc{font-size:.85rem;color:var(--brown-lt);line-height:1.65}
+    .cat-arr{display:inline-flex;align-items:center;gap:6px;font-family:var(--body);font-size:.79rem;font-weight:600;color:var(--green);margin-top:16px;transition:gap .18s var(--easeb)}
+    .cat:hover .cat-arr{gap:11px}
+
+    /* SHOP */
+    #shop{background:var(--pink)}
+    .shop-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;gap:24px;flex-wrap:wrap}
+    .shop-tabs{display:flex;gap:8px;margin-bottom:36px;flex-wrap:wrap}
+    .tab{font-family:var(--body);font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:8px 20px;border-radius:100px;border:1.5px solid rgba(85,107,62,.2);color:var(--green-dk);background:transparent;cursor:none;transition:background .2s,border-color .2s,color .2s}
+    .tab.on,.tab:hover{background:var(--green);border-color:var(--green);color:var(--cream)}
+    .shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .sc{background:var(--cream);border-radius:20px;overflow:hidden;transition:transform .25s var(--ease),box-shadow .25s;cursor:none;border:1px solid rgba(58,42,34,.05)}
+    .sc:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(85,107,62,.13)}
+    .sc.wide{grid-column:span 2}
+    .sc-thumb{height:196px;display:flex;align-items:center;justify-content:center;font-size:3.4rem;position:relative;overflow:hidden}
+    .sc.wide .sc-thumb{height:214px}
+    .sc-badge{position:absolute;top:13px;left:13px;background:rgba(247,241,232,.92);color:var(--green-dk);font-family:var(--body);font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:100px}
+    .sc-body{padding:18px 20px 22px}
+    .sc-cat{font-family:var(--body);font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--pink-deep);margin-bottom:5px;display:block}
+    .sc-name{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--green-dk);margin-bottom:6px;line-height:1.25}
+    .sc-desc{font-size:.82rem;color:var(--brown-lt);line-height:1.6;margin-bottom:14px}
+    .sc-foot{display:flex;align-items:center;justify-content:space-between}
+    .sc-price{font-family:var(--serif);font-size:1.15rem;color:var(--green-dk)}
+    .sc-price small{font-family:var(--body);font-size:.68rem;color:var(--brown-lt)}
+    .sc-btn{background:var(--green);color:var(--cream);font-family:var(--body);font-size:.74rem;font-weight:700;padding:8px 17px;border-radius:100px;border:0;cursor:none;transition:background .2s,transform .15s var(--easeb)}
+    .sc-btn:hover{background:var(--green-dk);transform:scale(1.06)}
+    .shop-feat{margin-top:22px;background:var(--green-dk);border-radius:20px;padding:38px 42px;display:grid;grid-template-columns:1fr auto;gap:36px;align-items:center}
+    .shop-feat h3{font-family:var(--serif);font-size:1.95rem;font-weight:400;color:var(--cream);margin-bottom:7px}
+    .shop-feat h3 em{font-style:italic;color:var(--pink-mid)}
+    .shop-feat p{font-size:.9rem;color:rgba(247,241,232,.58);max-width:460px}
+    .chips{display:flex;gap:9px;margin-top:18px;flex-wrap:wrap}
+    .chip{background:rgba(247,241,232,.08);border:1px solid rgba(247,241,232,.12);color:var(--pink);font-family:var(--body);font-size:.78rem;font-weight:600;padding:8px 15px;border-radius:100px}
+
+    /* SKINCARE RECS */
+    #skincare{background:var(--cream-warm)}
+    .skc-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-top:52px}
+    .skc-sticky{position:sticky;top:96px}
+    .ing-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+    .itab{font-family:var(--body);font-size:.74rem;font-weight:600;padding:7px 15px;border-radius:100px;border:1.5px solid rgba(85,107,62,.2);color:var(--green-dk);background:transparent;cursor:none;transition:background .2s,border-color .2s,color .2s}
+    .itab.on,.itab:hover{background:var(--green);border-color:var(--green);color:var(--cream)}
+    .trust-box{background:var(--cream);border-radius:18px;padding:30px;border:1px solid rgba(58,42,34,.07)}
+    .skc-cards{display:flex;flex-direction:column;gap:14px}
+    .skc{background:var(--cream);border-radius:18px;padding:24px;border:1px solid rgba(58,42,34,.07);display:grid;grid-template-columns:62px 1fr;gap:18px;align-items:start;transition:transform .2s var(--ease),box-shadow .2s;cursor:none}
+    .skc:hover{transform:translateX(5px);box-shadow:0 10px 30px rgba(85,107,62,.09)}
+    .skc-num{width:62px;height:62px;border-radius:14px;background:var(--pink);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.55rem;font-weight:400;color:var(--green-dk);flex-shrink:0}
+    .skc.feat .skc-num{background:var(--green);color:var(--cream)}
+    .skc-ctag{font-family:var(--body);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--pink-deep);margin-bottom:3px}
+    .skc h3{font-family:var(--serif);font-size:1.12rem;font-weight:400;color:var(--green-dk);margin-bottom:4px}
+    .skc p{font-size:.83rem;color:var(--brown-lt);line-height:1.65}
+    .skc-lnk{display:inline-flex;align-items:center;gap:5px;font-family:var(--body);font-size:.77rem;font-weight:600;color:var(--green);margin-top:9px;border-bottom:1px solid rgba(85,107,62,.22);transition:border-color .2s,gap .15s var(--easeb)}
+    .skc-lnk:hover{border-color:var(--green);gap:9px}
+
+    /* BLOG */
+    #blog{background:var(--cream)}
+    .blog-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;gap:24px;flex-wrap:wrap}
+    .blog-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:18px}
+    .bc{border-radius:20px;overflow:hidden;background:var(--cream-warm);border:1px solid rgba(58,42,34,.06);transition:transform .25s var(--ease),box-shadow .25s;cursor:none}
+    .bc:hover{transform:translateY(-5px);box-shadow:0 16px 42px rgba(85,107,62,.1)}
+    .bc-img{height:195px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .bc.feat .bc-img{height:272px}
+    .bc-cat{position:absolute;bottom:13px;left:13px;font-family:var(--body);font-size:.63rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(247,241,232,.92);color:var(--green-dk);padding:5px 11px;border-radius:100px}
+    .bc-body{padding:20px 22px 24px}
+    .bc-title{font-family:var(--serif);font-size:1.08rem;font-weight:400;color:var(--green-dk);line-height:1.35;margin-bottom:7px}
+    .bc.feat .bc-title{font-size:1.5rem}
+    .bc-meta{font-size:.74rem;color:var(--brown-lt);display:flex;align-items:center;gap:7px}
+    .bc-dot{width:4px;height:4px;border-radius:50%;background:var(--pink-deep);flex-shrink:0}
+    .bc-rd{display:inline-flex;align-items:center;gap:5px;font-family:var(--body);font-size:.77rem;font-weight:600;color:var(--green);margin-top:13px;transition:gap .15s var(--easeb)}
+    .bc:hover .bc-rd{gap:9px}
+
+    /* SUBSCRIPTION */
+    #subscription{background:var(--green-dk);padding:108px 80px}
+    #subscription .sl{color:var(--green-lt)}.#subscription .sl::before{background:var(--green-lt)}
+    .sub-sl{font-family:var(--body);font-size:.69rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--green-lt);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+    .sub-sl::before{content:'';width:26px;height:1px;background:var(--green-lt);flex-shrink:0}
+    .sub-sh{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,3.2rem);font-weight:400;line-height:1.1;letter-spacing:-.03em;color:var(--cream)}
+    .sub-sh em{font-style:italic;color:var(--pink-mid)}
+    .sub-sp{font-size:1rem;line-height:1.8;color:rgba(247,241,232,.58);max-width:530px;margin-top:12px;margin-bottom:52px}
+    .sub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .subc{border-radius:20px;padding:34px 30px;border:1px solid rgba(247,241,232,.1);transition:border-color .25s,background .25s,transform .25s var(--ease);cursor:none}
+    .subc:hover{border-color:rgba(247,241,232,.22);background:rgba(247,241,232,.04);transform:translateY(-4px)}
+    .subc.feat{background:var(--pink);border-color:var(--pink)}
+    .subc.feat:hover{background:var(--pink-mid);border-color:var(--pink-mid)}
+    .sub-badge{font-family:var(--body);font-size:.63rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:100px;background:var(--green);color:var(--cream);display:inline-block;margin-bottom:20px}
+    .subc.feat .sub-badge{background:var(--green-dk)}
+    .sub-name{font-family:var(--serif);font-size:1.45rem;font-weight:400;color:var(--cream);margin-bottom:5px}
+    .subc.feat .sub-name{color:var(--green-dk)}
+    .sub-price{font-family:var(--serif);font-size:2.7rem;font-weight:300;color:var(--pink);line-height:1;margin-bottom:3px}
+    .subc.feat .sub-price{color:var(--green-dk)}
+    .sub-period{font-size:.79rem;color:rgba(247,241,232,.42);margin-bottom:22px}
+    .subc.feat .sub-period{color:rgba(58,42,34,.48)}
+    .sub-perks{display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
+    .sub-perk{font-size:.87rem;color:rgba(247,241,232,.62);display:flex;align-items:center;gap:9px}
+    .subc.feat .sub-perk{color:var(--brown)}
+    .sub-perk::before{content:'✓';color:var(--green-lt);font-weight:700;flex-shrink:0}
+    .subc.feat .sub-perk::before{color:var(--green)}
+    .sub-cta{width:100%;background:rgba(247,241,232,.1);color:var(--cream);font-family:var(--body);font-size:.87rem;font-weight:600;padding:13px;border-radius:100px;border:1.5px solid rgba(247,241,232,.14);cursor:none;transition:background .2s,border-color .2s}
+    .subc:hover .sub-cta{background:rgba(247,241,232,.18)}
+    .subc.feat .sub-cta{background:var(--green-dk);color:var(--cream);border-color:var(--green-dk)}
+    .subc.feat:hover .sub-cta{background:var(--green);border-color:var(--green)}
+
+    /* TESTIMONIALS */
+    #testimonials{background:var(--pink);padding:108px 80px}
+    .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px}
+    .tc{background:var(--cream);border-radius:20px;padding:30px;border:1px solid rgba(58,42,34,.06);transition:transform .25s var(--ease),box-shadow .25s;cursor:none}
+    .tc:hover{transform:translateY(-4px);box-shadow:0 15px 38px rgba(85,107,62,.1)}
+    .tc-stars{color:#B8763A;letter-spacing:2px;font-size:.84rem;margin-bottom:15px}
+    .tc-q{font-family:var(--serif);font-style:italic;font-size:1.04rem;font-weight:300;color:var(--green-dk);line-height:1.72;margin-bottom:20px}
+    .tc-auth{display:flex;align-items:center;gap:11px}
+    .tc-av{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1rem;font-style:italic;color:var(--cream)}
+    .tc-name{font-family:var(--body);font-size:.83rem;font-weight:600;color:var(--green-dk)}
+    .tc-handle{font-size:.73rem;color:var(--brown-lt)}
+
+    /* NEWSLETTER */
+    #newsletter{background:var(--cream-warm);padding:108px 80px}
+    .nw-in{max-width:660px}
+    .nw-form{display:flex;gap:10px;margin-top:34px;padding:7px;background:var(--cream);border:1.5px solid rgba(85,107,62,.14);border-radius:100px;max-width:500px;box-shadow:0 10px 30px rgba(85,107,62,.08)}
+    .nw-form input{flex:1;border:0;background:transparent;font-family:var(--body);font-size:.9rem;color:var(--brown);padding:8px 14px;outline:none;min-width:0}
+    .nw-form input::placeholder{color:var(--brown-lt)}
+    .nw-perks{display:flex;gap:22px;margin-top:16px;flex-wrap:wrap}
+    .nw-perk{font-size:.77rem;color:var(--brown-lt);display:flex;align-items:center;gap:5px}
+    .nw-perk::before{content:'✓';color:var(--green);font-weight:700}
+
+    /* FOOTER */
+    footer{background:var(--brown);padding:68px 80px 38px}
+    .ft-top{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:52px;margin-bottom:52px}
+    .ft-logo{font-family:var(--serif);font-size:1.55rem;font-weight:400;color:var(--cream);margin-bottom:13px;display:block}
+    .ft-logo span{color:var(--pink-mid)}
+    .ft-p{font-size:.84rem;line-height:1.8;color:rgba(247,241,232,.42);max-width:230px}
+    .ft-socs{display:flex;gap:9px;margin-top:22px}
+    .ft-s{width:36px;height:36px;border-radius:50%;border:1px solid rgba(247,241,232,.14);display:flex;align-items:center;justify-content:center;font-size:.9rem;color:rgba(247,241,232,.45);transition:background .2s,border-color .2s,color .2s,transform .15s var(--easeb)}
+    .ft-s:hover{background:var(--pink-mid);border-color:var(--pink-mid);color:var(--brown);transform:scale(1.1)}
+    .ft-col h4{font-family:var(--serif);font-size:.98rem;font-weight:400;color:var(--cream);margin-bottom:18px}
+    .ft-col a{display:block;font-size:.83rem;color:rgba(247,241,232,.4);margin-bottom:11px;transition:color .2s,transform .15s}
+    .ft-col a:hover{color:var(--pink-mid);transform:translateX(3px)}
+    .ft-bot{border-top:1px solid rgba(247,241,232,.08);padding-top:26px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+    .ft-bot p{font-size:.77rem;color:rgba(247,241,232,.28)}
+    .ft-bot span{font-family:var(--serif);font-style:italic;font-size:.88rem;color:rgba(247,241,232,.22)}
+
+    /* RESPONSIVE */
+    @media(max-width:1020px){.shop-grid{grid-template-columns:repeat(2,1fr)}.sc.wide{grid-column:span 2}.sub-grid{grid-template-columns:1fr;max-width:420px}.skc-grid{grid-template-columns:1fr}.skc-sticky{position:static}}
+    @media(max-width:860px){#hero{grid-template-columns:1fr}.hero-right{display:none}.hero-left{padding:96px 32px 80px}#about{grid-template-columns:1fr;padding:80px 32px;gap:44px}.cats-grid{grid-template-columns:1fr 1fr}.cat.tall{grid-row:span 1;min-height:auto}.blog-grid{grid-template-columns:1fr}.tg{grid-template-columns:1fr}.ft-top{grid-template-columns:1fr 1fr}.sec,#subscription,#testimonials,#newsletter{padding:78px 32px}nav{padding:0 24px}nav ul{display:none}body{cursor:auto}#cdot,#cring{display:none}.shop-feat{grid-template-columns:1fr}}
+    @media(max-width:560px){.cats-grid,.shop-grid{grid-template-columns:1fr}.sc.wide{grid-column:span 1}.ft-top{grid-template-columns:1fr}.sub-grid{max-width:100%}.ast-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <nav class="nav page" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a class="brand" href="#home" aria-label="Stylish and Healthy home">
-        <span class="brand-mark">S&H</span>
-        <span>stylishandhealthy.</span>
-      </a>
-      <div class="nav-links">
-        <a href="#shop">Shop</a>
-        <a href="#blog">Blog</a>
-        <a href="#about">About us</a>
-        <a href="#contact">Contact us</a>
-        <a href="#newsletter">Newsletter</a>
+
+<div id="cdot"></div>
+<div id="cring"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo"><b>S&amp;H</b><span>.</span></a>
+  <ul>
+    <li><a href="#categories">Topics</a></li>
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#skincare">Skincare</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#subscription">Subscribe</a></li>
+    <li><a href="#newsletter" class="npill">Join Free</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-shape"></div>
+  <div class="hero-left">
+    <div class="eyebrow">Wellness · Skincare · Style · Self-Growth</div>
+    <h1 class="h1">Pretty <em>routines.</em><br>Smarter choices.</h1>
+    <span class="h1-sub">Where soft aesthetics meet real science.</span>
+    <p class="hero-p">Research-backed skincare, wellness habits, and self-improvement content — designed to feel as beautiful as it is useful. No trends. No pressure. Just real, gentle progress.</p>
+    <div class="hero-actions">
+      <a href="#shop" class="btn btn-f">Explore the shop →</a>
+      <a href="#subscription" class="btn btn-o">Weekly skincare deepdive</a>
+    </div>
+    <div class="hero-proof">
+      <div class="pavs">
+        <div class="pav pa1">S</div>
+        <div class="pav pa2">M</div>
+        <div class="pav pa3">L</div>
+      </div>
+      <p class="proof-t">Trusted by 10,000+ who want beauty and wellness to feel real.</p>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hcards">
+      <div class="hc hc1">
+        <div class="hc-tag">Weekly deepdive</div>
+        <div class="hc-name">Skincare Decoded</div>
+      </div>
+      <div class="hc hc2">
+        <div class="hc-tag">Digital downloads</div>
+        <div class="hc-name">Pretty Planners &amp; Trackers</div>
+      </div>
+      <div class="hc hc3">
+        <div class="hc-tag">Sticker shop</div>
+        <div class="hc-name">Aesthetic Sticker Packs</div>
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <main id="home" class="page">
-    <section class="hero">
-      <div>
-        <div class="eyebrow">✦ Pretty routines. Smarter choices.</div>
-        <h1>We fight for beauty that is <span class="highlight">honest</span>, useful, and backed by care.</h1>
-        <p>
-          Stylish & Healthy is for women who love soft aesthetics, realistic routines, and information that does more than just look good. We create digital tools, skincare guidance, self-improvement content, and beautiful essentials with research, clarity, and intention.
-        </p>
-        <div class="hero-actions">
-          <a class="btn" href="#shop">Explore the shop</a>
-          <a class="btn secondary" href="#about">What we stand for</a>
-        </div>
-      </div>
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-t">
+    <span class="ti">Research-backed skincare</span><span class="ti">Digital planners</span><span class="ti">Aesthetic stickers</span><span class="ti">Wellness habits</span><span class="ti">Soft discipline</span><span class="ti">Weekly deepdive</span><span class="ti">Pretty routines</span><span class="ti">Smarter choices</span>
+    <span class="ti">Research-backed skincare</span><span class="ti">Digital planners</span><span class="ti">Aesthetic stickers</span><span class="ti">Wellness habits</span><span class="ti">Soft discipline</span><span class="ti">Weekly deepdive</span><span class="ti">Pretty routines</span><span class="ti">Smarter choices</span>
+  </div>
+</div>
 
-      <div class="hero-card" aria-label="Stylish and Healthy brand card">
-        <div class="orb">S&H</div>
-        <div class="thread"></div>
-        <div class="liquid-word">
-          <strong>stylishandhealthy.</strong>
-          <span>Digital planners, skincare clarity, motivation, and wellness resources made to feel beautiful and trustworthy.</span>
-        </div>
-      </div>
-    </section>
+<!-- ABOUT -->
+<section id="about">
+  <div class="ast-grid rv">
+    <div class="ast"><div class="ast-n">10k+</div><div class="ast-l">Community members</div></div>
+    <div class="ast"><div class="ast-n">50+</div><div class="ast-l">Free resources</div></div>
+    <div class="ast"><div class="ast-n">100%</div><div class="ast-l">Research-backed</div></div>
+    <div class="ast"><div class="ast-n">0</div><div class="ast-l">Fake guru energy</div></div>
+  </div>
+  <div class="about-copy rv d2">
+    <div class="sl">Who we are</div>
+    <h2 class="sh">Wellness that feels as <em>beautiful</em> as it should.</h2>
+    <p style="margin-top:18px">We believe self-improvement should never feel overwhelming, clinical, or fake. Stylishandhealthy is your soft corner of the internet — where real science meets beautiful aesthetics, and good habits feel genuinely enjoyable.</p>
+    <p>Every recommendation is backed by research, every design is intentional, and nothing here is designed to make you feel behind.</p>
+    <div class="aps">
+      <div class="ap"><div class="ap-ic">🍵</div><div><div class="ap-t">Research first, trends never</div><div class="ap-s">We decode ingredients, habits, and routines — no hype, no filler.</div></div></div>
+      <div class="ap"><div class="ap-ic">🌸</div><div><div class="ap-t">Beauty without pressure</div><div class="ap-s">Progress without guilt. Routines that fit your real life.</div></div></div>
+      <div class="ap"><div class="ap-ic">✦</div><div><div class="ap-t">Soft discipline. Real results.</div><div class="ap-s">Small consistent habits compound into beautiful transformations.</div></div></div>
+    </div>
+  </div>
+</section>
 
-    <section class="section reveal" aria-labelledby="fight-title">
-      <div class="section-header">
-        <h2 id="fight-title">What we fight for</h2>
-        <p>We are building a softer, smarter corner of the internet — one where beauty is not confusing, motivation is not toxic, and self-improvement does not have to feel overwhelming.</p>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <div class="icon">♡</div>
-          <h3>Trust over trends</h3>
-          <p>We turn noisy online advice into simple, researched, and realistic guidance you can actually understand.</p>
-        </article>
-        <article class="card">
-          <div class="icon">✎</div>
-          <h3>Beauty with structure</h3>
-          <p>Our planners, journals, templates, and trackers are made to help your routines feel calm, pretty, and doable.</p>
-        </article>
-        <article class="card">
-          <div class="icon">☼</div>
-          <h3>Progress without pressure</h3>
-          <p>We believe in becoming better without becoming mean to yourself. Soft discipline, real habits, honest growth.</p>
-        </article>
-      </div>
-    </section>
+<!-- CATEGORIES -->
+<section id="categories" class="sec">
+  <div class="cats-hdr rv">
+    <div>
+      <div class="sl">What we cover</div>
+      <h2 class="sh">Everything that makes you <em>glow.</em></h2>
+    </div>
+    <a href="#newsletter" class="btn btn-o">Join for free</a>
+  </div>
+  <div class="cats-grid">
+    <div class="cat tall dark rv">
+      <div class="cat-label">Deep dives</div>
+      <div class="cat-title">Skincare Science</div>
+      <div class="cat-desc">Ingredient breakdowns, routine guides, and the science behind serums, acids, and moisturisers — explained simply.</div>
+      <div class="cat-arr">Read →</div>
+    </div>
+    <div class="cat rv d1">
+      <div class="cat-label">Wellness</div>
+      <div class="cat-title">Habits &amp; Health</div>
+      <div class="cat-desc">Sleep, hydration, movement, and mindset — proven by science, brought to you simply.</div>
+      <div class="cat-arr">Explore →</div>
+    </div>
+    <div class="cat rv d2">
+      <div class="cat-label">Self-growth</div>
+      <div class="cat-title">Journaling &amp; Mindset</div>
+      <div class="cat-desc">Prompts, frameworks, and reflections to help you think clearly and grow with intention.</div>
+      <div class="cat-arr">Read →</div>
+    </div>
+    <div class="cat pink-bg rv d1">
+      <div class="cat-label">Organisation</div>
+      <div class="cat-title">Systems &amp; Planning</div>
+      <div class="cat-desc">Digital planners, habit trackers, and routine builders that make life feel calm and structured.</div>
+      <div class="cat-arr">Explore →</div>
+    </div>
+    <div class="cat rv d2">
+      <div class="cat-label">Aesthetic</div>
+      <div class="cat-title">Lifestyle &amp; Routines</div>
+      <div class="cat-desc">Morning rituals, self-care routines, and building a life you genuinely love.</div>
+      <div class="cat-arr">Read →</div>
+    </div>
+  </div>
+</section>
 
-    <section id="shop" class="section reveal">
-      <div class="feature">
-        <div class="mockup" aria-hidden="true"></div>
+<!-- SHOP -->
+<section id="shop" class="sec">
+  <div class="shop-hdr rv">
+    <div>
+      <div class="sl">The shop</div>
+      <h2 class="sh">Stickers, clothing, downloads<br>&amp; <em>more.</em></h2>
+    </div>
+    <a href="#newsletter" class="btn btn-f">Browse all →</a>
+  </div>
+  <div class="shop-tabs rv d1">
+    <button class="tab on">All</button>
+    <button class="tab">Stickers</button>
+    <button class="tab">Digital</button>
+    <button class="tab">Clothing</button>
+    <button class="tab">Accessories</button>
+  </div>
+  <div class="shop-grid">
+    <div class="sc wide rv d1">
+      <div class="sc-thumb" style="background:linear-gradient(135deg,var(--green),#3D4F2D)">
+        <div class="sc-badge">✦ Bestseller</div>
+        <span style="font-size:5rem">🌿</span>
+      </div>
+      <div class="sc-body">
+        <span class="sc-cat">Digital download</span>
+        <div class="sc-name">Skincare Starter Guide — Beginner's Complete Routine</div>
+        <p class="sc-desc">Everything you need to build a simple, effective skincare routine. Ingredients decoded, AM + PM layouts, skin type guide, and a printable tracker.</p>
+        <div class="sc-foot"><div class="sc-price"><small>from</small> Free</div><button class="sc-btn">Get it →</button></div>
+      </div>
+    </div>
+    <div class="sc rv d1">
+      <div class="sc-thumb" style="background:linear-gradient(135deg,var(--pink),#FDF0F3)">
+        <div class="sc-badge">New</div>
+        <span>🎀</span>
+      </div>
+      <div class="sc-body">
+        <span class="sc-cat">Sticker pack</span>
+        <div class="sc-name">Soft Aesthetic Sticker Pack Vol.1</div>
+        <p class="sc-desc">30+ die-cut stickers — matcha, wellness vibes, journal tabs, and aesthetic labels.</p>
+        <div class="sc-foot"><div class="sc-price"><small>from</small> $8</div><button class="sc-btn">Shop →</button></div>
+      </div>
+    </div>
+    <div class="sc rv d2">
+      <div class="sc-thumb" style="background:linear-gradient(135deg,var(--cream-warm),var(--cream))">
+        <div class="sc-badge">Popular</div>
+        <span>📓</span>
+      </div>
+      <div class="sc-body">
+        <span class="sc-cat">Digital planner</span>
+        <div class="sc-name">Weekly Wellness Planner — Printable PDF</div>
+        <p class="sc-desc">Habits, skincare tracking, journaling, and to-dos in one gorgeous printable layout.</p>
+        <div class="sc-foot"><div class="sc-price"><small>from</small> $6</div><button class="sc-btn">Buy →</button></div>
+      </div>
+    </div>
+    <div class="sc rv d1">
+      <div class="sc-thumb" style="background:linear-gradient(135deg,var(--green-lt),var(--ice))">
+        <div class="sc-badge">Limited</div>
+        <span>👕</span>
+      </div>
+      <div class="sc-body">
+        <span class="sc-cat">Clothing</span>
+        <div class="sc-name">S&amp;H Oversized Tee — Matcha Edition</div>
+        <p class="sc-desc">Soft sage green oversized tee with the S&H logo. 100% organic cotton.</p>
+        <div class="sc-foot"><div class="sc-price"><small>from</small> $38</div><button class="sc-btn">Shop →</button></div>
+      </div>
+    </div>
+    <div class="sc rv d2">
+      <div class="sc-thumb" style="background:linear-gradient(135deg,#F8D6DE,#F3AFC0)">
+        <div class="sc-badge">New</div>
+        <span>🧴</span>
+      </div>
+      <div class="sc-body">
+        <span class="sc-cat">Sticker pack</span>
+        <div class="sc-name">Skincare Ingredient Sticker Sheet</div>
+        <p class="sc-desc">Label your skincare shelf or journal: Retinol, Niacinamide, SPF and more.</p>
+        <div class="sc-foot"><div class="sc-price"><small>from</small> $5</div><button class="sc-btn">Buy →</button></div>
+      </div>
+    </div>
+    <div class="sc rv d3">
+      <div class="sc-thumb" style="background:linear-gradient(135deg,var(--brown),#6B5045)">
+        <div class="sc-badge">Merch</div>
+        <span>☕</span>
+      </div>
+      <div class="sc-body">
+        <span class="sc-cat">Accessories</span>
+        <div class="sc-name">Matcha Morning Canvas Tote</div>
+        <p class="sc-desc">Sturdy canvas tote with the Stylishandhealthy. wordmark. Effortlessly aesthetic.</p>
+        <div class="sc-foot"><div class="sc-price"><small>from</small> $24</div><button class="sc-btn">Shop →</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="shop-feat rv d2">
+    <div>
+      <h3>The Complete <em>Starter Bundle</em></h3>
+      <p>Everything you need to begin your wellness and skincare journey — discounted digital bundle. Skincare guide, wellness planner, habit tracker, journal prompts, and exclusive sticker sheet.</p>
+      <div class="chips">
+        <div class="chip">Skincare guide</div>
+        <div class="chip">Wellness planner</div>
+        <div class="chip">Habit tracker</div>
+        <div class="chip">Journal prompts</div>
+        <div class="chip">Sticker sheet</div>
+      </div>
+    </div>
+    <a href="#newsletter" class="btn btn-f" style="white-space:nowrap;flex-shrink:0">Get the bundle →</a>
+  </div>
+</section>
+
+<!-- SKINCARE RECS -->
+<section id="skincare" class="sec">
+  <div class="rv">
+    <div class="sl">Skincare Recs</div>
+    <h2 class="sh">Products worth <em>every penny.</em></h2>
+    <p class="sp" style="margin-top:12px">Tested, researched, and actually recommended. No paid placements without disclosure. Trust is our core brand asset.</p>
+  </div>
+  <div class="skc-grid">
+    <div class="skc-sticky rv d1">
+      <div class="ing-tabs">
+        <button class="itab on">All</button>
+        <button class="itab">Acne-prone</button>
+        <button class="itab">Dry skin</button>
+        <button class="itab">Anti-aging</button>
+        <button class="itab">Sensitive</button>
+      </div>
+      <div class="trust-box">
+        <div class="sl" style="margin-bottom:10px">Why trust us?</div>
+        <p class="sp" style="font-size:.88rem;max-width:none">Every recommendation is based on ingredient research, dermatology literature, and real testing. Affiliate links are always disclosed. We never recommend what we wouldn't use ourselves.</p>
+        <a href="#subscription" class="btn btn-f" style="margin-top:22px;display:inline-flex">Weekly deepdive →</a>
+      </div>
+    </div>
+    <div class="skc-cards rv d2">
+      <div class="skc feat">
+        <div class="skc-num" style="background:var(--green);color:var(--cream)">1</div>
         <div>
-          <span class="tag">Shop</span>
-          <h2>Digital products for your prettiest routines.</h2>
-          <p>Coming soon: digital planners, journals, skincare routine trackers, gym trackers, wall printables, sticker packs, and to-do list templates designed in our pink and matcha world.</p>
-          <div class="hero-actions">
-            <a class="btn" href="mailto:filiplovric41@gmail.com">Request early access</a>
-            <a class="btn secondary" href="#newsletter">Join the list</a>
-          </div>
+          <div class="skc-ctag">Holy Grail</div>
+          <h3>The Ordinary — Salicylic Acid 2% Solution</h3>
+          <p>Unclogs pores deeply, reduces acne, controls excess oil, improves texture. One of the best value-for-money actives available. Perfect entry-level BHA.</p>
+          <a href="#newsletter" class="skc-lnk">Full breakdown + affiliate link →</a>
         </div>
       </div>
-    </section>
-
-    <section id="blog" class="section reveal">
-      <div class="section-header">
-        <h2>Blog</h2>
-        <p>Evidence-minded posts for skincare, wellness, motivation, and self-improvement — written beautifully, but never blindly.</p>
+      <div class="skc">
+        <div class="skc-num">2</div>
+        <div>
+          <div class="skc-ctag">Moisturiser</div>
+          <h3>CeraVe — Moisturising Cream</h3>
+          <p>Ceramides, hyaluronic acid, and niacinamide in one affordable fragrance-free formula. Works for every skin type.</p>
+          <a href="#newsletter" class="skc-lnk">Full ingredient breakdown →</a>
+        </div>
       </div>
-      <div class="blog-list">
-        <a class="post" href="#">
-          <span class="tag">Skincare</span>
-          <div>
-            <h3>How to build a skincare routine that makes sense</h3>
-            <p>A beginner-friendly guide to choosing steps based on your skin goals, not random viral advice.</p>
-          </div>
-          <span class="arrow">→</span>
-        </a>
-        <a class="post" href="#">
-          <span class="tag">Mindset</span>
-          <div>
-            <h3>Motivation is cute, but systems are better</h3>
-            <p>How to design routines that support you even when you do not feel inspired.</p>
-          </div>
-          <span class="arrow">→</span>
-        </a>
-        <a class="post" href="#">
-          <span class="tag">Wellness</span>
-          <div>
-            <h3>Soft discipline without toxic productivity</h3>
-            <p>A kinder approach to habits, planning, fitness, and self-improvement.</p>
-          </div>
-          <span class="arrow">→</span>
-        </a>
+      <div class="skc">
+        <div class="skc-num">3</div>
+        <div>
+          <div class="skc-ctag">SPF</div>
+          <h3>Altruist — Sun Protection SPF 50+</h3>
+          <p>High-protection, lightweight, shockingly affordable. Dermatologist-formulated with broad-spectrum UVA/UVB filters.</p>
+          <a href="#newsletter" class="skc-lnk">Why SPF is non-negotiable →</a>
+        </div>
       </div>
-    </section>
-
-    <section class="section reveal about-contact">
-      <div id="about" class="panel">
-        <h2>About us</h2>
-        <p>Stylish & Healthy is a digital lifestyle brand for women who want beauty, wellness, and self-improvement to feel trustworthy, feminine, and actually useful.</p>
-        <ul>
-          <li>We care about research, not fear-based advice.</li>
-          <li>We create tools that make routines easier to keep.</li>
-          <li>We love matcha, pink, clean design, and beautiful systems.</li>
-        </ul>
+      <div class="skc">
+        <div class="skc-num">4</div>
+        <div>
+          <div class="skc-ctag">Vitamin C</div>
+          <h3>Timeless — 20% Vitamin C + E Ferulic Acid</h3>
+          <p>A dupe-level match for the iconic $180 SkinCeuticals serum. Brightens, protects, and fades hyperpigmentation at a fraction of the cost.</p>
+          <a href="#newsletter" class="skc-lnk">The vitamin C science →</a>
+        </div>
       </div>
-
-      <div id="contact" class="panel">
-        <h2>Contact us</h2>
-        <p>For collaborations, product requests, affiliate inquiries, or anything beautiful, reach out anytime.</p>
-        <ul>
-          <li>Email: <a href="mailto:filiplovric41@gmail.com">filiplovric41@gmail.com</a></li>
-          <li>Brand: stylishandhealthy.</li>
-          <li>Focus: skincare, wellness, digital planning, and self-improvement.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="newsletter" class="newsletter reveal">
-      <div>
-        <h2>Subscribe to the newsletter</h2>
-        <p>Get skincare clarity, digital product drops, motivation letters, routine ideas, and soft self-improvement notes directly in your inbox.</p>
-      </div>
-      <form class="form" action="mailto:filiplovric41@gmail.com" method="post" enctype="text/plain">
-        <input type="email" name="email" placeholder="your email address" aria-label="Email address" required />
-        <button class="btn" type="submit">Subscribe</button>
-      </form>
-    </section>
-  </main>
-
-  <footer class="page">
-    <div class="footer-inner">
-      <p>© <span id="year"></span> stylishandhealthy. All rights reserved.</p>
-      <div class="socials" aria-label="Social media links">
-        <a href="#">Pinterest</a>
-        <a href="#">YouTube</a>
-        <a href="#">Instagram</a>
-        <a href="#">TikTok</a>
+      <div class="skc">
+        <div class="skc-num">5</div>
+        <div>
+          <div class="skc-ctag">Retinol</div>
+          <h3>Paula's Choice — 1% Retinol Treatment</h3>
+          <p>Encapsulated retinol with soothing ingredients that minimise irritation while delivering real anti-aging results. The ideal starting retinoid.</p>
+          <a href="#newsletter" class="skc-lnk">Retinol beginner guide →</a>
+        </div>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+<!-- BLOG -->
+<section id="blog" class="sec">
+  <div class="blog-hdr rv">
+    <div>
+      <div class="sl">From the blog</div>
+      <h2 class="sh">Reads that make you <em>better.</em></h2>
+    </div>
+    <a href="#newsletter" class="btn btn-o">All posts →</a>
+  </div>
+  <div class="blog-grid">
+    <div class="bc feat rv d1">
+      <div class="bc-img" style="background:linear-gradient(135deg,var(--green),#3D4F2D)">
+        <div class="bc-cat">Skincare</div>
+      </div>
+      <div class="bc-body">
+        <div class="bc-title">5 Reasons The Ordinary Salicylic Acid Should Be in Your Routine — and How to Actually Use It</div>
+        <div class="bc-meta"><div class="bc-dot"></div>7 min read · Skincare Science</div>
+        <div class="bc-rd">Read more →</div>
+      </div>
+    </div>
+    <div class="bc rv d2">
+      <div class="bc-img" style="background:linear-gradient(135deg,var(--pink),#F8D6DE)">
+        <div class="bc-cat">Wellness</div>
+      </div>
+      <div class="bc-body">
+        <div class="bc-title">5 Science-Backed Tips That Actually Improve Your Life</div>
+        <div class="bc-meta"><div class="bc-dot"></div>5 min read · Wellness</div>
+        <div class="bc-rd">Read →</div>
+      </div>
+    </div>
+    <div class="bc rv d3">
+      <div class="bc-img" style="background:linear-gradient(135deg,var(--cream-warm),var(--cream))">
+        <div class="bc-cat">Journaling</div>
+      </div>
+      <div class="bc-body">
+        <div class="bc-title">8 Journal Prompts for Deeper Thinking and Clearer Intentions</div>
+        <div class="bc-meta"><div class="bc-dot"></div>4 min read · Self-Growth</div>
+        <div class="bc-rd">Read →</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.16 });
+<!-- SUBSCRIPTION -->
+<section id="subscription">
+  <div style="max-width:1200px;margin:0 auto;padding:108px 80px" class="sec" style="padding:0">
+    <div class="rv" style="margin-bottom:50px">
+      <div class="sub-sl">Weekly Skincare Deepdive</div>
+      <div class="sub-sh">Get the science <em>delivered.</em></div>
+      <p class="sub-sp">Every week: one ingredient decoded, one routine tip, one product recommendation, and one habit worth trying. Research-first, beautifully written.</p>
+    </div>
+    <div class="sub-grid">
+      <div class="subc rv d1">
+        <div class="sub-badge">Free</div>
+        <div class="sub-name">Starter</div>
+        <div class="sub-price">$0</div>
+        <div class="sub-period">/ forever free</div>
+        <div class="sub-perks">
+          <div class="sub-perk">Monthly skincare roundup</div>
+          <div class="sub-perk">Free resources &amp; downloads</div>
+          <div class="sub-perk">Blog posts &amp; recommendations</div>
+          <div class="sub-perk">Community access</div>
+        </div>
+        <button class="sub-cta">Join free →</button>
+      </div>
+      <div class="subc feat rv d2">
+        <div class="sub-badge">Most popular</div>
+        <div class="sub-name">Deepdive</div>
+        <div class="sub-price">$6</div>
+        <div class="sub-period">/ month — cancel anytime</div>
+        <div class="sub-perks">
+          <div class="sub-perk">Weekly ingredient deepdive</div>
+          <div class="sub-perk">Full routine guides</div>
+          <div class="sub-perk">Product database access</div>
+          <div class="sub-perk">Exclusive PDF downloads</div>
+          <div class="sub-perk">Reader Q&amp;A answers</div>
+        </div>
+        <button class="sub-cta">Start for $6 →</button>
+      </div>
+      <div class="subc rv d3">
+        <div class="sub-badge">Premium</div>
+        <div class="sub-name">Full Access</div>
+        <div class="sub-price">$12</div>
+        <div class="sub-period">/ month — cancel anytime</div>
+        <div class="sub-perks">
+          <div class="sub-perk">Everything in Deepdive</div>
+          <div class="sub-perk">Personal routine review</div>
+          <div class="sub-perk">Early shop access &amp; discounts</div>
+          <div class="sub-perk">Exclusive sticker drops</div>
+          <div class="sub-perk">Monthly live Q&amp;A session</div>
+        </div>
+        <button class="sub-cta">Get full access →</button>
+      </div>
+    </div>
+  </div>
+</section>
 
-    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
-  </script>
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="rv">
+    <div class="sl">Kind words</div>
+    <h2 class="sh">Loved by people who want wellness<br>to feel <em>beautiful.</em></h2>
+  </div>
+  <div class="tg">
+    <div class="tc rv d1">
+      <div class="tc-stars">★★★★★</div>
+      <div class="tc-q">"The salicylic acid breakdown completely changed how I shop for skincare. I finally understand what I'm actually putting on my face."</div>
+      <div class="tc-auth"><div class="tc-av" style="background:var(--green)">M</div><div><div class="tc-name">Maya K.</div><div class="tc-handle">@mayaskinroutine</div></div></div>
+    </div>
+    <div class="tc rv d2">
+      <div class="tc-stars">★★★★★</div>
+      <div class="tc-q">"The weekly deepdive subscription is genuinely the only newsletter I open every single time. Smart, beautiful, and actually useful."</div>
+      <div class="tc-auth"><div class="tc-av" style="background:var(--pink-deep)">L</div><div><div class="tc-name">Lena P.</div><div class="tc-handle">@lenalovesskn</div></div></div>
+    </div>
+    <div class="tc rv d3">
+      <div class="tc-stars">★★★★★</div>
+      <div class="tc-q">"The planner download and the sticker pack made my skincare journaling feel like an actual hobby. I use it every morning."</div>
+      <div class="tc-auth"><div class="tc-av" style="background:var(--brown-lt)">A</div><div><div class="tc-name">Ana R.</div><div class="tc-handle">@anaathome</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter">
+  <div class="nw-in rv">
+    <div class="sl">Join the community</div>
+    <h2 class="sh">Pretty routines,<br>delivered to your <em>inbox.</em></h2>
+    <p class="sp" style="margin-top:12px">Free skincare guides, wellness tips, and exclusive downloads. No spam — ever. Your trust is our most valuable asset.</p>
+    <form class="nw-form" onsubmit="handleSub(event)">
+      <input type="email" placeholder="your@email.com" required />
+      <button type="submit" class="btn btn-f" style="border-radius:100px;padding:11px 26px;cursor:none">Join free ✦</button>
+    </form>
+    <div class="nw-perks">
+      <div class="nw-perk">No spam, ever</div>
+      <div class="nw-perk">Free downloads on signup</div>
+      <div class="nw-perk">Unsubscribe anytime</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <span class="ft-logo">Stylishandhealthy<span>.</span></span>
+      <p class="ft-p">Pretty routines. Smarter choices. A soft corner of the internet for beauty, wellness, and self-improvement that feels as beautiful as it should.</p>
+      <div class="ft-socs">
+        <a href="#" class="ft-s">◎</a>
+        <a href="#" class="ft-s">⊕</a>
+        <a href="#" class="ft-s">◈</a>
+        <a href="#" class="ft-s">⊞</a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Shop</h4>
+      <a href="#shop">Sticker Packs</a>
+      <a href="#shop">Digital Downloads</a>
+      <a href="#shop">Clothing</a>
+      <a href="#shop">Accessories</a>
+      <a href="#shop">Bundles</a>
+    </div>
+    <div class="ft-col">
+      <h4>Explore</h4>
+      <a href="#categories">Topics</a>
+      <a href="#skincare">Skincare Recs</a>
+      <a href="#blog">Blog</a>
+      <a href="#subscription">Weekly Deepdive</a>
+      <a href="#newsletter">Newsletter</a>
+    </div>
+    <div class="ft-col">
+      <h4>About</h4>
+      <a href="#about">Our mission</a>
+      <a href="#">Affiliate disclosure</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy policy</a>
+      <a href="#">stylishandhealthy.com</a>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <p>© 2025 Stylishandhealthy. All rights reserved.</p>
+    <span>Pretty routines. Smarter choices.</span>
+  </div>
+</footer>
+
+<script>
+  // Cursor with lerp
+  const cdot = document.getElementById('cdot');
+  const cring = document.getElementById('cring');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cdot.style.left=mx+'px';cdot.style.top=my+'px'});
+  (function lr(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;cring.style.left=rx+'px';cring.style.top=ry+'px';requestAnimationFrame(lr)})();
+  document.querySelectorAll('a,button,.sc,.cat,.bc,.tc,.subc,.ap,.skc').forEach(el=>{
+    el.addEventListener('mouseenter',()=>document.body.classList.add('ch'));
+    el.addEventListener('mouseleave',()=>document.body.classList.remove('ch'));
+  });
+
+  // Nav
+  const nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>10),{passive:true});
+
+  // Reveal
+  const ro=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}}),{threshold:.1});
+  document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+
+  // Shop tabs
+  document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));t.classList.add('on')}));
+
+  // Ingredient tabs
+  document.querySelectorAll('.itab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.itab').forEach(x=>x.classList.remove('on'));t.classList.add('on')}));
+
+  // Newsletter
+  function handleSub(e){
+    e.preventDefault();
+    const btn=e.target.querySelector('button');
+    btn.textContent='✓ You\'re in!';
+    btn.style.background='var(--green-lt)';
+    setTimeout(()=>{btn.textContent='Join free ✦';btn.style.background='';e.target.reset()},3000);
+  }
+</script>
 </body>
 </html>
