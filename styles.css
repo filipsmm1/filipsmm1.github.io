@@ -1,83 +1,62 @@
-const menuBtn = document.getElementById('menuBtn');
-const navLinks = document.getElementById('navLinks');
-menuBtn?.addEventListener('click', () => navLinks.classList.toggle('open'));
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+menuToggle?.addEventListener('click', () => navLinks.classList.toggle('open'));
 
-const orb = document.getElementById('cursorOrb');
-if (window.matchMedia('(pointer:fine)').matches && orb) {
-  orb.style.display = 'block';
-  window.addEventListener('mousemove', (event) => {
-    orb.style.left = `${event.clientX}px`;
-    orb.style.top = `${event.clientY}px`;
-  });
-}
+document.querySelectorAll('.nav-links a').forEach((link) => {
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
+});
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) entry.target.classList.add('visible');
   });
-}, { threshold: 0.14 });
+}, { threshold: 0.12 });
+
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-const previews = {
-  daily: {
-    label: 'January 1 · Monday',
-    title: 'Today I am grateful for',
-    body: `
-      <div class="preview-lines"><span></span><span></span><span></span></div>
-      <h4>Top 3 priorities</h4>
-      <div class="preview-boxes"><span></span><span></span><span></span></div>
-      <h4>Evening reflection</h4>
-      <p class="muted">What went well today? What would I do differently?</p>
-    `
+const rituals = {
+  soft: {
+    title: 'Soft Reset Ritual',
+    items: [
+      'Open your journal and write one feeling you want to protect.',
+      'Plan only three priorities.',
+      'Do skincare slowly, not rushed.',
+      'End with one sentence: “I am becoming her by…”'
+    ]
   },
-  monthly: {
-    label: 'January · 2026',
-    title: 'Monthly overview',
-    body: `
-      <h4>Habit tracker</h4>
-      <div class="preview-boxes"><span></span><span></span><span></span><span></span></div>
-      <h4>This month’s focus</h4>
-      <div class="preview-lines"><span></span><span></span></div>
-      <p class="muted">Water 2L · Movement · No screens 1hr · Journal · Skincare</p>
-    `
+  glow: {
+    title: 'Glow Mode Ritual',
+    items: [
+      'Write three things you are grateful for before checking your phone.',
+      'Choose one beauty habit you can repeat all week.',
+      'Track water, movement, journaling, and skincare.',
+      'Reflect tonight on what made you feel beautiful.'
+    ]
   },
-  weekly: {
-    label: 'January · Week 1',
-    title: 'Weekly plan',
-    body: `
-      <h4>Weekly intention</h4>
-      <div class="preview-lines"><span></span><span></span></div>
-      <h4>Schedule blocks</h4>
-      <div class="preview-boxes"><span></span><span></span><span></span><span></span></div>
-      <p class="muted">Notes · This week’s win · Next week focus</p>
-    `
-  },
-  reflect: {
-    label: 'End of month',
-    title: 'Reflection prompts',
-    body: `
-      <h4>What drained me most this month?</h4>
-      <div class="preview-lines"><span></span><span></span></div>
-      <h4>What am I most proud of?</h4>
-      <div class="preview-lines"><span></span><span></span></div>
-      <h4>What does my body need right now?</h4>
-      <div class="preview-lines"><span></span><span></span></div>
-    `
+  focus: {
+    title: 'Focused Her Ritual',
+    items: [
+      'Write your top three priorities and circle the one that matters most.',
+      'Block your schedule before opening social apps.',
+      'Use the notes section for thoughts that distract you.',
+      'Close the day with one win and one lesson.'
+    ]
   }
 };
 
-const previewCard = document.getElementById('previewCard');
-document.querySelectorAll('.tab').forEach((tab) => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.tab').forEach((button) => button.classList.remove('active'));
-    tab.classList.add('active');
-    const preview = previews[tab.dataset.preview];
-    previewCard.style.opacity = '0';
-    previewCard.style.transform = 'translateY(8px)';
-    setTimeout(() => {
-      previewCard.innerHTML = `<p class="preview-label">${preview.label}</p><h3>${preview.title}</h3>${preview.body}`;
-      previewCard.style.opacity = '1';
-      previewCard.style.transform = 'translateY(0)';
-    }, 170);
+document.querySelectorAll('.tab').forEach((button) => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach((b) => b.classList.remove('active'));
+    button.classList.add('active');
+    const vibe = rituals[button.dataset.vibe];
+    document.getElementById('ritualTitle').textContent = vibe.title;
+    document.getElementById('ritualList').innerHTML = vibe.items.map((item) => `<li>${item}</li>`).join('');
   });
+});
+
+const glow = document.querySelector('.cursor-glow');
+window.addEventListener('pointermove', (event) => {
+  if (!glow) return;
+  glow.style.left = `${event.clientX - 160}px`;
+  glow.style.top = `${event.clientY - 160}px`;
 });

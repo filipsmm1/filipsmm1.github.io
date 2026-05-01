@@ -1,182 +1,165 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Stylish & Healthy | My Daily Journal 2026</title>
-  <meta name="description" content="My Daily Journal 2026 by Stylish & Healthy — a digital ritual for intentions, planning, reflection, habits, and feminine self-growth." />
+  <meta name="description" content="My Daily Journal 2026 by Stylish & Healthy — a digital daily ritual for intentions, planning, gratitude, habits, reflection and soft self-growth." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <div class="page-glow"></div>
-  <div class="cursor-orb" id="cursorOrb"></div>
-
-  <header class="topbar">
-    <p>New journal ritual for 2026</p>
-    <p>Live beautifully · Feel deeply · Thrive daily</p>
-    <p>Digital PDF planner</p>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="topline">✦ My Daily Journal 2026 is here ✦ Live beautifully. Feel deeply. Thrive daily. ✦</div>
+    <nav class="nav">
+      <a class="brand" href="#top" aria-label="Stylish and Healthy home">
+        <span>Stylish & Healthy</span>
+        <small>A Stylish & Healthy Ritual</small>
+      </a>
+      <button class="menu-toggle" aria-label="Open menu">☰</button>
+      <div class="nav-links">
+        <a href="#journal">Journal</a>
+        <a href="#inside">Inside</a>
+        <a href="#preview">Preview</a>
+        <a href="#routine">Routine</a>
+        <a class="pill-link" href="./assets/stylish_healthy_journal_2026.pdf" target="_blank" rel="noopener">View PDF</a>
+      </div>
+    </nav>
   </header>
 
-  <nav class="nav">
-    <a class="logo" href="#home" aria-label="Stylish and Healthy home">
-      <span>Stylish & Healthy</span>
-      <small>digital ritual space</small>
-    </a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
-    <div class="nav-links" id="navLinks">
-      <a href="#journal">Journal</a>
-      <a href="#inside">Inside</a>
-      <a href="#video">Video</a>
-      <a href="#preview">Preview</a>
-      <a href="#buy" class="nav-cta">Get the journal</a>
-    </div>
-  </nav>
-
-  <main id="home">
+  <main id="top">
     <section class="hero section-pad">
       <div class="hero-copy reveal">
-        <p class="eyebrow">My Daily Journal 2026</p>
-        <h1>A digital ritual for the woman becoming her.</h1>
-        <p class="hero-text">A clean, feminine, structured daily journal for intentions, gratitude, priorities, habits, weekly planning, and monthly reflection.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="assets/stylish_healthy_journal_2026.pdf" target="_blank" rel="noopener">View journal PDF</a>
-          <a class="btn secondary" href="assets/stylish_healthy_journal_2026.pdf" download>Download sample</a>
+        <p class="eyebrow">Digital daily journal · 517 pages · 2026 ritual system</p>
+        <h1>Make your year feel calm, beautiful, and intentional.</h1>
+        <p class="hero-text">A soft-luxury digital journal for intentions, weekly planning, gratitude, habit tracking, daily priorities, reflection, notes, and becoming the woman you promised yourself you would be.</p>
+        <div class="actions">
+          <a class="btn primary" href="./assets/stylish_healthy_journal_2026.pdf" target="_blank" rel="noopener">View journal PDF</a>
+          <a class="btn secondary" href="./assets/stylish_healthy_journal_2026.pdf" download>Download PDF</a>
         </div>
-        <div class="stats">
-          <div><strong>517</strong><span>pages</span></div>
-          <div><strong>12</strong><span>months</span></div>
+        <div class="hero-stats" aria-label="journal highlights">
+          <div><strong>2026</strong><span>dated planner</span></div>
+          <div><strong>517</strong><span>digital pages</span></div>
           <div><strong>daily</strong><span>ritual pages</span></div>
         </div>
       </div>
 
-      <div class="hero-media reveal" id="video">
-        <div class="video-frame">
-          <video src="assets/journal_showcase_v2.mp4" autoplay muted loop playsinline controls preload="metadata"></video>
+      <div class="hero-media reveal delay-1">
+        <div class="video-shell">
+          <video class="showcase-video" controls autoplay muted loop playsinline preload="metadata" poster="">
+            <source src="./assets/journal_showcase_v2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-badge floating">watch the journal</div>
         </div>
-        <div class="floating-note note-one">gratitude · priorities · schedule</div>
-        <div class="floating-note note-two">2026 ritual space</div>
       </div>
     </section>
 
-    <section class="marquee" aria-hidden="true">
+    <section class="marquee" aria-label="brand values">
       <div class="marquee-track">
-        <span>intentions</span><i>✦</i><span>daily gratitude</span><i>✦</i><span>habit tracker</span><i>✦</i><span>weekly planning</span><i>✦</i><span>reflection prompts</span><i>✦</i>
-        <span>intentions</span><i>✦</i><span>daily gratitude</span><i>✦</i><span>habit tracker</span><i>✦</i><span>weekly planning</span><i>✦</i><span>reflection prompts</span><i>✦</i>
+        <span>monthly intentions</span><span>habit tracker</span><span>weekly spread</span><span>daily gratitude</span><span>evening reflection</span><span>notes & brain dump</span>
+        <span>monthly intentions</span><span>habit tracker</span><span>weekly spread</span><span>daily gratitude</span><span>evening reflection</span><span>notes & brain dump</span>
       </div>
     </section>
 
-    <section class="section-pad intro" id="journal">
-      <div class="section-heading reveal">
-        <p class="eyebrow">The product</p>
-        <h2>Not another planner. A full-year soft discipline system.</h2>
-      </div>
-      <div class="journal-showcase reveal">
-        <div class="css-journal">
-          <div class="journal-tabs"><span>JAN</span><span>FEB</span><span>MAR</span><span>APR</span><span>MAY</span><span>JUN</span></div>
-          <div class="journal-page">
-            <small>My Daily Journal</small>
-            <h3>2026</h3>
-            <p>A Stylish & Healthy Ritual</p>
-            <div class="line"></div>
-            <em>Live beautifully. Feel deeply. Thrive daily.</em>
-          </div>
+    <section id="journal" class="product-focus section-pad">
+      <div class="journal-card reveal">
+        <div class="journal-cover css-journal">
+          <span class="year">2026</span>
+          <h2>My Daily Journal</h2>
+          <p>A Stylish & Healthy Ritual</p>
+          <small>Live beautifully. Feel deeply. Thrive daily.</small>
         </div>
-        <div class="product-copy">
-          <h3>Designed to make consistency feel beautiful.</h3>
-          <p>The journal opens with annual intentions and a year-at-a-glance, then moves through monthly overviews, weekly plans, daily pages, habit tracking, reflection prompts, and note space.</p>
-          <div class="pill-row">
-            <span>Digital PDF</span><span>2026 dated</span><span>Minimal luxe</span><span>Printable</span>
-          </div>
+        <div class="shadow-card one"></div>
+        <div class="shadow-card two"></div>
+      </div>
+      <div class="product-copy reveal delay-1">
+        <p class="eyebrow">The main product</p>
+        <h2>Not just a planner. A full-year ritual space.</h2>
+        <p>This journal is designed to help her set the tone for the year, plan each month, organize every week, anchor each day with gratitude and priorities, and reflect with honesty.</p>
+        <div class="mini-grid">
+          <div><b>Annual intentions</b><span>Mind, body, and life goals.</span></div>
+          <div><b>Monthly overview</b><span>Calendar, habits, and mood snapshot.</span></div>
+          <div><b>Daily pages</b><span>Gratitude, priorities, schedule, mood, energy.</span></div>
+          <div><b>Reflection prompts</b><span>Growth, not just productivity.</span></div>
         </div>
       </div>
     </section>
 
-    <section class="section-pad feature-grid" id="inside">
-      <article class="feature-card reveal">
-        <span class="icon">01</span>
-        <h3>Annual intentions</h3>
-        <p>Set what you are calling in for your mind, body, and life.</p>
-      </article>
-      <article class="feature-card reveal">
-        <span class="icon">02</span>
-        <h3>Monthly overview</h3>
-        <p>Plan each month with a calendar, focus area, and habit tracker.</p>
-      </article>
-      <article class="feature-card reveal">
-        <span class="icon">03</span>
-        <h3>Weekly spread</h3>
-        <p>Map your week with schedule blocks, intention, notes, and wins.</p>
-      </article>
-      <article class="feature-card reveal">
-        <span class="icon">04</span>
-        <h3>Daily ritual page</h3>
-        <p>Gratitude, top priorities, schedule, notes, energy, mood, and reflection.</p>
-      </article>
-    </section>
-
-    <section class="section-pad interactive" id="preview">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Preview the flow</p>
-        <h2>Choose the part of the journal you want to see.</h2>
+    <section id="inside" class="inside section-pad">
+      <div class="section-head reveal">
+        <p class="eyebrow">Inside the journal</p>
+        <h2>Everything she needs to return to herself daily.</h2>
       </div>
-      <div class="preview-shell reveal">
-        <div class="preview-controls" role="tablist" aria-label="Journal preview sections">
-          <button class="tab active" data-preview="daily">Daily Page</button>
-          <button class="tab" data-preview="monthly">Monthly Overview</button>
-          <button class="tab" data-preview="weekly">Weekly Spread</button>
-          <button class="tab" data-preview="reflect">Reflection</button>
-        </div>
-        <div class="preview-card" id="previewCard">
-          <p class="preview-label">January 1 · Monday</p>
-          <h3>Today I am grateful for</h3>
-          <div class="preview-lines"><span></span><span></span><span></span></div>
-          <h4>Top 3 priorities</h4>
-          <div class="preview-boxes"><span></span><span></span><span></span></div>
-          <h4>Evening reflection</h4>
-          <p class="muted">What went well today? What would I do differently?</p>
-        </div>
+      <div class="feature-grid">
+        <article class="feature-card reveal"><span>01</span><h3>Cover + intentions</h3><p>Start by writing what you want to feel, not just achieve.</p></article>
+        <article class="feature-card reveal"><span>02</span><h3>Monthly overview</h3><p>Plan boldly, track habits honestly, and see the month at a glance.</p></article>
+        <article class="feature-card reveal"><span>03</span><h3>Weekly spread</h3><p>Schedule the week and choose one big intention before Monday begins.</p></article>
+        <article class="feature-card reveal"><span>04</span><h3>Daily anchor</h3><p>Three gratitudes, three priorities, schedule, thoughts, mood, and energy.</p></article>
+        <article class="feature-card reveal"><span>05</span><h3>Reflection prompts</h3><p>Slow questions for self-awareness, confidence, and emotional clarity.</p></article>
+        <article class="feature-card reveal"><span>06</span><h3>Brain dump</h3><p>Extra pages to sketch, vent, list, dream, and reset your mind.</p></article>
       </div>
     </section>
 
-    <section class="section-pad ritual-builder">
-      <div class="builder-copy reveal">
-        <p class="eyebrow">Make it sell</p>
-        <h2>The video should be the main proof.</h2>
-        <p>Keep the showcase video above the fold. It instantly shows that this is a real product with depth, not just a concept.</p>
+    <section id="preview" class="preview section-pad">
+      <div class="preview-copy reveal">
+        <p class="eyebrow">PDF preview without broken embeds</p>
+        <h2>GitHub Pages-safe journal access.</h2>
+        <p>The PDF is included in the site files and linked normally. That prevents the “invalid PDF” or weird-symbol issue that can happen when trying to embed PDFs directly.</p>
+        <div class="actions compact">
+          <a class="btn primary" href="./assets/stylish_healthy_journal_2026.pdf" target="_blank" rel="noopener">Open PDF in new tab</a>
+          <a class="btn secondary" href="./assets/stylish_healthy_journal_2026.pdf" download>Download journal</a>
+        </div>
       </div>
-      <div class="checklist reveal">
-        <label><input type="checkbox" checked> Watch the journal flip-through</label>
-        <label><input type="checkbox" checked> Preview the PDF</label>
-        <label><input type="checkbox"> Add to cart / payment link</label>
-        <label><input type="checkbox"> Send instant download after purchase</label>
+      <div class="page-stack reveal delay-1" aria-hidden="true">
+        <div class="planner-page page-a"><h3>January Intentions</h3><div></div><div></div><div></div><p>How I want to feel</p></div>
+        <div class="planner-page page-b"><h3>Weekly Plan</h3><div class="grid-lines"></div><p>This week's win</p></div>
+        <div class="planner-page page-c"><h3>Daily Page</h3><p>Today I am grateful for</p><div></div><div></div><p>Top 3 priorities</p><div></div><div></div></div>
       </div>
     </section>
 
-    <section class="section-pad buy" id="buy">
-      <div class="buy-card reveal">
-        <p class="eyebrow">My Daily Journal 2026</p>
-        <h2>Start your ritual space today.</h2>
-        <p>Use this section for your Gumroad, Shopify, Payhip, Stan Store, or Etsy link.</p>
-        <div class="hero-actions center-actions">
-          <a class="btn primary" href="assets/stylish_healthy_journal_2026.pdf" target="_blank" rel="noopener">Open PDF</a>
-          <a class="btn secondary" href="assets/stylish_healthy_journal_2026.pdf" download>Download PDF</a>
+    <section id="routine" class="routine section-pad">
+      <div class="routine-panel reveal">
+        <p class="eyebrow">Website function</p>
+        <h2>Mini ritual builder</h2>
+        <p>Choose a vibe and get a matching daily ritual to pair with the journal.</p>
+        <div class="routine-tabs" role="tablist" aria-label="routine choices">
+          <button class="tab active" data-vibe="soft">Soft Reset</button>
+          <button class="tab" data-vibe="glow">Glow Mode</button>
+          <button class="tab" data-vibe="focus">Focused Her</button>
         </div>
-        <small class="note">Replace these PDF buttons with your checkout link when ready.</small>
       </div>
+      <div class="routine-result reveal delay-1">
+        <p class="eyebrow">Today’s ritual</p>
+        <h3 id="ritualTitle">Soft Reset Ritual</h3>
+        <ul id="ritualList">
+          <li>Open your journal and write one feeling you want to protect.</li>
+          <li>Plan only three priorities.</li>
+          <li>Do skincare slowly, not rushed.</li>
+          <li>End with one sentence: “I am becoming her by…”</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta section-pad reveal">
+      <p class="eyebrow">Stylish & Healthy</p>
+      <h2>Live beautifully. Feel deeply. Thrive daily.</h2>
+      <p>Make the journal the center of the brand experience: the video shows it, the copy explains it, and the PDF buttons make it easy to open or download.</p>
+      <a class="btn primary" href="./assets/stylish_healthy_journal_2026.pdf" target="_blank" rel="noopener">View the journal</a>
     </section>
   </main>
 
   <footer class="footer">
     <div>
       <strong>Stylish & Healthy</strong>
-      <p>Live beautifully. Feel deeply. Thrive daily.</p>
+      <p>A digital ritual brand for journaling, beauty, wellness, and becoming her.</p>
     </div>
-    <a href="#home">Back to top ↑</a>
+    <a href="./assets/stylish_healthy_journal_2026.pdf" download>Download journal PDF</a>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
