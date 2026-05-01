@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stylishandhealthy. — Pretty Routines. Smarter Choices.</title>
   <meta name="description" content="Research-backed skincare, wellness, and self-improvement that feels as beautiful as it should." />
+  <link rel="icon" type="image/png" href="logo_main.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Baloo+2:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Serif+Display:ital@0;1&family=Indie+Flower&family=Dancing+Script:wght@400;500;600;700&family=Coiny&family=DynaPuff:wght@400;500;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
   <style>
     :root {
       --pink:       #F8D6DE;
@@ -21,8 +22,12 @@
       --brown:      #3A2A22;
       --brown-lt:   #6B5045;
       --ice:        #DCECF0;
-      --serif: 'Cormorant Garamond', Georgia, serif;
-      --sans:  'Baloo 2', sans-serif;
+      --display: 'Playfair Display', Georgia, serif;
+      --display2: 'DM Serif Display', Georgia, serif;
+      --hand: 'Dancing Script', cursive;
+      --hand2: 'Indie Flower', cursive;
+      --bubble: 'DynaPuff', cursive;
+      --coiny: 'Coiny', cursive;
       --body:  'DM Sans', sans-serif;
       --ease:  cubic-bezier(0.22,1,0.36,1);
       --easeb: cubic-bezier(0.34,1.56,0.64,1);
@@ -40,28 +45,60 @@
     body.ch #cring{width:50px;height:50px;border-color:var(--pink-deep);opacity:.9}
     body.ch #cdot{background:var(--pink-deep);transform:translate(-50%,-50%) scale(1.8)}
 
+    /* WORDMARK BAR */
+    .wordmark-bar {
+      background: var(--pink);
+      text-align: center;
+      padding: 6px 0;
+      position: relative;
+      z-index: 201;
+    }
+    .wordmark-bar img {
+      height: 28px;
+      width: auto;
+      display: inline-block;
+      vertical-align: middle;
+      filter: none;
+    }
+
     /* NAV */
-    nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:66px;transition:background .4s var(--ease),box-shadow .4s}
-    nav.solid{background:rgba(247,241,232,.94);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(85,107,62,.1)}
-    .nav-logo{font-family:var(--serif);font-size:1.45rem;font-weight:500;color:var(--green-dk);letter-spacing:-.02em}
-    .nav-logo b{font-weight:600;color:var(--green)}
-    .nav-logo span{color:var(--pink-deep)}
+    nav{position:sticky;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:66px;transition:background .4s var(--ease),box-shadow .4s;background:rgba(247,241,232,.96);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(85,107,62,.1)}
+    .nav-logo{display:flex;align-items:center;gap:10px}
+    .nav-logo img{width:42px;height:42px;border-radius:50%;object-fit:cover;display:block}
     nav ul{list-style:none;display:flex;gap:34px;align-items:center}
     nav ul li a{font-family:var(--body);font-size:.79rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dk);transition:color .2s}
     nav ul li a:hover{color:var(--green)}
     .npill{background:var(--green);color:var(--cream)!important;padding:9px 22px;border-radius:100px;font-size:.77rem!important;letter-spacing:.05em!important;transition:background .2s,transform .15s var(--easeb)!important}
     .npill:hover{background:var(--green-dk)!important;transform:scale(1.04)!important}
 
+    /* DOODLE ELEMENTS */
+    .doodle{position:absolute;pointer-events:none;opacity:.55;user-select:none}
+    .doodle img{width:100%;height:100%;object-fit:contain}
+
+    /* BLOB shapes */
+    .blob-shape {
+      position: absolute;
+      pointer-events: none;
+      border-radius: 60% 40% 70% 30% / 50% 60% 40% 70%;
+      opacity: .12;
+      animation: blobmorph 18s ease-in-out infinite;
+    }
+    @keyframes blobmorph {
+      0%,100%{border-radius:60% 40% 70% 30% / 50% 60% 40% 70%}
+      33%{border-radius:40% 60% 30% 70% / 60% 40% 70% 30%}
+      66%{border-radius:70% 30% 50% 50% / 30% 70% 50% 60%}
+    }
+
     /* HERO */
-    #hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding-top:66px;background:var(--cream);position:relative;overflow:hidden}
+    #hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;background:var(--cream);position:relative;overflow:hidden}
     #hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(85,107,62,.065) .55px,transparent .55px);background-size:22px 22px;pointer-events:none}
-    .hero-shape{position:absolute;right:-100px;top:-60px;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle at 40% 40%,var(--pink) 0%,var(--cream) 68%);opacity:.5;animation:hshape 14s ease-in-out infinite}
-    @keyframes hshape{0%,100%{transform:scale(1) translateY(0)}50%{transform:scale(1.06) translateY(-18px)}}
+    .hero-shape{position:absolute;right:-100px;top:-60px;width:680px;height:680px;border-radius:60% 40% 70% 30% / 50% 60% 40% 70%;background:radial-gradient(circle at 40% 40%,var(--pink) 0%,var(--cream) 68%);opacity:.5;animation:hshape 14s ease-in-out infinite}
+    @keyframes hshape{0%,100%{transform:scale(1) translateY(0);border-radius:60% 40% 70% 30% / 50% 60% 40% 70%}50%{transform:scale(1.06) translateY(-18px);border-radius:40% 60% 30% 70% / 60% 40% 70% 30%}}
     .hero-left{padding:100px 68px 100px 80px;position:relative;z-index:2}
     .eyebrow{font-family:var(--body);font-size:.71rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--green);display:inline-block;margin-bottom:22px;padding:6px 16px;border:1px solid rgba(85,107,62,.2);border-radius:100px;background:rgba(85,107,62,.05)}
-    .h1{font-family:var(--serif);font-size:clamp(3.2rem,5.8vw,5.8rem);font-weight:400;line-height:1.05;letter-spacing:-.03em;color:var(--green-dk);margin-bottom:10px}
+    .h1{font-family:var(--display);font-size:clamp(3.2rem,5.8vw,5.8rem);font-weight:400;line-height:1.05;letter-spacing:-.02em;color:var(--green-dk);margin-bottom:10px}
     .h1 em{font-style:italic;color:var(--green)}
-    .h1-sub{font-family:var(--serif);font-size:clamp(1.4rem,2.4vw,2rem);font-weight:300;font-style:italic;color:var(--pink-deep);margin-bottom:26px;display:block}
+    .h1-sub{font-family:var(--hand);font-size:clamp(1.6rem,2.6vw,2.2rem);color:var(--pink-deep);margin-bottom:26px;display:block}
     .hero-p{font-size:1rem;line-height:1.8;color:var(--brown-lt);max-width:470px;margin-bottom:36px}
     .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-size:.9rem;font-weight:600;border-radius:100px;transition:background .2s,transform .18s var(--easeb),box-shadow .2s,border-color .2s;cursor:none;border:0}
@@ -71,7 +108,7 @@
     .btn-o:hover{border-color:var(--green);background:rgba(85,107,62,.05);transform:translateY(-2px)}
     .hero-proof{display:flex;align-items:center;gap:14px;margin-top:34px}
     .pavs{display:flex}
-    .pav{width:30px;height:30px;border-radius:50%;border:2px solid var(--cream);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:.9rem;font-style:italic;color:var(--cream);margin-left:-8px}
+    .pav{width:30px;height:30px;border-radius:50%;border:2px solid var(--cream);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:.9rem;font-style:italic;color:var(--cream);margin-left:-8px}
     .pav:first-child{margin-left:0}
     .pa1{background:var(--green)}.pa2{background:var(--pink-deep)}.pa3{background:var(--brown-lt)}
     .proof-t{font-size:.79rem;color:var(--brown-lt);max-width:210px;line-height:1.5}
@@ -86,33 +123,44 @@
     @keyframes hcf3{0%,100%{transform:rotate(-.5deg) translateY(0)}50%{transform:rotate(-.5deg) translateY(-17px)}}
     .hc-tag{font-family:var(--body);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
     .hc1 .hc-tag{color:rgba(247,241,232,.4)}.hc2 .hc-tag{color:rgba(85,107,62,.6)}.hc3 .hc-tag{color:var(--brown-lt)}
-    .hc-name{font-family:var(--serif);font-size:1.35rem;font-weight:400;line-height:1.2}
+    .hc-name{font-family:var(--display);font-size:1.35rem;font-weight:400;line-height:1.2}
     .hc1 .hc-name{color:var(--cream)}.hc2 .hc-name{color:var(--green-dk)}.hc3 .hc-name{color:var(--brown)}
+
+    /* JOURNAL PROMO STRIP */
+    .journal-strip{background:var(--green-dk);padding:52px 80px;display:flex;align-items:center;justify-content:space-between;gap:40px;position:relative;overflow:hidden}
+    .journal-strip::before{content:'';position:absolute;right:-60px;top:-60px;width:300px;height:300px;border-radius:50%;background:rgba(247,241,232,.04)}
+    .js-left h3{font-family:var(--display);font-size:2.2rem;font-weight:400;color:var(--cream);margin-bottom:8px}
+    .js-left h3 em{font-style:italic;color:var(--pink-mid)}
+    .js-left p{font-size:.95rem;color:rgba(247,241,232,.58);max-width:480px;line-height:1.7}
+    .js-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(247,241,232,.1);border:1px solid rgba(247,241,232,.2);border-radius:100px;padding:7px 18px;margin-bottom:16px}
+    .js-badge span{font-family:var(--hand2);font-size:.95rem;color:var(--pink-mid)}
+    .js-right{flex-shrink:0}
 
     /* TICKER */
     .ticker{background:var(--green);padding:13px 0;overflow:hidden;white-space:nowrap}
     .ticker-t{display:inline-flex;animation:tick 30s linear infinite}
-    .ti{font-family:var(--serif);font-style:italic;font-size:1.08rem;font-weight:300;color:var(--pink);padding:0 26px;display:inline-flex;align-items:center;gap:26px}
-    .ti::after{content:'—';color:var(--green-lt);font-style:normal}
+    .ti{font-family:var(--hand);font-size:1.2rem;font-weight:500;color:var(--pink);padding:0 26px;display:inline-flex;align-items:center;gap:26px}
+    .ti::after{content:'—';color:var(--green-lt);font-style:normal;font-family:var(--body)}
     @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
     /* SECTIONS */
     .sec{padding:108px 80px}
     .sl{font-family:var(--body);font-size:.69rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--green-lt);margin-bottom:14px;display:flex;align-items:center;gap:10px}
     .sl::before{content:'';width:26px;height:1px;background:var(--green-lt);flex-shrink:0}
-    .sh{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,3.2rem);font-weight:400;line-height:1.1;letter-spacing:-.03em;color:var(--green-dk)}
+    .sh{font-family:var(--display);font-size:clamp(1.9rem,3.4vw,3.2rem);font-weight:400;line-height:1.1;letter-spacing:-.02em;color:var(--green-dk)}
     .sh em{font-style:italic;color:var(--pink-deep)}
+    .sh.hand-accent em{font-family:var(--hand);font-size:clamp(2.2rem,3.8vw,3.6rem)}
     .sp{font-size:1rem;line-height:1.8;color:var(--brown-lt);max-width:530px}
     .rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
     .rv.in{opacity:1;transform:translateY(0)}
     .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
 
     /* ABOUT — dark */
-    #about{background:var(--green-dk);padding:96px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    #about{background:var(--green-dk);padding:96px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;overflow:hidden}
     .ast-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
     .ast{background:rgba(247,241,232,.04);border:1px solid rgba(247,241,232,.07);padding:34px 26px;transition:background .2s}
     .ast:hover{background:rgba(247,241,232,.07)}
-    .ast-n{font-family:var(--serif);font-size:3rem;font-weight:300;color:var(--pink);line-height:1;margin-bottom:5px}
+    .ast-n{font-family:var(--display);font-size:3rem;font-weight:300;color:var(--pink);line-height:1;margin-bottom:5px}
     .ast-l{font-size:.77rem;color:rgba(247,241,232,.45);letter-spacing:.05em}
     .about-copy .sl{color:var(--green-lt)}.about-copy .sl::before{background:var(--green-lt)}
     .about-copy .sh{color:var(--cream)}.about-copy .sh em{color:var(--pink-mid)}
@@ -121,14 +169,14 @@
     .ap{display:flex;align-items:flex-start;gap:16px;padding:17px;border:1px solid rgba(247,241,232,.07);transition:background .2s}
     .ap:hover{background:rgba(247,241,232,.05)}
     .ap-ic{font-size:1.25rem;flex-shrink:0;margin-top:2px}
-    .ap-t{font-family:var(--serif);font-size:1.08rem;font-weight:400;color:var(--cream);margin-bottom:2px}
+    .ap-t{font-family:var(--display);font-size:1.08rem;font-weight:400;color:var(--cream);margin-bottom:2px}
     .ap-s{font-size:.84rem;color:rgba(247,241,232,.48);line-height:1.6}
 
     /* CATEGORIES */
-    #categories{background:var(--cream)}
+    #categories{background:var(--cream);position:relative;overflow:hidden}
     .cats-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;gap:24px;flex-wrap:wrap}
     .cats-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:16px}
-    .cat{background:var(--cream-warm);border-radius:20px;padding:34px 30px;transition:transform .25s var(--ease),box-shadow .25s;border:1px solid rgba(58,42,34,.07);cursor:none}
+    .cat{background:var(--cream-warm);border-radius:28px 20px 32px 18px / 18px 30px 20px 28px;padding:34px 30px;transition:transform .25s var(--ease),box-shadow .25s;border:1px solid rgba(58,42,34,.07);cursor:none;position:relative;overflow:hidden}
     .cat:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(85,107,62,.1)}
     .cat.tall{grid-row:span 2;display:flex;flex-direction:column;justify-content:flex-end;min-height:340px}
     .cat.dark{background:var(--green)}
@@ -136,71 +184,86 @@
     .cat.dark .cat-label{color:var(--green-lt)}
     .cat.pink-bg{background:var(--pink)}
     .cat-label{font-family:var(--body);font-size:.67rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green-lt);margin-bottom:9px;display:block}
-    .cat-title{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--green-dk);margin-bottom:9px;line-height:1.2}
+    .cat-title{font-family:var(--display);font-size:1.5rem;font-weight:400;color:var(--green-dk);margin-bottom:9px;line-height:1.2}
     .cat.tall .cat-title{font-size:2.1rem}
     .cat-desc{font-size:.85rem;color:var(--brown-lt);line-height:1.65}
     .cat-arr{display:inline-flex;align-items:center;gap:6px;font-family:var(--body);font-size:.79rem;font-weight:600;color:var(--green);margin-top:16px;transition:gap .18s var(--easeb)}
     .cat:hover .cat-arr{gap:11px}
+    /* Blob background on cat cards */
+    .cat::before{content:'';position:absolute;width:160px;height:160px;background:rgba(255,255,255,.25);border-radius:60% 40% 70% 30% / 50% 60% 40% 70%;top:-30px;right:-30px;pointer-events:none;animation:blobmorph 14s ease-in-out infinite}
+    .cat.dark::before{background:rgba(255,255,255,.06)}
+    .cat.pink-bg::before{background:rgba(255,255,255,.3)}
 
     /* SHOP */
-    #shop{background:var(--pink)}
+    #shop{background:var(--pink);position:relative;overflow:hidden}
     .shop-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;gap:24px;flex-wrap:wrap}
     .shop-tabs{display:flex;gap:8px;margin-bottom:36px;flex-wrap:wrap}
     .tab{font-family:var(--body);font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:8px 20px;border-radius:100px;border:1.5px solid rgba(85,107,62,.2);color:var(--green-dk);background:transparent;cursor:none;transition:background .2s,border-color .2s,color .2s}
     .tab.on,.tab:hover{background:var(--green);border-color:var(--green);color:var(--cream)}
     .shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .sc{background:var(--cream);border-radius:20px;overflow:hidden;transition:transform .25s var(--ease),box-shadow .25s;cursor:none;border:1px solid rgba(58,42,34,.05)}
+    /* BLOB shop cards */
+    .sc{background:var(--cream);border-radius:56% 44% 60% 40% / 40% 56% 44% 60%;overflow:visible;transition:transform .25s var(--ease),box-shadow .25s;cursor:none;position:relative}
     .sc:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(85,107,62,.13)}
     .sc.wide{grid-column:span 2}
+    .sc-inner{background:var(--cream);border-radius:24px;overflow:hidden;border:1px solid rgba(58,42,34,.05);box-shadow:0 4px 18px rgba(58,42,34,.07)}
     .sc-thumb{height:196px;display:flex;align-items:center;justify-content:center;font-size:3.4rem;position:relative;overflow:hidden}
     .sc.wide .sc-thumb{height:214px}
+    .sc-thumb-img{width:100%;height:100%;object-fit:cover}
     .sc-badge{position:absolute;top:13px;left:13px;background:rgba(247,241,232,.92);color:var(--green-dk);font-family:var(--body);font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:100px}
     .sc-body{padding:18px 20px 22px}
     .sc-cat{font-family:var(--body);font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--pink-deep);margin-bottom:5px;display:block}
-    .sc-name{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--green-dk);margin-bottom:6px;line-height:1.25}
+    .sc-name{font-family:var(--display);font-size:1.15rem;font-weight:400;color:var(--green-dk);margin-bottom:6px;line-height:1.25}
     .sc-desc{font-size:.82rem;color:var(--brown-lt);line-height:1.6;margin-bottom:14px}
     .sc-foot{display:flex;align-items:center;justify-content:space-between}
-    .sc-price{font-family:var(--serif);font-size:1.15rem;color:var(--green-dk)}
+    .sc-price{font-family:var(--display);font-size:1.15rem;color:var(--green-dk)}
     .sc-price small{font-family:var(--body);font-size:.68rem;color:var(--brown-lt)}
     .sc-btn{background:var(--green);color:var(--cream);font-family:var(--body);font-size:.74rem;font-weight:700;padding:8px 17px;border-radius:100px;border:0;cursor:none;transition:background .2s,transform .15s var(--easeb)}
     .sc-btn:hover{background:var(--green-dk);transform:scale(1.06)}
-    .shop-feat{margin-top:22px;background:var(--green-dk);border-radius:20px;padding:38px 42px;display:grid;grid-template-columns:1fr auto;gap:36px;align-items:center}
-    .shop-feat h3{font-family:var(--serif);font-size:1.95rem;font-weight:400;color:var(--cream);margin-bottom:7px}
+    /* blob bg behind each product */
+    .sc-blob{position:absolute;z-index:0;pointer-events:none;border-radius:60% 40% 50% 50% / 40% 60% 50% 60%;opacity:.18;animation:blobmorph 12s ease-in-out infinite}
+    .sc-blob-1{width:120%;height:120%;top:-10%;left:-10%;background:var(--pink-mid);animation-delay:-3s}
+    .sc-blob-2{width:110%;height:110%;top:-5%;left:-5%;background:var(--green-lt);animation-delay:-6s}
+    .sc-blob-3{width:115%;height:115%;top:-7%;left:-7%;background:var(--cream-warm);animation-delay:-2s}
+    .sc-blob-4{width:120%;height:120%;top:-10%;left:-10%;background:var(--ice);animation-delay:-9s}
+
+    .shop-feat{margin-top:22px;background:var(--green-dk);border-radius:24px 32px 20px 28px / 28px 20px 32px 24px;padding:38px 42px;display:grid;grid-template-columns:1fr auto;gap:36px;align-items:center;position:relative;overflow:hidden}
+    .shop-feat::before{content:'';position:absolute;right:-80px;bottom:-80px;width:280px;height:280px;border-radius:60% 40% 70% 30% / 50% 60% 40% 70%;background:rgba(247,241,232,.04);animation:blobmorph 16s ease-in-out infinite}
+    .shop-feat h3{font-family:var(--display);font-size:1.95rem;font-weight:400;color:var(--cream);margin-bottom:7px}
     .shop-feat h3 em{font-style:italic;color:var(--pink-mid)}
     .shop-feat p{font-size:.9rem;color:rgba(247,241,232,.58);max-width:460px}
     .chips{display:flex;gap:9px;margin-top:18px;flex-wrap:wrap}
     .chip{background:rgba(247,241,232,.08);border:1px solid rgba(247,241,232,.12);color:var(--pink);font-family:var(--body);font-size:.78rem;font-weight:600;padding:8px 15px;border-radius:100px}
 
     /* SKINCARE RECS */
-    #skincare{background:var(--cream-warm)}
+    #skincare{background:var(--cream-warm);position:relative;overflow:hidden}
     .skc-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-top:52px}
     .skc-sticky{position:sticky;top:96px}
     .ing-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
     .itab{font-family:var(--body);font-size:.74rem;font-weight:600;padding:7px 15px;border-radius:100px;border:1.5px solid rgba(85,107,62,.2);color:var(--green-dk);background:transparent;cursor:none;transition:background .2s,border-color .2s,color .2s}
     .itab.on,.itab:hover{background:var(--green);border-color:var(--green);color:var(--cream)}
-    .trust-box{background:var(--cream);border-radius:18px;padding:30px;border:1px solid rgba(58,42,34,.07)}
+    .trust-box{background:var(--cream);border-radius:22px 28px 18px 24px / 24px 18px 28px 22px;padding:30px;border:1px solid rgba(58,42,34,.07)}
     .skc-cards{display:flex;flex-direction:column;gap:14px}
-    .skc{background:var(--cream);border-radius:18px;padding:24px;border:1px solid rgba(58,42,34,.07);display:grid;grid-template-columns:62px 1fr;gap:18px;align-items:start;transition:transform .2s var(--ease),box-shadow .2s;cursor:none}
+    .skc{background:var(--cream);border-radius:22px 16px 20px 18px / 18px 22px 16px 20px;padding:24px;border:1px solid rgba(58,42,34,.07);display:grid;grid-template-columns:62px 1fr;gap:18px;align-items:start;transition:transform .2s var(--ease),box-shadow .2s;cursor:none}
     .skc:hover{transform:translateX(5px);box-shadow:0 10px 30px rgba(85,107,62,.09)}
-    .skc-num{width:62px;height:62px;border-radius:14px;background:var(--pink);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.55rem;font-weight:400;color:var(--green-dk);flex-shrink:0}
+    .skc-num{width:62px;height:62px;border-radius:14px;background:var(--pink);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:1.55rem;font-weight:400;color:var(--green-dk);flex-shrink:0}
     .skc.feat .skc-num{background:var(--green);color:var(--cream)}
     .skc-ctag{font-family:var(--body);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--pink-deep);margin-bottom:3px}
-    .skc h3{font-family:var(--serif);font-size:1.12rem;font-weight:400;color:var(--green-dk);margin-bottom:4px}
+    .skc h3{font-family:var(--display);font-size:1.12rem;font-weight:400;color:var(--green-dk);margin-bottom:4px}
     .skc p{font-size:.83rem;color:var(--brown-lt);line-height:1.65}
     .skc-lnk{display:inline-flex;align-items:center;gap:5px;font-family:var(--body);font-size:.77rem;font-weight:600;color:var(--green);margin-top:9px;border-bottom:1px solid rgba(85,107,62,.22);transition:border-color .2s,gap .15s var(--easeb)}
     .skc-lnk:hover{border-color:var(--green);gap:9px}
 
     /* BLOG */
-    #blog{background:var(--cream)}
+    #blog{background:var(--cream);position:relative;overflow:hidden}
     .blog-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;gap:24px;flex-wrap:wrap}
     .blog-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:18px}
-    .bc{border-radius:20px;overflow:hidden;background:var(--cream-warm);border:1px solid rgba(58,42,34,.06);transition:transform .25s var(--ease),box-shadow .25s;cursor:none}
+    .bc{border-radius:24px 18px 28px 20px / 20px 28px 18px 24px;overflow:hidden;background:var(--cream-warm);border:1px solid rgba(58,42,34,.06);transition:transform .25s var(--ease),box-shadow .25s;cursor:none}
     .bc:hover{transform:translateY(-5px);box-shadow:0 16px 42px rgba(85,107,62,.1)}
     .bc-img{height:195px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
     .bc.feat .bc-img{height:272px}
     .bc-cat{position:absolute;bottom:13px;left:13px;font-family:var(--body);font-size:.63rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(247,241,232,.92);color:var(--green-dk);padding:5px 11px;border-radius:100px}
     .bc-body{padding:20px 22px 24px}
-    .bc-title{font-family:var(--serif);font-size:1.08rem;font-weight:400;color:var(--green-dk);line-height:1.35;margin-bottom:7px}
+    .bc-title{font-family:var(--display);font-size:1.08rem;font-weight:400;color:var(--green-dk);line-height:1.35;margin-bottom:7px}
     .bc.feat .bc-title{font-size:1.5rem}
     .bc-meta{font-size:.74rem;color:var(--brown-lt);display:flex;align-items:center;gap:7px}
     .bc-dot{width:4px;height:4px;border-radius:50%;background:var(--pink-deep);flex-shrink:0}
@@ -208,23 +271,22 @@
     .bc:hover .bc-rd{gap:9px}
 
     /* SUBSCRIPTION */
-    #subscription{background:var(--green-dk);padding:108px 80px}
-    #subscription .sl{color:var(--green-lt)}.#subscription .sl::before{background:var(--green-lt)}
+    #subscription{background:var(--green-dk);padding:108px 80px;position:relative;overflow:hidden}
     .sub-sl{font-family:var(--body);font-size:.69rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--green-lt);margin-bottom:14px;display:flex;align-items:center;gap:10px}
     .sub-sl::before{content:'';width:26px;height:1px;background:var(--green-lt);flex-shrink:0}
-    .sub-sh{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,3.2rem);font-weight:400;line-height:1.1;letter-spacing:-.03em;color:var(--cream)}
+    .sub-sh{font-family:var(--display);font-size:clamp(1.9rem,3.4vw,3.2rem);font-weight:400;line-height:1.1;letter-spacing:-.02em;color:var(--cream)}
     .sub-sh em{font-style:italic;color:var(--pink-mid)}
     .sub-sp{font-size:1rem;line-height:1.8;color:rgba(247,241,232,.58);max-width:530px;margin-top:12px;margin-bottom:52px}
     .sub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .subc{border-radius:20px;padding:34px 30px;border:1px solid rgba(247,241,232,.1);transition:border-color .25s,background .25s,transform .25s var(--ease);cursor:none}
+    .subc{border-radius:24px 18px 28px 20px / 20px 28px 18px 24px;padding:34px 30px;border:1px solid rgba(247,241,232,.1);transition:border-color .25s,background .25s,transform .25s var(--ease);cursor:none}
     .subc:hover{border-color:rgba(247,241,232,.22);background:rgba(247,241,232,.04);transform:translateY(-4px)}
     .subc.feat{background:var(--pink);border-color:var(--pink)}
     .subc.feat:hover{background:var(--pink-mid);border-color:var(--pink-mid)}
     .sub-badge{font-family:var(--body);font-size:.63rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:100px;background:var(--green);color:var(--cream);display:inline-block;margin-bottom:20px}
     .subc.feat .sub-badge{background:var(--green-dk)}
-    .sub-name{font-family:var(--serif);font-size:1.45rem;font-weight:400;color:var(--cream);margin-bottom:5px}
+    .sub-name{font-family:var(--display);font-size:1.45rem;font-weight:400;color:var(--cream);margin-bottom:5px}
     .subc.feat .sub-name{color:var(--green-dk)}
-    .sub-price{font-family:var(--serif);font-size:2.7rem;font-weight:300;color:var(--pink);line-height:1;margin-bottom:3px}
+    .sub-price{font-family:var(--display);font-size:2.7rem;font-weight:300;color:var(--pink);line-height:1;margin-bottom:3px}
     .subc.feat .sub-price{color:var(--green-dk)}
     .sub-period{font-size:.79rem;color:rgba(247,241,232,.42);margin-bottom:22px}
     .subc.feat .sub-period{color:rgba(58,42,34,.48)}
@@ -239,20 +301,20 @@
     .subc.feat:hover .sub-cta{background:var(--green);border-color:var(--green)}
 
     /* TESTIMONIALS */
-    #testimonials{background:var(--pink);padding:108px 80px}
+    #testimonials{background:var(--pink);padding:108px 80px;position:relative;overflow:hidden}
     .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px}
-    .tc{background:var(--cream);border-radius:20px;padding:30px;border:1px solid rgba(58,42,34,.06);transition:transform .25s var(--ease),box-shadow .25s;cursor:none}
+    .tc{background:var(--cream);border-radius:24px 18px 28px 20px / 20px 28px 18px 24px;padding:30px;border:1px solid rgba(58,42,34,.06);transition:transform .25s var(--ease),box-shadow .25s;cursor:none}
     .tc:hover{transform:translateY(-4px);box-shadow:0 15px 38px rgba(85,107,62,.1)}
     .tc-stars{color:#B8763A;letter-spacing:2px;font-size:.84rem;margin-bottom:15px}
-    .tc-q{font-family:var(--serif);font-style:italic;font-size:1.04rem;font-weight:300;color:var(--green-dk);line-height:1.72;margin-bottom:20px}
+    .tc-q{font-family:var(--display);font-style:italic;font-size:1.04rem;font-weight:400;color:var(--green-dk);line-height:1.72;margin-bottom:20px}
     .tc-auth{display:flex;align-items:center;gap:11px}
-    .tc-av{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1rem;font-style:italic;color:var(--cream)}
+    .tc-av{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:1rem;font-style:italic;color:var(--cream)}
     .tc-name{font-family:var(--body);font-size:.83rem;font-weight:600;color:var(--green-dk)}
     .tc-handle{font-size:.73rem;color:var(--brown-lt)}
 
     /* NEWSLETTER */
-    #newsletter{background:var(--cream-warm);padding:108px 80px}
-    .nw-in{max-width:660px}
+    #newsletter{background:var(--cream-warm);padding:108px 80px;position:relative;overflow:hidden}
+    .nw-in{max-width:660px;position:relative;z-index:2}
     .nw-form{display:flex;gap:10px;margin-top:34px;padding:7px;background:var(--cream);border:1.5px solid rgba(85,107,62,.14);border-radius:100px;max-width:500px;box-shadow:0 10px 30px rgba(85,107,62,.08)}
     .nw-form input{flex:1;border:0;background:transparent;font-family:var(--body);font-size:.9rem;color:var(--brown);padding:8px 14px;outline:none;min-width:0}
     .nw-form input::placeholder{color:var(--brown-lt)}
@@ -260,25 +322,30 @@
     .nw-perk{font-size:.77rem;color:var(--brown-lt);display:flex;align-items:center;gap:5px}
     .nw-perk::before{content:'✓';color:var(--green);font-weight:700}
 
+    /* HAND LABELS */
+    .hand-label{font-family:var(--hand2);font-size:1rem;color:var(--pink-deep);transform:rotate(-6deg);display:inline-block;margin-bottom:4px}
+
     /* FOOTER */
     footer{background:var(--brown);padding:68px 80px 38px}
     .ft-top{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:52px;margin-bottom:52px}
-    .ft-logo{font-family:var(--serif);font-size:1.55rem;font-weight:400;color:var(--cream);margin-bottom:13px;display:block}
-    .ft-logo span{color:var(--pink-mid)}
+    .ft-logo{display:flex;align-items:center;gap:12px;margin-bottom:13px}
+    .ft-logo img{width:38px;height:38px;border-radius:50%;object-fit:cover}
+    .ft-logo span{font-family:var(--display);font-size:1.35rem;font-weight:400;color:var(--cream)}
+    .ft-logo span em{font-style:italic;color:var(--pink-mid)}
     .ft-p{font-size:.84rem;line-height:1.8;color:rgba(247,241,232,.42);max-width:230px}
     .ft-socs{display:flex;gap:9px;margin-top:22px}
     .ft-s{width:36px;height:36px;border-radius:50%;border:1px solid rgba(247,241,232,.14);display:flex;align-items:center;justify-content:center;font-size:.9rem;color:rgba(247,241,232,.45);transition:background .2s,border-color .2s,color .2s,transform .15s var(--easeb)}
     .ft-s:hover{background:var(--pink-mid);border-color:var(--pink-mid);color:var(--brown);transform:scale(1.1)}
-    .ft-col h4{font-family:var(--serif);font-size:.98rem;font-weight:400;color:var(--cream);margin-bottom:18px}
+    .ft-col h4{font-family:var(--display);font-size:.98rem;font-weight:400;color:var(--cream);margin-bottom:18px}
     .ft-col a{display:block;font-size:.83rem;color:rgba(247,241,232,.4);margin-bottom:11px;transition:color .2s,transform .15s}
     .ft-col a:hover{color:var(--pink-mid);transform:translateX(3px)}
     .ft-bot{border-top:1px solid rgba(247,241,232,.08);padding-top:26px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
     .ft-bot p{font-size:.77rem;color:rgba(247,241,232,.28)}
-    .ft-bot span{font-family:var(--serif);font-style:italic;font-size:.88rem;color:rgba(247,241,232,.22)}
+    .ft-bot span{font-family:var(--hand);font-size:1rem;color:rgba(247,241,232,.28)}
 
     /* RESPONSIVE */
     @media(max-width:1020px){.shop-grid{grid-template-columns:repeat(2,1fr)}.sc.wide{grid-column:span 2}.sub-grid{grid-template-columns:1fr;max-width:420px}.skc-grid{grid-template-columns:1fr}.skc-sticky{position:static}}
-    @media(max-width:860px){#hero{grid-template-columns:1fr}.hero-right{display:none}.hero-left{padding:96px 32px 80px}#about{grid-template-columns:1fr;padding:80px 32px;gap:44px}.cats-grid{grid-template-columns:1fr 1fr}.cat.tall{grid-row:span 1;min-height:auto}.blog-grid{grid-template-columns:1fr}.tg{grid-template-columns:1fr}.ft-top{grid-template-columns:1fr 1fr}.sec,#subscription,#testimonials,#newsletter{padding:78px 32px}nav{padding:0 24px}nav ul{display:none}body{cursor:auto}#cdot,#cring{display:none}.shop-feat{grid-template-columns:1fr}}
+    @media(max-width:860px){#hero{grid-template-columns:1fr}.hero-right{display:none}.hero-left{padding:96px 32px 80px}#about{grid-template-columns:1fr;padding:80px 32px;gap:44px}.cats-grid{grid-template-columns:1fr 1fr}.cat.tall{grid-row:span 1;min-height:auto}.blog-grid{grid-template-columns:1fr}.tg{grid-template-columns:1fr}.ft-top{grid-template-columns:1fr 1fr}.sec,#subscription,#testimonials,#newsletter{padding:78px 32px}nav{padding:0 24px}nav ul{display:none}body{cursor:auto}#cdot,#cring{display:none}.shop-feat{grid-template-columns:1fr}.journal-strip{padding:44px 32px;flex-direction:column;gap:28px}}
     @media(max-width:560px){.cats-grid,.shop-grid{grid-template-columns:1fr}.sc.wide{grid-column:span 1}.ft-top{grid-template-columns:1fr}.sub-grid{max-width:100%}.ast-grid{grid-template-columns:1fr}}
   </style>
 </head>
@@ -287,29 +354,41 @@
 <div id="cdot"></div>
 <div id="cring"></div>
 
+<!-- WORDMARK BAR -->
+<div class="wordmark-bar">
+  <img src="youtube_banner.png" alt="Stylishandhealthy." />
+</div>
+
 <!-- NAV -->
 <nav id="nav">
-  <a href="#" class="nav-logo"><b>S&amp;H</b><span>.</span></a>
+  <a href="#" class="nav-logo">
+    <img src="logo_main.png" alt="S&H logo" />
+  </a>
   <ul>
     <li><a href="#categories">Topics</a></li>
     <li><a href="#shop">Shop</a></li>
     <li><a href="#skincare">Skincare</a></li>
     <li><a href="#blog">Blog</a></li>
     <li><a href="#subscription">Subscribe</a></li>
-    <li><a href="#newsletter" class="npill">Join Free</a></li>
+    <li><a href="journal.html" class="npill">Free Journal</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-shape"></div>
+  <!-- doodle heart 1 -->
+  <div class="doodle" style="width:110px;top:18%;right:8%;transform:rotate(12deg)"><img src="heart1.png" alt="" /></div>
+  <!-- doodle heart 2 -->
+  <div class="doodle" style="width:60px;bottom:22%;left:6%;transform:rotate(-8deg);opacity:.35"><img src="heart2.png" alt="" /></div>
+
   <div class="hero-left">
     <div class="eyebrow">Wellness · Skincare · Style · Self-Growth</div>
     <h1 class="h1">Pretty <em>routines.</em><br>Smarter choices.</h1>
     <span class="h1-sub">Where soft aesthetics meet real science.</span>
     <p class="hero-p">Research-backed skincare, wellness habits, and self-improvement content — designed to feel as beautiful as it is useful. No trends. No pressure. Just real, gentle progress.</p>
     <div class="hero-actions">
-      <a href="#shop" class="btn btn-f">Explore the shop →</a>
+      <a href="#shop" class="btn btn-f">Explore the shop</a>
       <a href="#subscription" class="btn btn-o">Weekly skincare deepdive</a>
     </div>
     <div class="hero-proof">
@@ -347,8 +426,26 @@
   </div>
 </div>
 
+<!-- JOURNAL PROMO STRIP -->
+<div class="journal-strip">
+  <!-- doodle heart 3 -->
+  <div class="doodle" style="width:80px;bottom:10%;right:20%;opacity:.4;transform:rotate(-4deg)"><img src="heart3.png" alt="" /></div>
+  <div class="js-left">
+    <div class="js-badge">
+      <span>completely free — just your email</span>
+    </div>
+    <h3>Get the <em>279 Day Journal</em> — Free</h3>
+    <p>A beautifully designed self-reflection journal with 279 days of guided prompts, habit tracking, and wellness check-ins. Yours free when you join the community.</p>
+  </div>
+  <div class="js-right">
+    <a href="journal.html" class="btn btn-f" style="font-size:1rem;padding:16px 36px">Get it free</a>
+  </div>
+</div>
+
 <!-- ABOUT -->
 <section id="about">
+  <!-- doodle heart floating -->
+  <div class="doodle" style="width:90px;top:10%;right:5%;opacity:.25;transform:rotate(8deg)"><img src="heart1.png" alt="" /></div>
   <div class="ast-grid rv">
     <div class="ast"><div class="ast-n">10k+</div><div class="ast-l">Community members</div></div>
     <div class="ast"><div class="ast-n">50+</div><div class="ast-l">Free resources</div></div>
@@ -357,23 +454,25 @@
   </div>
   <div class="about-copy rv d2">
     <div class="sl">Who we are</div>
-    <h2 class="sh">Wellness that feels as <em>beautiful</em> as it should.</h2>
+    <h2 class="sh hand-accent">Wellness that feels as <em>beautiful</em> as it should.</h2>
     <p style="margin-top:18px">We believe self-improvement should never feel overwhelming, clinical, or fake. Stylishandhealthy is your soft corner of the internet — where real science meets beautiful aesthetics, and good habits feel genuinely enjoyable.</p>
     <p>Every recommendation is backed by research, every design is intentional, and nothing here is designed to make you feel behind.</p>
     <div class="aps">
-      <div class="ap"><div class="ap-ic">🍵</div><div><div class="ap-t">Research first, trends never</div><div class="ap-s">We decode ingredients, habits, and routines — no hype, no filler.</div></div></div>
-      <div class="ap"><div class="ap-ic">🌸</div><div><div class="ap-t">Beauty without pressure</div><div class="ap-s">Progress without guilt. Routines that fit your real life.</div></div></div>
-      <div class="ap"><div class="ap-ic">✦</div><div><div class="ap-t">Soft discipline. Real results.</div><div class="ap-s">Small consistent habits compound into beautiful transformations.</div></div></div>
+      <div class="ap"><div><div class="ap-t">Research first, trends never</div><div class="ap-s">We decode ingredients, habits, and routines — no hype, no filler.</div></div></div>
+      <div class="ap"><div><div class="ap-t">Beauty without pressure</div><div class="ap-s">Progress without guilt. Routines that fit your real life.</div></div></div>
+      <div class="ap"><div><div class="ap-t">Soft discipline. Real results.</div><div class="ap-s">Small consistent habits compound into beautiful transformations.</div></div></div>
     </div>
   </div>
 </section>
 
 <!-- CATEGORIES -->
 <section id="categories" class="sec">
+  <!-- doodle -->
+  <div class="doodle" style="width:70px;top:8%;right:10%;transform:rotate(-15deg);opacity:.4"><img src="heart2.png" alt="" /></div>
   <div class="cats-hdr rv">
     <div>
       <div class="sl">What we cover</div>
-      <h2 class="sh">Everything that makes you <em>glow.</em></h2>
+      <h2 class="sh hand-accent">Everything that makes you <em>glow.</em></h2>
     </div>
     <a href="#newsletter" class="btn btn-o">Join for free</a>
   </div>
@@ -382,43 +481,45 @@
       <div class="cat-label">Deep dives</div>
       <div class="cat-title">Skincare Science</div>
       <div class="cat-desc">Ingredient breakdowns, routine guides, and the science behind serums, acids, and moisturisers — explained simply.</div>
-      <div class="cat-arr">Read →</div>
+      <div class="cat-arr">Read</div>
     </div>
     <div class="cat rv d1">
       <div class="cat-label">Wellness</div>
       <div class="cat-title">Habits &amp; Health</div>
       <div class="cat-desc">Sleep, hydration, movement, and mindset — proven by science, brought to you simply.</div>
-      <div class="cat-arr">Explore →</div>
+      <div class="cat-arr">Explore</div>
     </div>
     <div class="cat rv d2">
       <div class="cat-label">Self-growth</div>
       <div class="cat-title">Journaling &amp; Mindset</div>
       <div class="cat-desc">Prompts, frameworks, and reflections to help you think clearly and grow with intention.</div>
-      <div class="cat-arr">Read →</div>
+      <div class="cat-arr">Read</div>
     </div>
     <div class="cat pink-bg rv d1">
       <div class="cat-label">Organisation</div>
       <div class="cat-title">Systems &amp; Planning</div>
       <div class="cat-desc">Digital planners, habit trackers, and routine builders that make life feel calm and structured.</div>
-      <div class="cat-arr">Explore →</div>
+      <div class="cat-arr">Explore</div>
     </div>
     <div class="cat rv d2">
       <div class="cat-label">Aesthetic</div>
       <div class="cat-title">Lifestyle &amp; Routines</div>
       <div class="cat-desc">Morning rituals, self-care routines, and building a life you genuinely love.</div>
-      <div class="cat-arr">Read →</div>
+      <div class="cat-arr">Read</div>
     </div>
   </div>
 </section>
 
 <!-- SHOP -->
 <section id="shop" class="sec">
+  <!-- doodle -->
+  <div class="doodle" style="width:95px;top:5%;right:6%;transform:rotate(10deg);opacity:.45"><img src="heart3.png" alt="" /></div>
   <div class="shop-hdr rv">
     <div>
       <div class="sl">The shop</div>
       <h2 class="sh">Stickers, clothing, downloads<br>&amp; <em>more.</em></h2>
     </div>
-    <a href="#newsletter" class="btn btn-f">Browse all →</a>
+    <a href="#newsletter" class="btn btn-f">Browse all</a>
   </div>
   <div class="shop-tabs rv d1">
     <button class="tab on">All</button>
@@ -429,75 +530,88 @@
   </div>
   <div class="shop-grid">
     <div class="sc wide rv d1">
-      <div class="sc-thumb" style="background:linear-gradient(135deg,var(--green),#3D4F2D)">
-        <div class="sc-badge">✦ Bestseller</div>
-        <span style="font-size:5rem">🌿</span>
-      </div>
-      <div class="sc-body">
-        <span class="sc-cat">Digital download</span>
-        <div class="sc-name">Skincare Starter Guide — Beginner's Complete Routine</div>
-        <p class="sc-desc">Everything you need to build a simple, effective skincare routine. Ingredients decoded, AM + PM layouts, skin type guide, and a printable tracker.</p>
-        <div class="sc-foot"><div class="sc-price"><small>from</small> Free</div><button class="sc-btn">Get it →</button></div>
-      </div>
-    </div>
-    <div class="sc rv d1">
-      <div class="sc-thumb" style="background:linear-gradient(135deg,var(--pink),#FDF0F3)">
-        <div class="sc-badge">New</div>
-        <span>🎀</span>
-      </div>
-      <div class="sc-body">
-        <span class="sc-cat">Sticker pack</span>
-        <div class="sc-name">Soft Aesthetic Sticker Pack Vol.1</div>
-        <p class="sc-desc">30+ die-cut stickers — matcha, wellness vibes, journal tabs, and aesthetic labels.</p>
-        <div class="sc-foot"><div class="sc-price"><small>from</small> $8</div><button class="sc-btn">Shop →</button></div>
-      </div>
-    </div>
-    <div class="sc rv d2">
-      <div class="sc-thumb" style="background:linear-gradient(135deg,var(--cream-warm),var(--cream))">
-        <div class="sc-badge">Popular</div>
-        <span>📓</span>
-      </div>
-      <div class="sc-body">
-        <span class="sc-cat">Digital planner</span>
-        <div class="sc-name">Weekly Wellness Planner — Printable PDF</div>
-        <p class="sc-desc">Habits, skincare tracking, journaling, and to-dos in one gorgeous printable layout.</p>
-        <div class="sc-foot"><div class="sc-price"><small>from</small> $6</div><button class="sc-btn">Buy →</button></div>
+      <div class="sc-blob sc-blob-1"></div>
+      <div class="sc-inner" style="position:relative;z-index:1">
+        <div class="sc-thumb" style="background:linear-gradient(135deg,var(--green),#3D4F2D)">
+          <div class="sc-badge">Bestseller</div>
+          <div style="font-family:var(--display);font-size:3.5rem;color:rgba(247,241,232,.15);font-weight:700;position:absolute">SKIN</div>
+        </div>
+        <div class="sc-body">
+          <span class="sc-cat">Digital download</span>
+          <div class="sc-name">Skincare Starter Guide — Beginner's Complete Routine</div>
+          <p class="sc-desc">Everything you need to build a simple, effective skincare routine. Ingredients decoded, AM + PM layouts, skin type guide, and a printable tracker.</p>
+          <div class="sc-foot"><div class="sc-price"><small>from</small> Free</div><button class="sc-btn">Get it</button></div>
+        </div>
       </div>
     </div>
     <div class="sc rv d1">
-      <div class="sc-thumb" style="background:linear-gradient(135deg,var(--green-lt),var(--ice))">
-        <div class="sc-badge">Limited</div>
-        <span>👕</span>
-      </div>
-      <div class="sc-body">
-        <span class="sc-cat">Clothing</span>
-        <div class="sc-name">S&amp;H Oversized Tee — Matcha Edition</div>
-        <p class="sc-desc">Soft sage green oversized tee with the S&H logo. 100% organic cotton.</p>
-        <div class="sc-foot"><div class="sc-price"><small>from</small> $38</div><button class="sc-btn">Shop →</button></div>
+      <div class="sc-blob sc-blob-1"></div>
+      <div class="sc-inner" style="position:relative;z-index:1">
+        <div class="sc-thumb" style="background:linear-gradient(135deg,var(--pink),#FDF0F3)">
+          <div class="sc-badge">New</div>
+        </div>
+        <div class="sc-body">
+          <span class="sc-cat">Sticker pack</span>
+          <div class="sc-name">Soft Aesthetic Sticker Pack Vol.1</div>
+          <p class="sc-desc">30+ die-cut stickers — matcha, wellness vibes, journal tabs, and aesthetic labels.</p>
+          <div class="sc-foot"><div class="sc-price"><small>from</small> $8</div><button class="sc-btn">Shop</button></div>
+        </div>
       </div>
     </div>
     <div class="sc rv d2">
-      <div class="sc-thumb" style="background:linear-gradient(135deg,#F8D6DE,#F3AFC0)">
-        <div class="sc-badge">New</div>
-        <span>🧴</span>
+      <div class="sc-blob sc-blob-3"></div>
+      <div class="sc-inner" style="position:relative;z-index:1">
+        <div class="sc-thumb" style="background:linear-gradient(135deg,var(--cream-warm),var(--cream))">
+          <div class="sc-badge">Popular</div>
+        </div>
+        <div class="sc-body">
+          <span class="sc-cat">Digital planner</span>
+          <div class="sc-name">Weekly Wellness Planner — Printable PDF</div>
+          <p class="sc-desc">Habits, skincare tracking, journaling, and to-dos in one gorgeous printable layout.</p>
+          <div class="sc-foot"><div class="sc-price"><small>from</small> $6</div><button class="sc-btn">Buy</button></div>
+        </div>
       </div>
-      <div class="sc-body">
-        <span class="sc-cat">Sticker pack</span>
-        <div class="sc-name">Skincare Ingredient Sticker Sheet</div>
-        <p class="sc-desc">Label your skincare shelf or journal: Retinol, Niacinamide, SPF and more.</p>
-        <div class="sc-foot"><div class="sc-price"><small>from</small> $5</div><button class="sc-btn">Buy →</button></div>
+    </div>
+    <div class="sc rv d1">
+      <div class="sc-blob sc-blob-2"></div>
+      <div class="sc-inner" style="position:relative;z-index:1">
+        <div class="sc-thumb" style="background:linear-gradient(135deg,var(--green-lt),var(--ice))">
+          <div class="sc-badge">Limited</div>
+        </div>
+        <div class="sc-body">
+          <span class="sc-cat">Clothing</span>
+          <div class="sc-name">S&amp;H Oversized Tee — Matcha Edition</div>
+          <p class="sc-desc">Soft sage green oversized tee with the S&H logo. 100% organic cotton.</p>
+          <div class="sc-foot"><div class="sc-price"><small>from</small> $38</div><button class="sc-btn">Shop</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="sc rv d2">
+      <div class="sc-blob sc-blob-1"></div>
+      <div class="sc-inner" style="position:relative;z-index:1">
+        <div class="sc-thumb" style="background:linear-gradient(135deg,#F8D6DE,#F3AFC0)">
+          <div class="sc-badge">New</div>
+        </div>
+        <div class="sc-body">
+          <span class="sc-cat">Sticker pack</span>
+          <div class="sc-name">Skincare Ingredient Sticker Sheet</div>
+          <p class="sc-desc">Label your skincare shelf or journal: Retinol, Niacinamide, SPF and more.</p>
+          <div class="sc-foot"><div class="sc-price"><small>from</small> $5</div><button class="sc-btn">Buy</button></div>
+        </div>
       </div>
     </div>
     <div class="sc rv d3">
-      <div class="sc-thumb" style="background:linear-gradient(135deg,var(--brown),#6B5045)">
-        <div class="sc-badge">Merch</div>
-        <span>☕</span>
-      </div>
-      <div class="sc-body">
-        <span class="sc-cat">Accessories</span>
-        <div class="sc-name">Matcha Morning Canvas Tote</div>
-        <p class="sc-desc">Sturdy canvas tote with the Stylishandhealthy. wordmark. Effortlessly aesthetic.</p>
-        <div class="sc-foot"><div class="sc-price"><small>from</small> $24</div><button class="sc-btn">Shop →</button></div>
+      <div class="sc-blob sc-blob-4"></div>
+      <div class="sc-inner" style="position:relative;z-index:1">
+        <div class="sc-thumb" style="background:linear-gradient(135deg,var(--brown),#6B5045)">
+          <div class="sc-badge">Merch</div>
+        </div>
+        <div class="sc-body">
+          <span class="sc-cat">Accessories</span>
+          <div class="sc-name">Matcha Morning Canvas Tote</div>
+          <p class="sc-desc">Sturdy canvas tote with the Stylishandhealthy. wordmark. Effortlessly aesthetic.</p>
+          <div class="sc-foot"><div class="sc-price"><small>from</small> $24</div><button class="sc-btn">Shop</button></div>
+        </div>
       </div>
     </div>
   </div>
@@ -513,7 +627,7 @@
         <div class="chip">Sticker sheet</div>
       </div>
     </div>
-    <a href="#newsletter" class="btn btn-f" style="white-space:nowrap;flex-shrink:0">Get the bundle →</a>
+    <a href="#newsletter" class="btn btn-f" style="white-space:nowrap;flex-shrink:0">Get the bundle</a>
   </div>
 </section>
 
@@ -536,7 +650,7 @@
       <div class="trust-box">
         <div class="sl" style="margin-bottom:10px">Why trust us?</div>
         <p class="sp" style="font-size:.88rem;max-width:none">Every recommendation is based on ingredient research, dermatology literature, and real testing. Affiliate links are always disclosed. We never recommend what we wouldn't use ourselves.</p>
-        <a href="#subscription" class="btn btn-f" style="margin-top:22px;display:inline-flex">Weekly deepdive →</a>
+        <a href="#subscription" class="btn btn-f" style="margin-top:22px;display:inline-flex">Weekly deepdive</a>
       </div>
     </div>
     <div class="skc-cards rv d2">
@@ -546,7 +660,7 @@
           <div class="skc-ctag">Holy Grail</div>
           <h3>The Ordinary — Salicylic Acid 2% Solution</h3>
           <p>Unclogs pores deeply, reduces acne, controls excess oil, improves texture. One of the best value-for-money actives available. Perfect entry-level BHA.</p>
-          <a href="#newsletter" class="skc-lnk">Full breakdown + affiliate link →</a>
+          <a href="#newsletter" class="skc-lnk">Full breakdown + affiliate link</a>
         </div>
       </div>
       <div class="skc">
@@ -555,7 +669,7 @@
           <div class="skc-ctag">Moisturiser</div>
           <h3>CeraVe — Moisturising Cream</h3>
           <p>Ceramides, hyaluronic acid, and niacinamide in one affordable fragrance-free formula. Works for every skin type.</p>
-          <a href="#newsletter" class="skc-lnk">Full ingredient breakdown →</a>
+          <a href="#newsletter" class="skc-lnk">Full ingredient breakdown</a>
         </div>
       </div>
       <div class="skc">
@@ -564,7 +678,7 @@
           <div class="skc-ctag">SPF</div>
           <h3>Altruist — Sun Protection SPF 50+</h3>
           <p>High-protection, lightweight, shockingly affordable. Dermatologist-formulated with broad-spectrum UVA/UVB filters.</p>
-          <a href="#newsletter" class="skc-lnk">Why SPF is non-negotiable →</a>
+          <a href="#newsletter" class="skc-lnk">Why SPF is non-negotiable</a>
         </div>
       </div>
       <div class="skc">
@@ -572,8 +686,8 @@
         <div>
           <div class="skc-ctag">Vitamin C</div>
           <h3>Timeless — 20% Vitamin C + E Ferulic Acid</h3>
-          <p>A dupe-level match for the iconic $180 SkinCeuticals serum. Brightens, protects, and fades hyperpigmentation at a fraction of the cost.</p>
-          <a href="#newsletter" class="skc-lnk">The vitamin C science →</a>
+          <p>A dupe-level match for the iconic SkinCeuticals serum. Brightens, protects, and fades hyperpigmentation at a fraction of the cost.</p>
+          <a href="#newsletter" class="skc-lnk">The vitamin C science</a>
         </div>
       </div>
       <div class="skc">
@@ -582,7 +696,7 @@
           <div class="skc-ctag">Retinol</div>
           <h3>Paula's Choice — 1% Retinol Treatment</h3>
           <p>Encapsulated retinol with soothing ingredients that minimise irritation while delivering real anti-aging results. The ideal starting retinoid.</p>
-          <a href="#newsletter" class="skc-lnk">Retinol beginner guide →</a>
+          <a href="#newsletter" class="skc-lnk">Retinol beginner guide</a>
         </div>
       </div>
     </div>
@@ -591,12 +705,13 @@
 
 <!-- BLOG -->
 <section id="blog" class="sec">
+  <div class="doodle" style="width:65px;bottom:10%;right:4%;opacity:.4;transform:rotate(20deg)"><img src="heart1.png" alt="" /></div>
   <div class="blog-hdr rv">
     <div>
       <div class="sl">From the blog</div>
-      <h2 class="sh">Reads that make you <em>better.</em></h2>
+      <h2 class="sh hand-accent">Reads that make you <em>better.</em></h2>
     </div>
-    <a href="#newsletter" class="btn btn-o">All posts →</a>
+    <a href="#newsletter" class="btn btn-o">All posts</a>
   </div>
   <div class="blog-grid">
     <div class="bc feat rv d1">
@@ -606,7 +721,7 @@
       <div class="bc-body">
         <div class="bc-title">5 Reasons The Ordinary Salicylic Acid Should Be in Your Routine — and How to Actually Use It</div>
         <div class="bc-meta"><div class="bc-dot"></div>7 min read · Skincare Science</div>
-        <div class="bc-rd">Read more →</div>
+        <div class="bc-rd">Read more</div>
       </div>
     </div>
     <div class="bc rv d2">
@@ -616,7 +731,7 @@
       <div class="bc-body">
         <div class="bc-title">5 Science-Backed Tips That Actually Improve Your Life</div>
         <div class="bc-meta"><div class="bc-dot"></div>5 min read · Wellness</div>
-        <div class="bc-rd">Read →</div>
+        <div class="bc-rd">Read</div>
       </div>
     </div>
     <div class="bc rv d3">
@@ -626,7 +741,7 @@
       <div class="bc-body">
         <div class="bc-title">8 Journal Prompts for Deeper Thinking and Clearer Intentions</div>
         <div class="bc-meta"><div class="bc-dot"></div>4 min read · Self-Growth</div>
-        <div class="bc-rd">Read →</div>
+        <div class="bc-rd">Read</div>
       </div>
     </div>
   </div>
@@ -634,7 +749,7 @@
 
 <!-- SUBSCRIPTION -->
 <section id="subscription">
-  <div style="max-width:1200px;margin:0 auto;padding:108px 80px" class="sec" style="padding:0">
+  <div style="max-width:1200px;margin:0 auto;padding:108px 80px">
     <div class="rv" style="margin-bottom:50px">
       <div class="sub-sl">Weekly Skincare Deepdive</div>
       <div class="sub-sh">Get the science <em>delivered.</em></div>
@@ -652,7 +767,7 @@
           <div class="sub-perk">Blog posts &amp; recommendations</div>
           <div class="sub-perk">Community access</div>
         </div>
-        <button class="sub-cta">Join free →</button>
+        <button class="sub-cta">Join free</button>
       </div>
       <div class="subc feat rv d2">
         <div class="sub-badge">Most popular</div>
@@ -666,7 +781,7 @@
           <div class="sub-perk">Exclusive PDF downloads</div>
           <div class="sub-perk">Reader Q&amp;A answers</div>
         </div>
-        <button class="sub-cta">Start for $6 →</button>
+        <button class="sub-cta">Start for $6</button>
       </div>
       <div class="subc rv d3">
         <div class="sub-badge">Premium</div>
@@ -680,7 +795,7 @@
           <div class="sub-perk">Exclusive sticker drops</div>
           <div class="sub-perk">Monthly live Q&amp;A session</div>
         </div>
-        <button class="sub-cta">Get full access →</button>
+        <button class="sub-cta">Get full access</button>
       </div>
     </div>
   </div>
@@ -688,6 +803,7 @@
 
 <!-- TESTIMONIALS -->
 <section id="testimonials">
+  <div class="doodle" style="width:75px;top:8%;left:5%;opacity:.4;transform:rotate(-10deg)"><img src="heart2.png" alt="" /></div>
   <div class="rv">
     <div class="sl">Kind words</div>
     <h2 class="sh">Loved by people who want wellness<br>to feel <em>beautiful.</em></h2>
@@ -715,11 +831,11 @@
 <section id="newsletter">
   <div class="nw-in rv">
     <div class="sl">Join the community</div>
-    <h2 class="sh">Pretty routines,<br>delivered to your <em>inbox.</em></h2>
+    <h2 class="sh hand-accent">Pretty routines,<br>delivered to your <em>inbox.</em></h2>
     <p class="sp" style="margin-top:12px">Free skincare guides, wellness tips, and exclusive downloads. No spam — ever. Your trust is our most valuable asset.</p>
     <form class="nw-form" onsubmit="handleSub(event)">
       <input type="email" placeholder="your@email.com" required />
-      <button type="submit" class="btn btn-f" style="border-radius:100px;padding:11px 26px;cursor:none">Join free ✦</button>
+      <button type="submit" class="btn btn-f" style="border-radius:100px;padding:11px 26px;cursor:none">Join free</button>
     </form>
     <div class="nw-perks">
       <div class="nw-perk">No spam, ever</div>
@@ -727,19 +843,24 @@
       <div class="nw-perk">Unsubscribe anytime</div>
     </div>
   </div>
+  <!-- doodle -->
+  <div class="doodle" style="width:130px;bottom:10%;right:8%;opacity:.3;transform:rotate(5deg)"><img src="heart3.png" alt="" /></div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="ft-top">
     <div>
-      <span class="ft-logo">Stylishandhealthy<span>.</span></span>
+      <div class="ft-logo">
+        <img src="logo_main.png" alt="S&H" />
+        <span>Stylishandhealthy<em>.</em></span>
+      </div>
       <p class="ft-p">Pretty routines. Smarter choices. A soft corner of the internet for beauty, wellness, and self-improvement that feels as beautiful as it should.</p>
       <div class="ft-socs">
-        <a href="#" class="ft-s">◎</a>
-        <a href="#" class="ft-s">⊕</a>
-        <a href="#" class="ft-s">◈</a>
-        <a href="#" class="ft-s">⊞</a>
+        <a href="#" class="ft-s">P</a>
+        <a href="#" class="ft-s">I</a>
+        <a href="#" class="ft-s">T</a>
+        <a href="#" class="ft-s">Y</a>
       </div>
     </div>
     <div class="ft-col">
@@ -764,7 +885,7 @@
       <a href="#">Affiliate disclosure</a>
       <a href="#">Contact</a>
       <a href="#">Privacy policy</a>
-      <a href="#">stylishandhealthy.com</a>
+      <a href="journal.html">Free Journal</a>
     </div>
   </div>
   <div class="ft-bot">
@@ -774,7 +895,6 @@
 </footer>
 
 <script>
-  // Cursor with lerp
   const cdot = document.getElementById('cdot');
   const cring = document.getElementById('cring');
   let mx=0,my=0,rx=0,ry=0;
@@ -784,28 +904,17 @@
     el.addEventListener('mouseenter',()=>document.body.classList.add('ch'));
     el.addEventListener('mouseleave',()=>document.body.classList.remove('ch'));
   });
-
-  // Nav
   const nav=document.getElementById('nav');
-  window.addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>10),{passive:true});
-
-  // Reveal
   const ro=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}}),{threshold:.1});
   document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
-
-  // Shop tabs
   document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));t.classList.add('on')}));
-
-  // Ingredient tabs
   document.querySelectorAll('.itab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.itab').forEach(x=>x.classList.remove('on'));t.classList.add('on')}));
-
-  // Newsletter
   function handleSub(e){
     e.preventDefault();
     const btn=e.target.querySelector('button');
-    btn.textContent='✓ You\'re in!';
+    btn.textContent='You\'re in!';
     btn.style.background='var(--green-lt)';
-    setTimeout(()=>{btn.textContent='Join free ✦';btn.style.background='';e.target.reset()},3000);
+    setTimeout(()=>{btn.textContent='Join free';btn.style.background='';e.target.reset()},3000);
   }
 </script>
 </body>
