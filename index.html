@@ -1,141 +1,182 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stylish & Healthy | My Daily Journal 2026</title>
-  <meta name="description" content="Stylish & Healthy digital journal for women who want motivation, self-care, beauty rituals and feminine discipline." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stylish & Healthy | 2026 Daily Journal</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="page-glow one"></div>
+  <div class="page-glow two"></div>
 
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Stylish and Healthy home">
-      <span>Stylish & Healthy</span>
-      <small>digital beauty rituals</small>
+    <a class="brand" href="#top">
+      <span class="brand-name">Stylish & Healthy</span>
+      <span class="brand-sub">Digital ritual journal</span>
     </a>
-    <nav class="nav-links" aria-label="Primary navigation">
-      <a href="#video">Watch</a>
+
+    <nav class="nav">
+      <a href="#journal">Journal</a>
       <a href="#inside">Inside</a>
       <a href="#ritual">Ritual</a>
-      <a href="#faq">FAQ</a>
+      <a href="#shop">Shop</a>
     </nav>
-    <a class="nav-cta" href="#video">View journal</a>
+
+    <a class="header-cta" href="#shop">Get the journal</a>
   </header>
 
   <main id="top">
-    <section class="hero section-pad">
+    <section class="hero">
       <div class="hero-copy reveal">
-        <p class="eyebrow">2026 digital journal · soft discipline · glow era</p>
-        <h1>Plan your year like the woman you’re becoming.</h1>
-        <p class="hero-text">A feminine digital journal for intentions, habits, reflection, routines and daily confidence — designed to make self-growth feel beautiful enough to keep.</p>
+        <p class="eyebrow">2026 daily journal · feminine reset system</p>
+        <h1>Your soft-life routine, organized beautifully.</h1>
+        <p class="hero-text">
+          A digital daily journal for planning your year, romanticizing your routine,
+          tracking your habits, and becoming the most grounded version of yourself.
+        </p>
+
         <div class="hero-actions">
-          <a class="button primary" href="#video">Watch the journal</a>
-          <a class="button ghost" href="#inside">See what’s inside</a>
+          <a class="btn primary" href="#shop">Shop journal</a>
+          <a class="btn secondary" href="#video">Watch preview</a>
         </div>
-        <div class="metrics" aria-label="Journal highlights">
-          <div><strong>2026</strong><span>full-year journal</span></div>
-          <div><strong>Daily</strong><span>ritual pages</span></div>
-          <div><strong>Soft</strong><span>luxury layout</span></div>
+
+        <div class="mini-stats">
+          <div><strong>517</strong><span>pages</span></div>
+          <div><strong>12</strong><span>months</span></div>
+          <div><strong>2026</strong><span>dated</span></div>
         </div>
       </div>
 
       <div class="hero-showcase reveal" id="video">
         <div class="video-shell">
-          <div class="video-topbar">
+          <div class="window-bar">
             <span></span><span></span><span></span>
-            <p>journal_showcase_v2.mp4</p>
+            <p>journal preview</p>
           </div>
           <video class="journal-video" controls autoplay muted loop playsinline preload="metadata">
             <source src="./assets/journal_showcase_v2.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
-        <div class="floating-note note-one">monthly intentions</div>
-        <div class="floating-note note-two">daily gratitude</div>
-        <div class="floating-note note-three">habit tracker</div>
+        <div class="floating-note note-a">daily gratitude</div>
+        <div class="floating-note note-b">habit tracker</div>
+        <div class="floating-note note-c">monthly reset</div>
       </div>
     </section>
 
     <section class="marquee" aria-label="Brand values">
       <div class="marquee-track">
-        <span>romanticize your routine</span><span>✦</span><span>become her</span><span>✦</span><span>beauty meets discipline</span><span>✦</span><span>live beautifully</span><span>✦</span><span>feel deeply</span><span>✦</span><span>thrive daily</span><span>✦</span>
-        <span>romanticize your routine</span><span>✦</span><span>become her</span><span>✦</span><span>beauty meets discipline</span><span>✦</span><span>live beautifully</span><span>✦</span><span>feel deeply</span><span>✦</span><span>thrive daily</span><span>✦</span>
+        <span>live beautifully</span>
+        <span>feel deeply</span>
+        <span>thrive daily</span>
+        <span>plan softly</span>
+        <span>glow intentionally</span>
+        <span>live beautifully</span>
+        <span>feel deeply</span>
+        <span>thrive daily</span>
       </div>
     </section>
 
-    <section class="section-pad split" id="inside">
+    <section class="journal-section" id="journal">
       <div class="section-heading reveal">
-        <p class="eyebrow">what’s inside</p>
-        <h2>A complete ritual system, not just blank pages.</h2>
-      </div>
-      <div class="feature-grid">
-        <article class="feature-card reveal"><span>01</span><h3>Annual intentions</h3><p>Start the year with clarity for your mind, body and life goals.</p></article>
-        <article class="feature-card reveal"><span>02</span><h3>Monthly overview</h3><p>Plan each month, track habits and decide how you want to feel.</p></article>
-        <article class="feature-card reveal"><span>03</span><h3>Weekly spreads</h3><p>Map your schedule, intention, notes, wins and next-week focus.</p></article>
-        <article class="feature-card reveal"><span>04</span><h3>Daily pages</h3><p>Gratitude, priorities, schedule, thoughts, energy and evening reflection.</p></article>
-      </div>
-    </section>
-
-    <section class="journal-stage section-pad" id="ritual">
-      <div class="journal-art reveal" aria-hidden="true">
-        <div class="page-stack stack-a"></div>
-        <div class="page-stack stack-b"></div>
-        <div class="main-journal">
-          <span class="journal-year">2026</span>
-          <h2>My Daily Journal</h2>
-          <p>A Stylish & Healthy Ritual</p>
-          <small>Live beautifully. Feel deeply. Thrive daily.</small>
-        </div>
-      </div>
-      <div class="ritual-copy reveal">
-        <p class="eyebrow">the daily ritual</p>
-        <h2>Small pages that make your life feel held.</h2>
-        <p>Use it every morning to choose your priorities and every evening to reflect without overthinking. The goal is not perfection — it is returning to yourself daily.</p>
-        <div class="ritual-steps">
-          <button data-step="gratitude" class="active">Gratitude</button>
-          <button data-step="priorities">Priorities</button>
-          <button data-step="reflection">Reflection</button>
-        </div>
-        <div class="ritual-result" id="ritualResult">Write three things that make your life feel rich before the day starts.</div>
-      </div>
-    </section>
-
-    <section class="section-pad shop-section">
-      <div class="shop-card reveal">
-        <p class="eyebrow">main product</p>
+        <p class="eyebrow">the main product</p>
         <h2>My Daily Journal 2026</h2>
-        <p>Designed for women who love pretty systems, soft structure, self-care and motivation. Built for planning, reflecting and becoming more intentional every day.</p>
-        <a class="button primary" href="#video">Watch showcase again</a>
+        <p>
+          Designed as a calm ritual space for intentions, routines, reflection,
+          gratitude, planning, and your everyday glow-up.
+        </p>
       </div>
-      <div class="affirmation-card reveal">
-        <p class="eyebrow">today’s affirmation</p>
-        <h3 id="affirmation">I am allowed to become a more disciplined, beautiful version of myself.</h3>
-        <button class="button ghost" id="newAffirmation">New affirmation</button>
+
+      <div class="journal-grid">
+        <article class="feature-card reveal">
+          <span class="card-number">01</span>
+          <h3>Annual intentions</h3>
+          <p>Set your tone for the year across mind, body, and life.</p>
+        </article>
+        <article class="feature-card reveal">
+          <span class="card-number">02</span>
+          <h3>Monthly overview</h3>
+          <p>Plan each month with focus, habits, mood, and reflection.</p>
+        </article>
+        <article class="feature-card reveal">
+          <span class="card-number">03</span>
+          <h3>Weekly planning</h3>
+          <p>Map your week, schedule your days, and choose one intention.</p>
+        </article>
+        <article class="feature-card reveal">
+          <span class="card-number">04</span>
+          <h3>Daily pages</h3>
+          <p>Gratitude, top priorities, schedule, notes, mood, and energy.</p>
+        </article>
       </div>
     </section>
 
-    <section class="section-pad faq" id="faq">
-      <div class="section-heading reveal">
-        <p class="eyebrow">questions</p>
-        <h2>Before you buy.</h2>
+    <section class="inside" id="inside">
+      <div class="inside-copy reveal">
+        <p class="eyebrow">what’s inside</p>
+        <h2>A full year of structure without the boring planner energy.</h2>
+        <p>
+          This is for the girl who wants organization to feel pretty, calming,
+          and motivating — not overwhelming.
+        </p>
       </div>
-      <details class="reveal" open><summary>Is this a physical journal?</summary><p>This page is set up for a digital journal product. You can sell it, send it or deliver it however you prefer.</p></details>
-      <details class="reveal"><summary>Does the video work on GitHub Pages?</summary><p>Yes. The video is stored in the assets folder and referenced with a safe relative path: <code>./assets/journal_showcase_v2.mp4</code>.</p></details>
-      <details class="reveal"><summary>Is the PDF included?</summary><p>No. The PDF has been removed from this website package completely.</p></details>
+
+      <div class="stacked-pages reveal" aria-hidden="true">
+        <div class="page-card page-1">
+          <span>January</span>
+          <strong>Monthly Reset</strong>
+          <div class="line"></div><div class="line short"></div><div class="dots"></div>
+        </div>
+        <div class="page-card page-2">
+          <span>Weekly Plan</span>
+          <strong>Intention</strong>
+          <div class="planner-lines"></div>
+        </div>
+        <div class="page-card page-3">
+          <span>Daily Ritual</span>
+          <strong>Gratitude · Priorities · Mood</strong>
+          <div class="checklist"><i></i><i></i><i></i></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ritual" id="ritual">
+      <div class="section-heading reveal">
+        <p class="eyebrow">interactive ritual</p>
+        <h2>Choose today’s journal mood</h2>
+      </div>
+
+      <div class="mood-lab reveal">
+        <div class="mood-buttons">
+          <button data-mood="soft" class="active">Soft reset</button>
+          <button data-mood="glow">Glow-up</button>
+          <button data-mood="focus">Focused girl</button>
+        </div>
+        <div class="mood-result">
+          <p id="moodTitle">Soft reset</p>
+          <h3 id="moodPrompt">What would feel peaceful, beautiful, and manageable today?</h3>
+          <span id="moodTag">journal · skincare · slow morning</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop" id="shop">
+      <div class="shop-card reveal">
+        <p class="eyebrow">ready when you are</p>
+        <h2>Start your 2026 ritual.</h2>
+        <p>
+          Add your purchase link here when you’re ready. For now, this button
+          is a placeholder you can replace in <code>index.html</code>.
+        </p>
+        <a class="btn primary large" href="#" aria-label="Replace this with your shop link">Buy the journal</a>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div>
-      <strong>Stylish & Healthy</strong>
-      <span>Empower · Elevate · Become her</span>
-    </div>
-    <a href="#top">Back to top ↑</a>
+    <p>Stylish & Healthy</p>
+    <span>Live beautifully. Feel deeply. Thrive daily.</span>
   </footer>
 
   <script src="./script.js"></script>

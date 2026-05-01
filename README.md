@@ -1,6 +1,6 @@
-# Stylish & Healthy — Video-Only GitHub Pages Site
+# Stylish & Healthy — GitHub Pages Video-Only Site
 
-This version removes the PDF completely and keeps the uploaded video as the main showcase.
+This package is clean and contains **no PDF**.
 
 ## Files
 
@@ -8,25 +8,23 @@ This version removes the PDF completely and keeps the uploaded video as the main
 index.html
 styles.css
 script.js
-assets/journal_showcase_v2.mp4
+assets/
+  journal_showcase_v2.mp4
 ```
 
 ## GitHub Pages setup
 
 1. Create a new GitHub repository.
-2. Upload the contents of this folder to the repository root.
-3. Make sure the file structure stays exactly the same.
+2. Upload the contents of this folder, not the zip itself.
+3. Make sure `index.html` is in the repository root.
 4. Go to **Settings → Pages**.
-5. Choose **Deploy from branch**.
-6. Select your main branch and `/root`.
-7. Save.
+5. Under **Build and deployment**, choose:
+   - Source: Deploy from a branch
+   - Branch: main
+   - Folder: /root
+6. Save.
 
 ## Important
 
-The video source in `index.html` is:
-
-```html
-./assets/journal_showcase_v2.mp4
-```
-
-Do not change it to `/assets/...` for GitHub Pages project sites.
+If you see PDF code like `/Type /Page`, your repo is still serving an old PDF file as the homepage.
+Delete the old PDF from the repo and make sure `index.html` is the file GitHub Pages opens.
