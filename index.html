@@ -1,253 +1,248 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Stylish & Healthy — luxury digital journals, beauty rituals, skincare routine builder, and feminine self-growth tools." />
   <title>Stylish & Healthy | Digital Beauty Rituals</title>
+  <meta name="description" content="Stylish & Healthy creates feminine digital journals, skincare routines, and soft-luxury self-growth tools." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
-  <div class="ambient ambient-three"></div>
+  <div class="cursor-orb" aria-hidden="true"></div>
+  <div class="page-noise" aria-hidden="true"></div>
 
-  <header class="announcement">
-    <span>✦ New: The Becoming Journal</span>
-    <span>Empower · Elevate · Become Her</span>
-    <span>Build Your Ritual →</span>
+  <header class="site-header">
+    <div class="ribbon">
+      <span>✦ new journal drop</span>
+      <span>matcha glow era</span>
+      <span>become her daily</span>
+    </div>
+    <nav class="nav">
+      <a class="brand" href="#top" aria-label="Stylish and Healthy homepage">
+        <span class="brand-mark">S&H</span>
+        <span>
+          <strong>Stylish & Healthy</strong>
+          <em>digital beauty rituals</em>
+        </span>
+      </a>
+      <button class="menu-button" id="menuButton" aria-label="Open menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#journals">Journals</a>
+        <a href="#routine">Routine Builder</a>
+        <a href="#rituals">Rituals</a>
+        <a href="#glow-lab">Glow Lab</a>
+        <a href="#letter">Join</a>
+      </div>
+      <a class="nav-cta" href="#journals">Shop the glow</a>
+    </nav>
   </header>
 
-  <nav class="nav">
-    <a class="brand" href="#top" aria-label="Stylish and Healthy home">
-      <span class="brand-name">Stylish & Healthy</span>
-      <span class="brand-subtitle">Digital Beauty Rituals</span>
-    </a>
-    <div class="nav-links">
-      <a href="#journals">Journals</a>
-      <a href="#routine">Routine Builder</a>
-      <a href="#rituals">Rituals</a>
-      <a href="#story">About</a>
-    </div>
-    <a class="nav-cta" href="#shop">Shop</a>
-  </nav>
-
   <main id="top">
-    <section class="hero section-shell">
-      <div class="hero-copy reveal">
-        <div class="eyebrow">✦ Luxury self-growth for women</div>
-        <h1>Become the woman your future self is obsessed with.</h1>
+    <section class="hero section-reveal">
+      <div class="hero-copy">
+        <p class="eyebrow">Luxury self-growth for feminine women</p>
+        <h1>Build a life that feels like matcha, silk, and main-character discipline.</h1>
         <p class="hero-text">
-          Digital journals, beauty systems, and personalized skincare rituals created for the woman who wants her life to feel intentional, feminine, and expensive.
+          Digital journals, skincare rituals, and soft systems for the woman who wants her routines to feel beautiful enough to keep.
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="#shop">Start your glow era ✦</a>
-          <a class="button secondary" href="#routine">Build my routine ✧</a>
+          <a class="button primary magnetic" href="#routine">Build my ritual</a>
+          <a class="button secondary magnetic" href="#journals">Explore journals</a>
         </div>
-        <div class="stats-card">
-          <div><strong>10k+</strong><span>girls inspired</span></div>
+        <div class="mini-stats" aria-label="Brand highlights">
+          <div><strong data-count="10000">0</strong><span>girls inspired</span></div>
           <div><strong>3 min</strong><span>daily ritual</span></div>
           <div><strong>soft</strong><span>luxury systems</span></div>
         </div>
       </div>
 
-      <div class="hero-visual reveal delay-1" aria-label="Luxury digital journal and skincare ritual visual">
-        <div class="visual-bg"></div>
-        <div class="glow-desk">The Glow Desk</div>
-        <div class="crown-badge">♕</div>
-        <div class="journal-hero">
-          <div class="journal-inner">
-            <span>✦</span>
-            <h2>The Becoming Journal</h2>
-            <p>identity prompts · rituals · feminine discipline</p>
+      <div class="hero-art" aria-label="CSS illustration of journals and skincare ritual tools">
+        <div class="floating-badge badge-one">today's prompt<br><b>I choose her.</b></div>
+        <div class="floating-badge badge-two">matcha mood<br><b>calm discipline</b></div>
+        <div class="journal-stack">
+          <div class="journal journal-back"><span>Glow Era</span></div>
+          <div class="journal journal-front">
+            <div class="journal-lines"></div>
+            <span>The Becoming<br>Journal</span>
+            <small>become her</small>
           </div>
         </div>
-        <div class="ritual-note floating-card">
-          <div class="mini-label">Today’s Ritual ♡</div>
-          <p>Write the version of you who already has it.</p>
-        </div>
-        <div class="routine-note floating-card dark">
-          <div class="mini-label">Skin Ritual Preview</div>
-          <p>Hydrating cleanser · peptide serum · barrier cream · SPF glow veil</p>
-        </div>
+        <div class="doodle flower flower-a"><i></i><i></i><i></i><i></i><b></b></div>
+        <div class="doodle flower flower-b"><i></i><i></i><i></i><i></i><b></b></div>
+        <div class="serum serum-one"><span></span></div>
+        <div class="serum serum-two"><span></span></div>
+        <div class="sparkle s1">✦</div>
+        <div class="sparkle s2">✧</div>
+        <div class="sparkle s3">✶</div>
       </div>
     </section>
 
-    <section class="marquee" aria-label="Brand values">
-      <span>feminine discipline</span>
-      <i>✦</i>
-      <span>beauty systems</span>
-      <i>✦</i>
-      <span>soft luxury</span>
-      <i>✦</i>
-      <span>becoming her</span>
-      <i>✦</i>
-      <span>self-worth rituals</span>
+    <section class="marquee" aria-label="brand values">
+      <div class="marquee-track">
+        <span>feminine discipline</span><b>✦</b><span>matcha glow</span><b>✦</b><span>beauty systems</span><b>✦</b><span>soft luxury</span><b>✦</b><span>self-worth rituals</span><b>✦</b>
+        <span>feminine discipline</span><b>✦</b><span>matcha glow</span><b>✦</b><span>beauty systems</span><b>✦</b><span>soft luxury</span><b>✦</b><span>self-worth rituals</span><b>✦</b>
+      </div>
     </section>
 
-    <section id="shop" class="products section-shell">
-      <div class="section-heading reveal">
+    <section id="journals" class="section shop section-reveal">
+      <div class="section-heading split">
         <div>
-          <p class="section-kicker">Shop the system</p>
-          <h2>Your glow-up should look as good as it feels.</h2>
+          <p class="eyebrow">The digital shelf</p>
+          <h2>Pretty tools for becoming painfully consistent.</h2>
         </div>
-        <p>
-          A curated digital shelf for confidence, routines, self-love, beauty, and becoming more intentional without making life complicated.
-        </p>
+        <p>Choose your current era. Every product is designed to feel calm, organized, feminine, and expensive without being complicated.</p>
       </div>
 
-      <div id="journals" class="product-grid">
-        <article class="product-card reveal">
-          <div class="product-art rose">
-            <span class="product-tag">Signature</span>
-            <div class="mini-journal"><span>The</span><strong>Becoming Journal</strong></div>
+      <div class="product-grid">
+        <article class="product-card tilt-card active" data-product="becoming">
+          <div class="product-visual book-visual matcha-book">
+            <span>The Becoming<br>Journal</span>
           </div>
           <div class="product-info">
-            <div>
-              <h3>The Becoming Journal</h3>
-              <p>identity, discipline, feminine confidence</p>
-            </div>
-            <strong>€19</strong>
+            <small>Signature journal</small>
+            <h3>The Becoming Journal</h3>
+            <p>Identity prompts, discipline tracking, glow-up planning, and self-worth resets.</p>
+            <button class="text-link" data-open-modal="becoming">View details →</button>
           </div>
-          <a href="#" class="text-link">Explore →</a>
         </article>
 
-        <article class="product-card reveal delay-1">
-          <div class="product-art cream">
-            <span class="product-tag">Website Tool</span>
-            <div class="tablet-mockup">
-              <h4>Glow Ritual Builder</h4>
-              <div class="routine-icons"><i></i><i></i><i></i><i></i></div>
-              <div class="mock-lines"><b></b><b></b><b></b></div>
-            </div>
+        <article class="product-card tilt-card" data-product="reset">
+          <div class="product-visual book-visual cream-book">
+            <span>Soft Life<br>Reset</span>
           </div>
           <div class="product-info">
-            <div>
-              <h3>Glow Ritual Builder</h3>
-              <p>personalized routines for your skin era</p>
-            </div>
-            <strong>Free</strong>
+            <small>Guided planner</small>
+            <h3>Soft Life Reset</h3>
+            <p>Declutter your mind, rebuild your standards, and romanticize the basics.</p>
+            <button class="text-link" data-open-modal="reset">View details →</button>
           </div>
-          <a href="#routine" class="text-link">Try it →</a>
         </article>
 
-        <article class="product-card reveal delay-2">
-          <div class="product-art beige">
-            <span class="product-tag">Most Loved</span>
-            <div class="mini-journal soft"><span>Soft Life</span><strong>Reset</strong></div>
+        <article class="product-card tilt-card" data-product="beauty">
+          <div class="product-visual book-visual blush-book">
+            <span>Beauty Rituals</span>
           </div>
           <div class="product-info">
-            <div>
-              <h3>Soft Life Reset</h3>
-              <p>motivation, routines, emotional clarity</p>
-            </div>
-            <strong>€14</strong>
+            <small>Routine tracker</small>
+            <h3>Beauty Rituals Diary</h3>
+            <p>Track skincare, haircare, bodycare, mood, water, and your weekly glow notes.</p>
+            <button class="text-link" data-open-modal="beauty">View details →</button>
           </div>
-          <a href="#" class="text-link">Explore →</a>
         </article>
       </div>
     </section>
 
-    <section id="routine" class="routine-builder section-shell">
-      <div class="routine-dark reveal">
-        <p class="section-kicker">Signature website experience</p>
-        <h2>Build your skincare ritual like a luxury consult.</h2>
-        <p>
-          Your routine builder should feel like a private beauty desk: personal, calm, polished, and instantly useful.
-        </p>
-        <div class="routine-tabs" role="tablist" aria-label="Choose skin goal">
-          <button class="active" data-goal="glow">✦ Glow</button>
-          <button data-goal="clear">♧ Clear</button>
-          <button data-goal="soft">♡ Soft</button>
-        </div>
-      </div>
-
-      <div class="routine-result reveal delay-1">
-        <div class="result-top">
-          <div>
-            <p class="section-kicker">Routine result</p>
-            <h3 id="routine-title">Your glow ritual</h3>
+    <section id="routine" class="section routine section-reveal">
+      <div class="routine-panel">
+        <div class="routine-copy">
+          <p class="eyebrow">Signature website tool</p>
+          <h2>Build your skincare ritual like a mini luxury consult.</h2>
+          <p>Select your skin mood and let the page create a simple ritual. This makes your website feel interactive, personal, and memorable.</p>
+          <div class="routine-tabs" role="tablist" aria-label="Choose a skin mood">
+            <button class="tab active" data-skin="glow">Glow</button>
+            <button class="tab" data-skin="calm">Calm</button>
+            <button class="tab" data-skin="clear">Clear</button>
+            <button class="tab" data-skin="soft">Soft</button>
           </div>
-          <span>♡</span>
         </div>
-        <p id="routine-copy" class="result-copy">A dewy, balanced ritual built around hydration, barrier support, and consistency.</p>
-        <div class="routine-steps">
-          <div><span>1</span><p><strong>Cleanse softly</strong>Remove, refresh, and reset.</p></div>
-          <div><span>2</span><p><strong>Treat intentionally</strong>Apply actives that support your goals.</p></div>
-          <div><span>3</span><p><strong>Moisturize generously</strong>Nourish and strengthen your barrier.</p></div>
-          <div><span>4</span><p><strong>Protect the glow</strong>Shield your skin every single day.</p></div>
+
+        <div class="routine-card" id="routineCard">
+          <div class="routine-top">
+            <span class="routine-icon">☼</span>
+            <div>
+              <small>Your ritual result</small>
+              <h3 id="routineTitle">Matcha Glow Ritual</h3>
+            </div>
+          </div>
+          <p id="routineDescription">A bright, hydrated routine focused on gentle consistency and glow-supporting layers.</p>
+          <ol id="routineSteps" class="routine-steps">
+            <li><span>1</span><b>Milky cleanse</b><em>start soft, never stripped</em></li>
+            <li><span>2</span><b>Hydrating essence</b><em>layer calm moisture</em></li>
+            <li><span>3</span><b>Barrier cream</b><em>seal the ritual</em></li>
+            <li><span>4</span><b>SPF glow veil</b><em>protect the future you</em></li>
+          </ol>
         </div>
-        <a class="button primary full" href="#">Take the routine quiz →</a>
       </div>
     </section>
 
-    <section id="rituals" class="rituals section-shell">
-      <div class="ritual-copy reveal">
-        <p class="section-kicker">The brand philosophy</p>
-        <h2>Pretty systems for powerful women.</h2>
-        <p>
-          Stylish & Healthy is not about perfection. It is about creating a daily environment that makes confidence feel natural.
-        </p>
+    <section id="rituals" class="section rituals section-reveal">
+      <div class="section-heading center">
+        <p class="eyebrow">Daily ritual board</p>
+        <h2>Aesthetic systems that make discipline feel feminine.</h2>
       </div>
       <div class="ritual-grid">
-        <div class="ritual-card reveal"><span>☼</span><p>Morning confidence prompts</p></div>
-        <div class="ritual-card reveal delay-1"><span>▦</span><p>Weekly glow-up planning</p></div>
-        <div class="ritual-card reveal delay-2"><span>♧</span><p>Skincare routine mapping</p></div>
-        <div class="ritual-card reveal"><span>↗</span><p>Mood, beauty, and habit tracking</p></div>
-        <div class="ritual-card reveal delay-1"><span>♡</span><p>Self-worth reminders</p></div>
-        <div class="ritual-card reveal delay-2"><span>♕</span><p>Feminine discipline systems</p></div>
+        <button class="ritual-card" data-affirmation="You do not chase. You become undeniable."><span>☁</span><b>Morning soft reset</b><small>2-minute identity prompt</small></button>
+        <button class="ritual-card" data-affirmation="Your standards are allowed to be expensive."><span>♡</span><b>Self-worth check</b><small>confidence before scrolling</small></button>
+        <button class="ritual-card" data-affirmation="Small routines create the woman people notice."><span>✎</span><b>Journal ritual</b><small>write, release, decide</small></button>
+        <button class="ritual-card" data-affirmation="Beauty becomes magnetic when it feels intentional."><span>✦</span><b>Beauty routine</b><small>skin, body, fragrance</small></button>
+        <button class="ritual-card" data-affirmation="Your glow-up is not rushed. It is curated."><span>⌁</span><b>Weekly planning</b><small>habits, goals, glow notes</small></button>
+        <button class="ritual-card" data-affirmation="You are becoming the proof."><span>♕</span><b>Main character audit</b><small>standards, energy, environment</small></button>
       </div>
+      <div class="affirmation-box" id="affirmationBox">Click a ritual to receive your affirmation.</div>
     </section>
 
-    <section id="story" class="story section-shell reveal">
-      <div class="quote-block">
-        <span>“</span>
-        <h2>I wanted my routine to feel beautiful enough to actually keep.</h2>
-        <p>
-          So I created digital tools that make discipline feel feminine and self-growth feel like a lifestyle.
-        </p>
-        <em>With love, Stylish & Healthy</em>
-      </div>
-      <div class="journal-wall" aria-label="Digital journal collection">
-        <div>Confidence Journal</div>
-        <div>Glow Era</div>
-        <div>Self-Love Journal</div>
-        <div>Discipline Diary</div>
-        <div>Beauty Rituals</div>
-        <div>Soft Reset</div>
-      </div>
-    </section>
-
-    <section class="newsletter section-shell reveal">
-      <div>
-        <h2>Make becoming her feel organized, beautiful, and inevitable.</h2>
-      </div>
-      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for joining The Glow Letter ✦');">
-        <label for="email">The Glow Letter</label>
-        <p>Soft motivation, beauty rituals, and new journal drops.</p>
+    <section id="glow-lab" class="section glow-lab section-reveal">
+      <div class="lab-card">
         <div>
-          <input id="email" type="email" placeholder="Enter your email" required />
-          <button type="submit">Join the glow</button>
+          <p class="eyebrow">Glow Lab</p>
+          <h2>Find your current era.</h2>
+          <p>Move the slider and let your homepage respond. This gives the site a more dynamic, app-like feeling.</p>
         </div>
-      </form>
+        <div class="slider-wrap">
+          <label for="eraRange">Soft discipline level</label>
+          <input id="eraRange" type="range" min="0" max="100" value="64" />
+          <div class="era-output" id="eraOutput">
+            <span>64%</span>
+            <b>Matcha Main Character</b>
+          </div>
+        </div>
+      </div>
+      <div class="orbit-art" aria-hidden="true">
+        <div class="orbit orbit-one"><span>journal</span></div>
+        <div class="orbit orbit-two"><span>skincare</span></div>
+        <div class="orbit orbit-three"><span>mindset</span></div>
+        <div class="center-orb">S&H</div>
+      </div>
+    </section>
+
+    <section id="letter" class="section letter section-reveal">
+      <div class="letter-card">
+        <div>
+          <p class="eyebrow">The Glow Letter</p>
+          <h2>Soft motivation, journal drops, skincare rituals, and weekly reminders to become her.</h2>
+        </div>
+        <form class="subscribe-form" id="subscribeForm">
+          <input type="email" placeholder="your email" aria-label="Email address" required />
+          <button class="button primary" type="submit">Join the glow</button>
+          <p id="formMessage" role="status"></p>
+        </form>
+      </div>
     </section>
   </main>
 
-  <footer class="footer section-shell">
+  <dialog class="product-modal" id="productModal">
+    <button class="modal-close" id="modalClose" aria-label="Close modal">×</button>
+    <small id="modalType">Digital journal</small>
+    <h3 id="modalTitle">The Becoming Journal</h3>
+    <p id="modalText">A soft-luxury journal for identity, discipline, and feminine confidence.</p>
+    <ul id="modalList"></ul>
+    <button class="button primary">Add to wishlist</button>
+  </dialog>
+
+  <footer class="footer">
     <div>
       <strong>Stylish & Healthy</strong>
-      <p>Empower · Elevate · Become Her</p>
+      <p>Digital beauty rituals for women who choose their softest and strongest self.</p>
     </div>
     <div class="footer-links">
       <a href="#journals">Journals</a>
-      <a href="#routine">Routine Builder</a>
+      <a href="#routine">Routine</a>
       <a href="#rituals">Rituals</a>
-      <a href="#story">About</a>
+      <a href="#letter">Newsletter</a>
     </div>
-    <p>© 2026 Stylish & Healthy. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
