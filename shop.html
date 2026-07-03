@@ -1,121 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shop -- Stylishandhealthy.</title>
-  <meta name="description" content="Stickers, digital downloads, clothing, and accessories from Stylishandhealthy." />
-  <link rel="icon" type="image/png" href="logo_main.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Serif+Display:ital@0;1&family=Indie+Flower&family=Dancing+Script:wght@400;500;600;700&family=DynaPuff:wght@400;500;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    .shop-tabs { display: flex; gap: 8px; margin-bottom: 40px; flex-wrap: wrap; }
-    .tab { font-family: var(--body); font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 8px 20px; border-radius: 100px; border: 1.5px solid rgba(85,107,62,.2); color: var(--green-dk); background: transparent; cursor: none; transition: background .2s, border-color .2s, color .2s; }
-    .tab.on, .tab:hover { background: var(--green); border-color: var(--green); color: var(--cream); }
-    .shop-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-    .sc { background: var(--cream); border-radius: 24px; overflow: hidden; transition: transform .25s var(--ease), box-shadow .25s; cursor: none; border: 1px solid rgba(58,42,34,.07); }
-    .sc:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(85,107,62,.13); }
-    .sc.wide { grid-column: span 2; }
-    .sc-thumb { height: 200px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-    .sc.wide .sc-thumb { height: 220px; }
-    .sc-badge { position: absolute; top: 13px; left: 13px; background: rgba(247,241,232,.92); color: var(--green-dk); font-family: var(--body); font-size: .63rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 5px 11px; border-radius: 100px; }
-    .sc-body { padding: 18px 20px 22px; }
-    .sc-cat { font-family: var(--body); font-size: .66rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--pink-deep); margin-bottom: 5px; display: block; }
-    .sc-name { font-family: var(--display); font-size: 1.15rem; font-weight: 400; color: var(--green-dk); margin-bottom: 6px; line-height: 1.25; }
-    .sc-desc { font-size: .82rem; color: var(--brown-lt); line-height: 1.6; margin-bottom: 14px; }
-    .sc-foot { display: flex; align-items: center; justify-content: space-between; }
-    .sc-price { font-family: var(--display); font-size: 1.15rem; color: var(--green-dk); }
-    .sc-price small { font-family: var(--body); font-size: .68rem; color: var(--brown-lt); }
-    .sc-btn { background: var(--green); color: var(--cream); font-family: var(--body); font-size: .74rem; font-weight: 700; padding: 8px 17px; border-radius: 100px; border: 0; cursor: none; transition: background .2s, transform .15s var(--easeb); }
-    .sc-btn:hover { background: var(--green-dk); transform: scale(1.06); }
-    @media(max-width:860px) { .shop-grid{grid-template-columns:repeat(2,1fr)} .sc.wide{grid-column:span 2} }
-    @media(max-width:560px) { .shop-grid{grid-template-columns:1fr} .sc.wide{grid-column:span 1} }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="theme-color" content="#F7F1E8"/>
+<meta name="p:domain_verify" content="d52c5a761a8aff55499412bf4194b9c0"/>
+<title>Stylishandhealthy - Hot Girls Read the Research</title>
+<meta name="description" content="Research-backed skincare and realistic wellness advice for people who want pretty routines without falling for every trend online."/>
+<link rel="canonical" href="https://www.stylishandhealthy.com/"/>
+<link rel="icon" href="/assets/images/logo_main.png" type="image/png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Dancing+Script:wght@500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/assets/css/styles.css"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Stylishandhealthy - Hot Girls Read the Research"/>
+<meta property="og:description" content="Research-backed skincare and realistic wellness advice for people who want pretty routines without falling for every trend online."/>
+<meta property="og:url" content="https://www.stylishandhealthy.com/"/>
+<meta property="og:image" content="https://www.stylishandhealthy.com/assets/images/youtube_banner.png"/>
+<meta property="og:site_name" content="Stylishandhealthy"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Stylishandhealthy - Hot Girls Read the Research"/>
+<meta name="twitter:description" content="Research-backed skincare and realistic wellness advice for people who want pretty routines without falling for every trend online."/>
+<meta name="twitter:image" content="https://www.stylishandhealthy.com/assets/images/youtube_banner.png"/>
+
 </head>
 <body>
-
-<div id="cdot"></div>
-<div id="cring"></div>
-
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div id="cdot" aria-hidden="true"></div>
 <div class="wordmark-bar">
-  <img src="youtube_banner.png" alt="Stylishandhealthy." />
+  <a href="/" aria-label="Stylishandhealthy home">
+    <img src="/assets/images/youtube_banner.png" alt="Stylishandhealthy"/>
+  </a>
 </div>
-
-<nav>
-  <a href="index.html" class="nav-logo"><img src="logo_main.png" alt="S&H" /></a>
-  <ul>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="shop.html">Shop</a></li>
-    <li><a href="skincare.html">Skincare</a></li>
-    <li><a href="subscribe.html">Subscribe</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="journal.html" class="npill">Free Journal</a></li>
+<nav class="site-nav" aria-label="Primary navigation">
+  <a class="nav-logo" href="/" aria-label="Stylishandhealthy home">
+    <img src="/assets/images/logo_main.png" alt="S&H"/>
+    <span>Stylish<em>&</em>healthy</span>
+  </a>
+  <button class="nav-burger" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul id="primary-navigation">
+    <li><a class="" href="/blog">Blog</a></li>
+<li><a class="" href="/shop">Shop</a></li>
+<li><a class="" href="/skincare">Skincare</a></li>
+<li><a class="" href="/about">About</a></li>
+<li><a class="nav-pill" href="/journal">Free Journal</a></li>
   </ul>
 </nav>
+<main id="main-content">
 
-<div class="page-hero">
-  <div class="page-hero-blob"></div>
-  <div class="doodle" style="width:120px;top:18%;right:10%;opacity:.25;transform:rotate(8deg)"><img src="heart1.png" alt="" /></div>
-  <div class="sl">The shop</div>
-  <h1>Stickers, downloads,<br>clothing <em>and more.</em></h1>
-  <p>Everything you need to make your routines feel beautiful -- from aesthetic sticker packs to digital planners and soft merch.</p>
-</div>
-
-<section class="sec" style="background:var(--pink);position:relative;overflow:hidden">
-  <div class="doodle" style="width:100px;top:5%;right:6%;transform:rotate(10deg);opacity:.4"><img src="heart2.png" alt="" /></div>
-
-  <div class="shop-tabs rv">
-    <button class="tab on">All</button>
-    <button class="tab">Stickers</button>
-    <button class="tab">Digital</button>
-    <button class="tab">Clothing</button>
-    <button class="tab">Accessories</button>
-  </div>
-
-  <div class="empty-state rv d1">
-    <div class="empty-icon">🛍️</div>
-    <h3>Nothing <em>here yet</em></h3>
-    <p>Products are coming soon. Join the newsletter to be the first to know when the shop goes live.</p>
-    <a href="subscribe.html" class="btn btn-f">Get notified</a>
-  </div>
-</section>
-
-<section class="nw-strip">
-  <div class="doodle" style="width:110px;bottom:12%;right:7%;opacity:.3;transform:rotate(-5deg)"><img src="heart3.png" alt="" /></div>
-  <div class="nw-strip-inner rv">
-    <div class="sl">Be first to shop</div>
-    <h2>New drops, straight to your <em>inbox.</em></h2>
-    <p>Be the first to know when new products land. Subscribers get early access and exclusive discounts.</p>
-    <form class="nw-form" onsubmit="handleNwSub(event)">
-      <input type="email" placeholder="your@email.com" required />
-      <button type="submit" class="btn btn-wh" style="padding:11px 26px;font-size:.87rem">Join free</button>
-    </form>
-    <p class="nw-note">No spam. Unsubscribe anytime.</p>
-  </div>
-</section>
-
-<footer>
-  <div class="ft-top">
-    <div>
-      <div class="ft-logo"><img src="logo_main.png" alt="S&H" /><span>Stylishandhealthy<em>.</em></span></div>
-      <p class="ft-p">Pretty routines. Smarter choices. A soft corner of the internet for beauty, wellness, and self-improvement.</p>
-      <div class="ft-socs"><a href="#" class="ft-s">P</a><a href="#" class="ft-s">I</a><a href="#" class="ft-s">T</a><a href="#" class="ft-s">Y</a></div>
+<section class="hero hero-editorial">
+  <div class="hero-copy reveal">
+    <p class="eyebrow">Research-backed skincare and realistic wellness</p>
+    <h1>Hot girls read <em>the research.</em></h1>
+    <p class="hero-script">Actual research, pretty routines, no trend worship.</p>
+    <p class="hero-text">Stylishandhealthy helps you understand skincare, beauty habits, wellness claims, and product hype without making your routine feel like a science exam.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="/blog">Explore the blog</a>
+      <a class="btn btn-secondary" href="/journal">Download the free journal</a>
     </div>
-    <div class="ft-col"><h4>Shop</h4><a href="shop.html">All products</a><a href="shop.html">Sticker Packs</a><a href="shop.html">Digital Downloads</a><a href="shop.html">Clothing</a></div>
-    <div class="ft-col"><h4>Explore</h4><a href="blog.html">Blog</a><a href="skincare.html">Skincare Recs</a><a href="subscribe.html">Subscribe</a><a href="about.html">About</a><a href="journal.html">Free Journal</a></div>
-    <div class="ft-col"><h4>Info</h4><a href="about.html">Our mission</a><a href="terms.html">Terms of service</a><a href="privacy.html">Privacy policy</a><a href="affiliate.html">Affiliate disclosure</a><a href="contact.html">Contact</a></div>
+    <div class="hero-proof">
+      <span>ingredient science</span>
+      <span>routine logic</span>
+      <span>realistic habits</span>
+    </div>
   </div>
-  <div class="ft-bot"><p>2025 Stylishandhealthy. All rights reserved.</p><span>Pretty routines. Smarter choices.</span></div>
-</footer>
+  <div class="hero-visual reveal">
+    <div class="research-board">
+      <div class="board-top">
+        <span>Research card</span>
+        <strong>Barrier first.</strong>
+      </div>
+      <div class="board-meter"><span style="width:82%"></span></div>
+      <div class="board-list">
+        <p><b>Claim:</b> “Your skin needs a reset.”</p>
+        <p><b>Question:</b> Is it irritation, acne, dehydration, or over-exfoliation?</p>
+        <p><b>Verdict:</b> Fix the basics before adding more actives.</p>
+      </div>
+    </div>
+    <div class="floating-note note-one">SPF is skincare.</div>
+    <div class="floating-note note-two">Pretty does not mean unscientific.</div>
+  </div>
+</section>
 
-<script src="shared.js"></script>
-<script>
-  document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
-    document.querySelectorAll('.tab').forEach(x => x.classList.remove('on'));
-    t.classList.add('on');
-  }));
-</script>
+<section class="section section-tight">
+  <div class="section-heading center reveal">
+    <p class="eyebrow">What we cover</p>
+    <h2>Beauty content with a spine.</h2>
+    <p>Clear categories, stronger explanations, and less vague wellness advice.</p>
+  </div>
+  <div class="cover-grid">
+    <a class="cover-card image-cover large reveal" href="/skincare">
+      <img src="/assets/images/skincare_science_square.png" alt="Skincare science illustration"/>
+      <div class="image-shade"></div>
+      <div class="cover-content overlay">
+        <span>01</span>
+        <h3>Skincare science</h3>
+        <p>Barrier damage, acne, sunscreen filters, exfoliation, moisturizers, and ingredient logic explained without fearmongering.</p>
+      </div>
+    </a>
+    <a class="cover-card reveal" href="/blog">
+      <span>02</span>
+      <h3>Product breakdowns</h3>
+      <p>Ingredient-led reviews that explain who a product makes sense for, who should skip it, and what claims are overhyped.</p>
+    </a>
+    <a class="cover-card reveal" href="/blog">
+      <span>03</span>
+      <h3>Wellness claims</h3>
+      <p>Fitness, habits, beauty trends, and lifestyle advice checked against evidence instead of vibes.</p>
+    </a>
+    <a class="cover-card reveal" href="/shop">
+      <span>04</span>
+      <h3>Printable routines</h3>
+      <p>Journals, trackers, to-do lists, and reset pages made to be printed, used, and not overcomplicated.</p>
+    </a>
+  </div>
+</section>
+
+<section class="section split-section">
+  <div class="split-copy reveal">
+    <p class="eyebrow">The method</p>
+    <h2>Every article should help you make a better decision.</h2>
+    <p>Good beauty content should not just say “this is good” or “this is toxic.” It should explain the mechanism, the limits, the tradeoffs, and the person it actually suits.</p>
+    <div class="method-list">
+      <div><strong>1</strong><p>Start with the claim.</p></div>
+      <div><strong>2</strong><p>Check the mechanism and evidence.</p></div>
+      <div><strong>3</strong><p>Translate it into a realistic routine choice.</p></div>
+    </div>
+  </div>
+  <div class="detail-panel reveal">
+    <h3>What makes a recommendation stronger?</h3>
+    <ul class="check-list">
+      <li>Ingredient list reviewed in context</li>
+      <li>Skin type and routine fit explained</li>
+      <li>Known limitations mentioned clearly</li>
+      <li>Affiliate links disclosed without hiding the incentive</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section muted">
+  <div class="section-heading reveal">
+    <p class="eyebrow">Start here</p>
+    <h2>Featured reads</h2>
+  </div>
+  <div class="article-grid">
+    <a class="article-card featured reveal" href="/blog/skin-barrier-damaged-or-acne">
+      <div class="article-img gradient-card"><span>Barrier vs acne</span></div>
+      <div class="article-body">
+        <span class="tag">Skin barrier</span>
+        <h3>Is My Skin Barrier Damaged, or Do I Just Have Acne?</h3>
+        <p>The practical difference between irritation, barrier damage, and acne patterns.</p>
+      </div>
+    </a>
+    <a class="article-card reveal" href="/blog/beauty-of-joseon-relief-sun-review">
+      <div class="article-img gradient-card alt"><span>SPF review</span></div>
+      <div class="article-body">
+        <span class="tag">Sunscreen</span>
+        <h3>Beauty of Joseon Relief Sun Review</h3>
+        <p>Filters, finish, who it suits, and where the hype is actually justified.</p>
+      </div>
+    </a>
+    <a class="article-card reveal" href="/blog/the-ordinary-glycolic-acid-review">
+      <div class="article-img gradient-card sage"><span>Acid logic</span></div>
+      <div class="article-body">
+        <span class="tag">Exfoliation</span>
+        <h3>The Ordinary Glycolic Acid Review</h3>
+        <p>How to use exfoliating acids without turning your barrier into a project.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="section pinterest-section">
+  <div class="pin-card reveal">
+    <div>
+      <p class="eyebrow">Pinterest</p>
+      <h2>Follow the visual research board.</h2>
+      <p>Skincare diagrams, routine maps, product explainers, and printable previews.</p>
+    </div>
+    <a class="btn btn-light" href="https://www.pinterest.com/stylishandhealthy">Follow on Pinterest</a>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="footer-logo" href="/">
+        <img src="/assets/images/logo_main.png" alt="S&H"/>
+        <span>Stylish<em>&</em>healthy</span>
+      </a>
+      <p>Research-backed skincare and wellness content for people who want pretty routines without falling for every trend online.</p>
+      <div class="social-row" aria-label="Social links">
+        <a href="https://www.instagram.com/stylishandhealthie" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1"/></svg></a>
+        <a href="https://www.pinterest.com/stylishandhealthy" aria-label="Pinterest"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12.2 3.2c-5.2 0-7.9 3.7-7.9 6.9 0 2 1.1 3.6 2.7 4.2.3.1.5 0 .6-.3l.3-1.2c.1-.4.1-.5-.2-.8-.5-.6-.8-1.2-.8-2.2 0-2.9 2.2-5.4 5.7-5.4 3.1 0 4.8 1.9 4.8 4.4 0 3.3-1.5 6.1-3.7 6.1-1.2 0-2.1-1-1.8-2.2.3-1.5 1-3.1 1-4.2 0-1-.5-1.8-1.6-1.8-1.3 0-2.3 1.3-2.3 3.1 0 1.1.4 1.9.4 1.9s-1.3 5.4-1.5 6.3c-.4 1.9-.1 4.1 0 4.3 0 .1.2.2.3.1.1-.1 1.8-2.2 2.4-4.1l.7-2.6c.3.7 1.3 1.2 2.4 1.2 3.1 0 5.3-2.9 5.3-6.8 0-2.9-2.5-5.7-6.8-5.7z"/></svg></a>
+        <a href="https://www.tiktok.com/@stylish.and.healthy" aria-label="TikTok"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15.8 3c.3 2.5 1.7 4 4.2 4.3v3.1c-1.5.1-2.9-.4-4.1-1.2v5.8c0 4.3-2.7 6.3-5.7 6.3-3.1 0-5.6-2.2-5.6-5.3 0-3.4 2.7-5.6 6.2-5.3v3.2c-1.6-.2-2.8.6-2.8 2 0 1.2 1 2 2.2 2 1.4 0 2.2-.8 2.2-2.7V3h3.4z"/></svg></a>
+        <a href="/contact" aria-label="Contact"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Read</h4>
+      <a href="/blog">Latest articles</a>
+      <a href="/skincare">Skincare science</a>
+      <a href="/shop">Free resources</a>
+      <a href="/journal">Free journal</a>
+    </div>
+    <div>
+      <h4>Brand</h4>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/affiliate">Affiliate disclosure</a>
+      <a href="/privacy">Privacy policy</a>
+    </div>
+    <div>
+      <h4>Useful note</h4>
+      <p class="footer-note">Content is educational and not a replacement for medical care. Product links may be affiliate links and are always disclosed.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Stylishandhealthy. All rights reserved.</p>
+    <span>Hot girls read the research.</span>
+  </div>
+</footer>
+<script src="/assets/js/shared.js" defer></script>
 </body>
 </html>

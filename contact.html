@@ -1,130 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact -- Stylishandhealthy.</title>
-  <meta name="description" content="Get in touch with Stylishandhealthy." />
-  <link rel="icon" type="image/png" href="logo_main.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Serif+Display:ital@0;1&family=Indie+Flower&family=Dancing+Script:wght@400;500;600;700&family=DynaPuff:wght@400;500;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-    .contact-form-wrap { background: var(--cream-warm); border-radius: 24px 18px 28px 20px / 20px 28px 18px 24px; padding: 40px; border: 1px solid rgba(58,42,34,.07); }
-    .form-field { margin-bottom: 18px; }
-    .form-label { font-family: var(--body); font-size: .8rem; font-weight: 600; color: var(--green-dk); display: block; margin-bottom: 7px; letter-spacing: .03em; }
-    .form-input, .form-textarea { width: 100%; border: 1.5px solid rgba(85,107,62,.15); background: var(--cream); font-family: var(--body); font-size: .95rem; color: var(--brown); padding: 13px 18px; border-radius: 14px; outline: none; transition: border-color .2s; }
-    .form-input:focus, .form-textarea:focus { border-color: var(--green); }
-    .form-textarea { resize: vertical; min-height: 140px; }
-    .form-input::placeholder, .form-textarea::placeholder { color: var(--brown-lt); }
-    .contact-info { display: flex; flex-direction: column; gap: 20px; }
-    .ci-card { background: var(--cream-warm); border-radius: 18px; padding: 24px; border: 1px solid rgba(58,42,34,.07); }
-    .ci-label { font-family: var(--body); font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--green-lt); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
-    .ci-label::before { content: ''; width: 16px; height: 1px; background: var(--green-lt); flex-shrink: 0; }
-    .ci-val { font-family: var(--display); font-size: 1.1rem; color: var(--green-dk); }
-    .ci-sub { font-size: .83rem; color: var(--brown-lt); margin-top: 4px; line-height: 1.5; }
-    @media(max-width:860px) { .contact-grid{grid-template-columns:1fr;gap:44px} }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="theme-color" content="#F7F1E8"/>
+<meta name="p:domain_verify" content="d52c5a761a8aff55499412bf4194b9c0"/>
+<title>About Stylishandhealthy - Research-Backed Beauty Without Nonsense</title>
+<meta name="description" content="Learn the mission behind Stylishandhealthy: research-backed skincare, realistic wellness, and beauty content with better standards."/>
+<link rel="canonical" href="https://www.stylishandhealthy.com/about"/>
+<link rel="icon" href="/assets/images/logo_main.png" type="image/png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Dancing+Script:wght@500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/assets/css/styles.css"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="About Stylishandhealthy - Research-Backed Beauty Without Nonsense"/>
+<meta property="og:description" content="Learn the mission behind Stylishandhealthy: research-backed skincare, realistic wellness, and beauty content with better standards."/>
+<meta property="og:url" content="https://www.stylishandhealthy.com/about"/>
+<meta property="og:image" content="https://www.stylishandhealthy.com/assets/images/youtube_banner.png"/>
+<meta property="og:site_name" content="Stylishandhealthy"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="About Stylishandhealthy - Research-Backed Beauty Without Nonsense"/>
+<meta name="twitter:description" content="Learn the mission behind Stylishandhealthy: research-backed skincare, realistic wellness, and beauty content with better standards."/>
+<meta name="twitter:image" content="https://www.stylishandhealthy.com/assets/images/youtube_banner.png"/>
+
 </head>
 <body>
-
-<div id="cdot"></div>
-<div id="cring"></div>
-
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div id="cdot" aria-hidden="true"></div>
 <div class="wordmark-bar">
-  <img src="youtube_banner.png" alt="Stylishandhealthy." />
+  <a href="/" aria-label="Stylishandhealthy home">
+    <img src="/assets/images/youtube_banner.png" alt="Stylishandhealthy"/>
+  </a>
 </div>
-
-<nav>
-  <a href="index.html" class="nav-logo"><img src="logo_main.png" alt="S&H" /></a>
-  <ul>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="shop.html">Shop</a></li>
-    <li><a href="skincare.html">Skincare</a></li>
-    <li><a href="subscribe.html">Subscribe</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="journal.html" class="npill">Free Journal</a></li>
+<nav class="site-nav" aria-label="Primary navigation">
+  <a class="nav-logo" href="/" aria-label="Stylishandhealthy home">
+    <img src="/assets/images/logo_main.png" alt="S&H"/>
+    <span>Stylish<em>&</em>healthy</span>
+  </a>
+  <button class="nav-burger" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul id="primary-navigation">
+    <li><a class="" href="/blog">Blog</a></li>
+<li><a class="" href="/shop">Shop</a></li>
+<li><a class="" href="/skincare">Skincare</a></li>
+<li><a class=" active" href="/about">About</a></li>
+<li><a class="nav-pill" href="/journal">Free Journal</a></li>
   </ul>
 </nav>
+<main id="main-content">
 
-<div class="page-hero">
-  <div class="page-hero-blob"></div>
-  <div class="doodle" style="width:115px;top:20%;right:9%;opacity:.25;transform:rotate(8deg)"><img src="heart1.png" alt="" /></div>
-  <div class="sl">Say hello</div>
-  <h1>Get in <em>touch.</em></h1>
-  <p>Questions, collabs, press enquiries, or just a kind word -- we would love to hear from you.</p>
-</div>
-
-<section class="sec" style="background:var(--cream);position:relative;overflow:hidden">
-  <div class="doodle" style="width:90px;bottom:8%;right:5%;opacity:.35;transform:rotate(-10deg)"><img src="heart2.png" alt="" /></div>
-
-  <div class="contact-grid">
-    <div class="rv">
-      <div class="sl">Send a message</div>
-      <h2 class="sh" style="margin-bottom:28px">We read <em>everything.</em></h2>
-      <div class="contact-form-wrap">
-        <div class="form-field">
-          <label class="form-label">Your name</label>
-          <input class="form-input" type="text" placeholder="First name" />
-        </div>
-        <div class="form-field">
-          <label class="form-label">Email address</label>
-          <input class="form-input" type="email" placeholder="your@email.com" />
-        </div>
-        <div class="form-field">
-          <label class="form-label">Subject</label>
-          <input class="form-input" type="text" placeholder="What is this about?" />
-        </div>
-        <div class="form-field">
-          <label class="form-label">Message</label>
-          <textarea class="form-textarea" placeholder="Your message here..."></textarea>
-        </div>
-        <button class="btn btn-f" style="width:100%;justify-content:center">Send message</button>
-      </div>
-    </div>
-
-    <div class="contact-info rv d2">
-      <div class="sl">Other ways to reach us</div>
-      <div class="ci-card">
-        <div class="ci-label">Email</div>
-        <div class="ci-val">hello@stylishandhealthy.com</div>
-        <div class="ci-sub">We reply within 48 hours on weekdays.</div>
-      </div>
-      <div class="ci-card">
-        <div class="ci-label">Collaborations</div>
-        <div class="ci-val">collab@stylishandhealthy.com</div>
-        <div class="ci-sub">Brand partnerships, product gifting, and sponsored content enquiries.</div>
-      </div>
-      <div class="ci-card">
-        <div class="ci-label">Social media</div>
-        <div class="ci-val">@stylishandhealthy</div>
-        <div class="ci-sub">Find us on Pinterest, Instagram, TikTok, and YouTube.</div>
-      </div>
-      <div class="ci-card">
-        <div class="ci-label">Response time</div>
-        <div class="ci-val">Within 2 business days</div>
-        <div class="ci-sub">We are a small team. We appreciate your patience and reply to every message.</div>
-      </div>
-    </div>
+<section class="page-hero compact">
+  <div class="page-hero-inner reveal">
+    <p class="eyebrow">About the brand</p>
+    <h1>Pretty routines are better when they are not built on bad information.</h1>
+    <p>Stylishandhealthy is for readers who like beauty, skincare, wellness, and self-improvement, but do not want to be manipulated by every viral claim online.</p>
   </div>
 </section>
 
-<footer>
-  <div class="ft-top">
-    <div>
-      <div class="ft-logo"><img src="logo_main.png" alt="S&H" /><span>Stylishandhealthy<em>.</em></span></div>
-      <p class="ft-p">Pretty routines. Smarter choices. A soft corner of the internet for beauty, wellness, and self-improvement.</p>
-      <div class="ft-socs"><a href="#" class="ft-s">P</a><a href="#" class="ft-s">I</a><a href="#" class="ft-s">T</a><a href="#" class="ft-s">Y</a></div>
-    </div>
-    <div class="ft-col"><h4>Shop</h4><a href="shop.html">All products</a><a href="shop.html">Sticker Packs</a><a href="shop.html">Digital Downloads</a><a href="shop.html">Clothing</a></div>
-    <div class="ft-col"><h4>Explore</h4><a href="blog.html">Blog</a><a href="skincare.html">Skincare Recs</a><a href="subscribe.html">Subscribe</a><a href="about.html">About</a><a href="journal.html">Free Journal</a></div>
-    <div class="ft-col"><h4>Info</h4><a href="about.html">Our mission</a><a href="terms.html">Terms of service</a><a href="privacy.html">Privacy policy</a><a href="affiliate.html">Affiliate disclosure</a><a href="contact.html">Contact</a></div>
+<section class="section split-section">
+  <div class="split-copy reveal">
+    <p class="eyebrow">The point</p>
+    <h2>This is not anti-beauty. It is anti-nonsense.</h2>
+    <p>I started Stylishandhealthy because beauty content often acts like you have two options: blindly trust trends or become cynical about everything. The better option is to stay curious, check the claim, and make a decision that fits your skin, budget, and actual life.</p>
+    <p>The tone is soft, but the standard is not. If a product is overhyped, I want to say that. If a boring routine step works, I want to make it look good enough that people actually stick with it.</p>
   </div>
-  <div class="ft-bot"><p>2025 Stylishandhealthy. All rights reserved.</p><span>Pretty routines. Smarter choices.</span></div>
-</footer>
+  <div class="quote-panel reveal">
+    <span>♡</span>
+    <p>“The goal is not a perfect routine. The goal is knowing what you are doing and why.”</p>
+  </div>
+</section>
 
-<script src="shared.js"></script>
+<section class="section muted">
+  <div class="section-heading center reveal">
+    <p class="eyebrow">Values</p>
+    <h2>What the site stands for</h2>
+  </div>
+  <div class="values-grid">
+    <article class="value-card reveal"><span>♡</span><h3>Research over panic</h3><p>No fear-based ingredient lists. No “toxic” language just because it gets clicks.</p></article>
+    <article class="value-card reveal"><span>♡</span><h3>Beauty without shame</h3><p>You can care about how things look and still care about evidence.</p></article>
+    <article class="value-card reveal"><span>♡</span><h3>Realistic routines</h3><p>A routine only matters if it fits your time, money, skin, and energy.</p></article>
+    <article class="value-card reveal"><span>♡</span><h3>Clear disclosures</h3><p>Affiliate links should be obvious. Trust matters more than commission.</p></article>
+    <article class="value-card reveal"><span>♡</span><h3>Specific advice</h3><p>“It depends” is not enough. The useful part is explaining what it depends on.</p></article>
+    <article class="value-card reveal"><span>♡</span><h3>Better taste</h3><p>Educational content does not have to look boring to be serious.</p></article>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="footer-logo" href="/">
+        <img src="/assets/images/logo_main.png" alt="S&H"/>
+        <span>Stylish<em>&</em>healthy</span>
+      </a>
+      <p>Research-backed skincare and wellness content for people who want pretty routines without falling for every trend online.</p>
+      <div class="social-row" aria-label="Social links">
+        <a href="https://www.instagram.com/stylishandhealthie" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1"/></svg></a>
+        <a href="https://www.pinterest.com/stylishandhealthy" aria-label="Pinterest"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12.2 3.2c-5.2 0-7.9 3.7-7.9 6.9 0 2 1.1 3.6 2.7 4.2.3.1.5 0 .6-.3l.3-1.2c.1-.4.1-.5-.2-.8-.5-.6-.8-1.2-.8-2.2 0-2.9 2.2-5.4 5.7-5.4 3.1 0 4.8 1.9 4.8 4.4 0 3.3-1.5 6.1-3.7 6.1-1.2 0-2.1-1-1.8-2.2.3-1.5 1-3.1 1-4.2 0-1-.5-1.8-1.6-1.8-1.3 0-2.3 1.3-2.3 3.1 0 1.1.4 1.9.4 1.9s-1.3 5.4-1.5 6.3c-.4 1.9-.1 4.1 0 4.3 0 .1.2.2.3.1.1-.1 1.8-2.2 2.4-4.1l.7-2.6c.3.7 1.3 1.2 2.4 1.2 3.1 0 5.3-2.9 5.3-6.8 0-2.9-2.5-5.7-6.8-5.7z"/></svg></a>
+        <a href="https://www.tiktok.com/@stylish.and.healthy" aria-label="TikTok"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15.8 3c.3 2.5 1.7 4 4.2 4.3v3.1c-1.5.1-2.9-.4-4.1-1.2v5.8c0 4.3-2.7 6.3-5.7 6.3-3.1 0-5.6-2.2-5.6-5.3 0-3.4 2.7-5.6 6.2-5.3v3.2c-1.6-.2-2.8.6-2.8 2 0 1.2 1 2 2.2 2 1.4 0 2.2-.8 2.2-2.7V3h3.4z"/></svg></a>
+        <a href="/contact" aria-label="Contact"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Read</h4>
+      <a href="/blog">Latest articles</a>
+      <a href="/skincare">Skincare science</a>
+      <a href="/shop">Free resources</a>
+      <a href="/journal">Free journal</a>
+    </div>
+    <div>
+      <h4>Brand</h4>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/affiliate">Affiliate disclosure</a>
+      <a href="/privacy">Privacy policy</a>
+    </div>
+    <div>
+      <h4>Useful note</h4>
+      <p class="footer-note">Content is educational and not a replacement for medical care. Product links may be affiliate links and are always disclosed.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Stylishandhealthy. All rights reserved.</p>
+    <span>Hot girls read the research.</span>
+  </div>
+</footer>
+<script src="/assets/js/shared.js" defer></script>
 </body>
 </html>

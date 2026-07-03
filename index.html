@@ -1,355 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stylishandhealthy. -- Pretty Routines. Smarter Choices.</title>
-  <meta name="description" content="Research-backed skincare, wellness, and self-improvement that feels as beautiful as it should." />
-  <link rel="icon" type="image/png" href="logo_main.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Serif+Display:ital@0;1&family=Indie+Flower&family=Dancing+Script:wght@400;500;600;700&family=DynaPuff:wght@400;500;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* ---- HERO ---- */
-    #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; background: var(--cream); position: relative; overflow: hidden; }
-    #hero::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(85,107,62,.065) .55px, transparent .55px); background-size: 22px 22px; pointer-events: none; }
-    .hero-shape { position: absolute; right: -100px; top: -60px; width: 680px; height: 680px; border-radius: 60% 40% 70% 30% / 50% 60% 40% 70%; background: radial-gradient(circle at 40% 40%, var(--pink) 0%, var(--cream) 68%); opacity: .5; animation: hshape 14s ease-in-out infinite; }
-    @keyframes hshape { 0%,100%{transform:scale(1) translateY(0);border-radius:60% 40% 70% 30% / 50% 60% 40% 70%} 50%{transform:scale(1.06) translateY(-18px);border-radius:40% 60% 30% 70% / 60% 40% 70% 30%} }
-    .hero-left { padding: 100px 68px 100px 80px; position: relative; z-index: 2; }
-    .eyebrow { font-family: var(--body); font-size: .71rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--green); display: inline-block; margin-bottom: 22px; padding: 6px 16px; border: 1px solid rgba(85,107,62,.2); border-radius: 100px; background: rgba(85,107,62,.05); }
-    .h1 { font-family: var(--display); font-size: clamp(3.2rem,5.8vw,5.8rem); font-weight: 400; line-height: 1.05; letter-spacing: -.02em; color: var(--green-dk); margin-bottom: 10px; }
-    .h1 em { font-style: italic; color: var(--green); }
-    .h1-sub { font-family: var(--hand); font-size: clamp(1.6rem,2.6vw,2.2rem); color: var(--pink-deep); margin-bottom: 26px; display: block; }
-    .hero-p { font-size: 1rem; line-height: 1.8; color: var(--brown-lt); max-width: 470px; margin-bottom: 36px; }
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-    .hero-proof { display: flex; align-items: center; gap: 14px; margin-top: 34px; }
-    .pavs { display: flex; }
-    .pav { width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--cream); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-size: .9rem; font-style: italic; color: var(--cream); margin-left: -8px; }
-    .pav:first-child { margin-left: 0; }
-    .pa1{background:var(--green)}.pa2{background:var(--pink-deep)}.pa3{background:var(--brown-lt)}
-    .proof-t { font-size: .79rem; color: var(--brown-lt); max-width: 210px; line-height: 1.5; }
-    .hero-right { position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; padding: 80px 80px 80px 0; }
-    .hcards { position: relative; width: 350px; height: 400px; }
-    .hc { position: absolute; border-radius: 22px; padding: 28px; box-shadow: 0 26px 52px rgba(58,42,34,.15); }
-    .hc1 { width: 270px; height: 320px; background: var(--green-dk); top: 0; left: 0; transform: rotate(-5deg); animation: hcf1 9s ease-in-out infinite; display: flex; flex-direction: column; justify-content: flex-end; }
-    .hc2 { width: 252px; height: 288px; background: var(--pink); top: 42px; left: 66px; transform: rotate(3deg); animation: hcf2 11s ease-in-out infinite .8s; display: flex; flex-direction: column; justify-content: flex-end; }
-    .hc3 { width: 234px; height: 252px; background: var(--cream-warm); border: 1px solid rgba(58,42,34,.07); top: 84px; left: 34px; transform: rotate(-.5deg); animation: hcf3 10s ease-in-out infinite .4s; display: flex; flex-direction: column; justify-content: flex-end; }
-    @keyframes hcf1 { 0%,100%{transform:rotate(-5deg) translateY(0)} 50%{transform:rotate(-5deg) translateY(-13px)} }
-    @keyframes hcf2 { 0%,100%{transform:rotate(3deg) translateY(0)} 50%{transform:rotate(3deg) translateY(-9px)} }
-    @keyframes hcf3 { 0%,100%{transform:rotate(-.5deg) translateY(0)} 50%{transform:rotate(-.5deg) translateY(-17px)} }
-    .hc-tag { font-family: var(--body); font-size: .65rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 5px; }
-    .hc1 .hc-tag{color:rgba(247,241,232,.4)} .hc2 .hc-tag{color:rgba(85,107,62,.6)} .hc3 .hc-tag{color:var(--brown-lt)}
-    .hc-name { font-family: var(--display); font-size: 1.35rem; font-weight: 400; line-height: 1.2; }
-    .hc1 .hc-name{color:var(--cream)} .hc2 .hc-name{color:var(--green-dk)} .hc3 .hc-name{color:var(--brown)}
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="theme-color" content="#F7F1E8"/>
+<meta name="p:domain_verify" content="d52c5a761a8aff55499412bf4194b9c0"/>
+<title>Affiliate Disclosure - Stylishandhealthy</title>
+<meta name="description" content="Stylishandhealthy clearly discloses affiliate links, sponsored content, and editorial standards."/>
+<link rel="canonical" href="https://www.stylishandhealthy.com/affiliate"/>
+<link rel="icon" href="/assets/images/logo_main.png" type="image/png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Dancing+Script:wght@500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/assets/css/styles.css"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Affiliate Disclosure - Stylishandhealthy"/>
+<meta property="og:description" content="Stylishandhealthy clearly discloses affiliate links, sponsored content, and editorial standards."/>
+<meta property="og:url" content="https://www.stylishandhealthy.com/affiliate"/>
+<meta property="og:image" content="https://www.stylishandhealthy.com/assets/images/youtube_banner.png"/>
+<meta property="og:site_name" content="Stylishandhealthy"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Affiliate Disclosure - Stylishandhealthy"/>
+<meta name="twitter:description" content="Stylishandhealthy clearly discloses affiliate links, sponsored content, and editorial standards."/>
+<meta name="twitter:image" content="https://www.stylishandhealthy.com/assets/images/youtube_banner.png"/>
 
-    /* ---- JOURNAL STRIP ---- */
-    .journal-strip { background: var(--green-dk); padding: 52px 80px; display: flex; align-items: center; justify-content: space-between; gap: 40px; position: relative; overflow: hidden; }
-    .journal-strip::before { content: ''; position: absolute; right: -60px; top: -60px; width: 300px; height: 300px; border-radius: 50%; background: rgba(247,241,232,.04); }
-    .js-left h3 { font-family: var(--display); font-size: 2.2rem; font-weight: 400; color: var(--cream); margin-bottom: 8px; }
-    .js-left h3 em { font-style: italic; color: var(--pink-mid); }
-    .js-left p { font-size: .95rem; color: rgba(247,241,232,.58); max-width: 480px; line-height: 1.7; }
-    .js-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(247,241,232,.1); border: 1px solid rgba(247,241,232,.2); border-radius: 100px; padding: 7px 18px; margin-bottom: 16px; }
-    .js-badge span { font-family: var(--hand2); font-size: .95rem; color: var(--pink-mid); }
-
-    /* ---- ABOUT ---- */
-    #about { background: var(--green-dk); padding: 96px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; overflow: hidden; }
-    .ast-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-    .ast { background: rgba(247,241,232,.04); border: 1px solid rgba(247,241,232,.07); padding: 34px 26px; transition: background .2s; }
-    .ast:hover { background: rgba(247,241,232,.07); }
-    .ast-n { font-family: var(--display); font-size: 3rem; font-weight: 300; color: var(--pink); line-height: 1; margin-bottom: 5px; }
-    .ast-l { font-size: .77rem; color: rgba(247,241,232,.45); letter-spacing: .05em; }
-    .about-copy .sl{color:var(--green-lt)} .about-copy .sl::before{background:var(--green-lt)}
-    .about-copy .sh{color:var(--cream)} .about-copy .sh em{color:var(--pink-mid)}
-    .about-copy p { color: rgba(247,241,232,.6); margin-bottom: 18px; font-size: .96rem; line-height: 1.8; }
-    .aps { display: flex; flex-direction: column; gap: 1px; margin-top: 30px; }
-    .ap { display: flex; align-items: flex-start; gap: 16px; padding: 17px; border: 1px solid rgba(247,241,232,.07); transition: background .2s; }
-    .ap:hover { background: rgba(247,241,232,.05); }
-    .ap-t { font-family: var(--display); font-size: 1.08rem; font-weight: 400; color: var(--cream); margin-bottom: 2px; }
-    .ap-s { font-size: .84rem; color: rgba(247,241,232,.48); line-height: 1.6; }
-
-    /* ---- CATEGORIES ---- */
-    #categories { background: var(--cream); position: relative; overflow: hidden; }
-    .cats-hdr { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 52px; gap: 24px; flex-wrap: wrap; }
-    .cats-grid { display: grid; grid-template-columns: repeat(3,1fr); grid-template-rows: auto auto; gap: 16px; }
-    .cat { background: var(--cream-warm); border-radius: 28px 20px 32px 18px / 18px 30px 20px 28px; padding: 34px 30px; transition: transform .25s var(--ease), box-shadow .25s; border: 1px solid rgba(58,42,34,.07); cursor: none; position: relative; overflow: hidden; }
-    .cat:hover { transform: translateY(-5px); box-shadow: 0 18px 44px rgba(85,107,62,.1); }
-    .cat.tall { grid-row: span 2; display: flex; flex-direction: column; justify-content: flex-end; min-height: 340px; }
-    .cat.dark { background: var(--green); }
-    .cat.dark .cat-label,.cat.dark .cat-title,.cat.dark .cat-desc,.cat.dark .cat-arr { color: var(--cream); }
-    .cat.dark .cat-label { color: var(--green-lt); }
-    .cat.pink-bg { background: var(--pink); }
-    .cat-label { font-family: var(--body); font-size: .67rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--green-lt); margin-bottom: 9px; display: block; }
-    .cat-title { font-family: var(--display); font-size: 1.5rem; font-weight: 400; color: var(--green-dk); margin-bottom: 9px; line-height: 1.2; }
-    .cat.tall .cat-title { font-size: 2.1rem; }
-    .cat-desc { font-size: .85rem; color: var(--brown-lt); line-height: 1.65; }
-    .cat-arr { display: inline-flex; align-items: center; gap: 6px; font-family: var(--body); font-size: .79rem; font-weight: 600; color: var(--green); margin-top: 16px; transition: gap .18s var(--easeb); }
-    .cat:hover .cat-arr { gap: 11px; }
-    .cat::before { content: ''; position: absolute; width: 160px; height: 160px; background: rgba(255,255,255,.25); border-radius: 60% 40% 70% 30% / 50% 60% 40% 70%; top: -30px; right: -30px; pointer-events: none; animation: blobmorph 14s ease-in-out infinite; }
-    .cat.dark::before { background: rgba(255,255,255,.06); }
-    .cat.pink-bg::before { background: rgba(255,255,255,.3); }
-
-    /* ---- TESTIMONIALS MINI ---- */
-    #testimonials { background: var(--pink); padding: 108px 80px; position: relative; overflow: hidden; }
-    .tg { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 52px; }
-    .tc { background: var(--cream); border-radius: 24px 18px 28px 20px / 20px 28px 18px 24px; padding: 30px; border: 1px solid rgba(58,42,34,.06); transition: transform .25s var(--ease), box-shadow .25s; cursor: none; }
-    .tc:hover { transform: translateY(-4px); box-shadow: 0 15px 38px rgba(85,107,62,.1); }
-    .tc-stars { color: #B8763A; letter-spacing: 2px; font-size: .84rem; margin-bottom: 15px; }
-    .tc-q { font-family: var(--display); font-style: italic; font-size: 1.04rem; font-weight: 400; color: var(--green-dk); line-height: 1.72; margin-bottom: 20px; }
-    .tc-auth { display: flex; align-items: center; gap: 11px; }
-    .tc-av { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-size: 1rem; font-style: italic; color: var(--cream); }
-    .tc-name { font-family: var(--body); font-size: .83rem; font-weight: 600; color: var(--green-dk); }
-    .tc-handle { font-size: .73rem; color: var(--brown-lt); }
-
-    @media(max-width:860px) {
-      #hero{grid-template-columns:1fr} .hero-right{display:none} .hero-left{padding:96px 32px 80px}
-      #about{grid-template-columns:1fr;padding:80px 32px;gap:44px}
-      .cats-grid{grid-template-columns:1fr 1fr} .cat.tall{grid-row:span 1;min-height:auto}
-      .tg{grid-template-columns:1fr}
-      #testimonials,.journal-strip{padding:60px 32px}
-      .journal-strip{flex-direction:column;gap:24px}
-    }
-    @media(max-width:560px) { .cats-grid{grid-template-columns:1fr} .ast-grid{grid-template-columns:1fr} }
-  </style>
 </head>
 <body>
-
-<div id="cdot"></div>
-<div id="cring"></div>
-
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div id="cdot" aria-hidden="true"></div>
 <div class="wordmark-bar">
-  <img src="youtube_banner.png" alt="Stylishandhealthy." />
-</div>
-
-<nav>
-  <a href="index.html" class="nav-logo">
-    <img src="logo_main.png" alt="S&H" />
+  <a href="/" aria-label="Stylishandhealthy home">
+    <img src="/assets/images/youtube_banner.png" alt="Stylishandhealthy"/>
   </a>
-  <ul>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="shop.html">Shop</a></li>
-    <li><a href="skincare.html">Skincare</a></li>
-    <li><a href="subscribe.html">Subscribe</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="journal.html" class="npill">Free Journal</a></li>
+</div>
+<nav class="site-nav" aria-label="Primary navigation">
+  <a class="nav-logo" href="/" aria-label="Stylishandhealthy home">
+    <img src="/assets/images/logo_main.png" alt="S&H"/>
+    <span>Stylish<em>&</em>healthy</span>
+  </a>
+  <button class="nav-burger" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul id="primary-navigation">
+    <li><a class="" href="/blog">Blog</a></li>
+<li><a class="" href="/shop">Shop</a></li>
+<li><a class="" href="/skincare">Skincare</a></li>
+<li><a class="" href="/about">About</a></li>
+<li><a class="nav-pill" href="/journal">Free Journal</a></li>
   </ul>
 </nav>
+<main id="main-content">
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-shape"></div>
-  <div class="doodle" style="width:130px;top:18%;right:8%;transform:rotate(12deg)"><img src="heart1.png" alt="" /></div>
-  <div class="doodle" style="width:80px;bottom:22%;left:6%;transform:rotate(-8deg);opacity:.35"><img src="heart2.png" alt="" /></div>
-  <div class="hero-left">
-    <div class="eyebrow">Wellness - Skincare - Style - Self-Growth</div>
-    <h1 class="h1">Pretty <em>routines.</em><br>Smarter choices.</h1>
-    <span class="h1-sub">Where soft aesthetics meet real science.</span>
-    <p class="hero-p">Research-backed skincare, wellness habits, and self-improvement content designed to feel as beautiful as it is useful. No trends. No pressure. Just real, gentle progress.</p>
-    <div class="hero-actions">
-      <a href="shop.html" class="btn btn-f">Explore the shop</a>
-      <a href="subscribe.html" class="btn btn-o">Weekly skincare deepdive</a>
-    </div>
-    <div class="hero-proof">
-      <div class="pavs">
-        <div class="pav pa1">S</div>
-        <div class="pav pa2">M</div>
-        <div class="pav pa3">L</div>
-      </div>
-      <p class="proof-t">Trusted by 10,000+ who want beauty and wellness to feel real.</p>
-    </div>
+<section class="page-hero legal-hero">
+  <div class="page-hero-inner reveal">
+    <p class="eyebrow">Legal</p>
+    <h1>Affiliate Disclosure</h1>
+    <p>Last updated: July 2026</p>
   </div>
-  <div class="hero-right">
-    <div class="hcards">
-      <div class="hc hc1">
-        <div class="hc-tag">Weekly deepdive</div>
-        <div class="hc-name">Skincare Decoded</div>
-      </div>
-      <div class="hc hc2">
-        <div class="hc-tag">Digital downloads</div>
-        <div class="hc-name">Pretty Planners and Trackers</div>
-      </div>
-      <div class="hc hc3">
-        <div class="hc-tag">Sticker shop</div>
-        <div class="hc-name">Aesthetic Sticker Packs</div>
-      </div>
-    </div>
+</section>
+<section class="section">
+  <div class="legal-body reveal">
+    
+<h2>Affiliate links</h2>
+<p>Some pages may include affiliate links. If you buy through those links, Stylishandhealthy may earn a commission at no extra cost to you.</p>
+<h2>Editorial standard</h2>
+<p>Affiliate commission does not guarantee a positive recommendation. Products should still make sense based on formula, use case, price, and routine fit.</p>
+<h2>Sponsored content</h2>
+<p>Sponsored content, if published, should be clearly labeled. Hidden sponsorships are not acceptable here.</p>
+<h2>Questions</h2>
+<p>Questions about affiliate relationships can be sent through the contact page.</p>
+
   </div>
 </section>
 
-<!-- TICKER -->
-<div class="ticker">
-  <div class="ticker-t">
-    <span class="ti">Research-backed skincare</span><span class="ti">Digital planners</span><span class="ti">Aesthetic stickers</span><span class="ti">Wellness habits</span><span class="ti">Soft discipline</span><span class="ti">Weekly deepdive</span><span class="ti">Pretty routines</span><span class="ti">Smarter choices</span>
-    <span class="ti">Research-backed skincare</span><span class="ti">Digital planners</span><span class="ti">Aesthetic stickers</span><span class="ti">Wellness habits</span><span class="ti">Soft discipline</span><span class="ti">Weekly deepdive</span><span class="ti">Pretty routines</span><span class="ti">Smarter choices</span>
-  </div>
-</div>
-
-<!-- JOURNAL STRIP -->
-<div class="journal-strip">
-  <div class="doodle" style="width:100px;bottom:10%;right:20%;opacity:.4;transform:rotate(-4deg)"><img src="heart3.png" alt="" /></div>
-  <div class="js-left">
-    <div class="js-badge"><span>completely free -- just your email</span></div>
-    <h3>Get the <em>279 Day Journal</em> -- Free</h3>
-    <p>A beautifully designed self-reflection journal with 279 days of guided prompts, habit tracking, and wellness check-ins. Yours free when you join the community.</p>
-  </div>
-  <div class="js-right">
-    <a href="journal.html" class="btn btn-f" style="font-size:1rem;padding:16px 36px">Get it free</a>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="doodle" style="width:110px;top:10%;right:5%;opacity:.25;transform:rotate(8deg)"><img src="heart1.png" alt="" /></div>
-  <div class="ast-grid rv">
-    <div class="ast"><div class="ast-n">10k+</div><div class="ast-l">Community members</div></div>
-    <div class="ast"><div class="ast-n">50+</div><div class="ast-l">Free resources</div></div>
-    <div class="ast"><div class="ast-n">100%</div><div class="ast-l">Research-backed</div></div>
-    <div class="ast"><div class="ast-n">0</div><div class="ast-l">Fake guru energy</div></div>
-  </div>
-  <div class="about-copy rv d2">
-    <div class="sl">Who we are</div>
-    <h2 class="sh">Wellness that feels as <em>beautiful</em> as it should.</h2>
-    <p style="margin-top:18px">We believe self-improvement should never feel overwhelming, clinical, or fake. Stylishandhealthy is your soft corner of the internet -- where real science meets beautiful aesthetics, and good habits feel genuinely enjoyable.</p>
-    <p>Every recommendation is backed by research, every design is intentional, and nothing here is designed to make you feel behind.</p>
-    <div class="aps">
-      <div class="ap"><div><div class="ap-t">Research first, trends never</div><div class="ap-s">We decode ingredients, habits, and routines -- no hype, no filler.</div></div></div>
-      <div class="ap"><div><div class="ap-t">Beauty without pressure</div><div class="ap-s">Progress without guilt. Routines that fit your real life.</div></div></div>
-      <div class="ap"><div><div class="ap-t">Soft discipline. Real results.</div><div class="ap-s">Small consistent habits compound into beautiful transformations.</div></div></div>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="footer-logo" href="/">
+        <img src="/assets/images/logo_main.png" alt="S&H"/>
+        <span>Stylish<em>&</em>healthy</span>
+      </a>
+      <p>Research-backed skincare and wellness content for people who want pretty routines without falling for every trend online.</p>
+      <div class="social-row" aria-label="Social links">
+        <a href="https://www.instagram.com/stylishandhealthie" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1"/></svg></a>
+        <a href="https://www.pinterest.com/stylishandhealthy" aria-label="Pinterest"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12.2 3.2c-5.2 0-7.9 3.7-7.9 6.9 0 2 1.1 3.6 2.7 4.2.3.1.5 0 .6-.3l.3-1.2c.1-.4.1-.5-.2-.8-.5-.6-.8-1.2-.8-2.2 0-2.9 2.2-5.4 5.7-5.4 3.1 0 4.8 1.9 4.8 4.4 0 3.3-1.5 6.1-3.7 6.1-1.2 0-2.1-1-1.8-2.2.3-1.5 1-3.1 1-4.2 0-1-.5-1.8-1.6-1.8-1.3 0-2.3 1.3-2.3 3.1 0 1.1.4 1.9.4 1.9s-1.3 5.4-1.5 6.3c-.4 1.9-.1 4.1 0 4.3 0 .1.2.2.3.1.1-.1 1.8-2.2 2.4-4.1l.7-2.6c.3.7 1.3 1.2 2.4 1.2 3.1 0 5.3-2.9 5.3-6.8 0-2.9-2.5-5.7-6.8-5.7z"/></svg></a>
+        <a href="https://www.tiktok.com/@stylish.and.healthy" aria-label="TikTok"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15.8 3c.3 2.5 1.7 4 4.2 4.3v3.1c-1.5.1-2.9-.4-4.1-1.2v5.8c0 4.3-2.7 6.3-5.7 6.3-3.1 0-5.6-2.2-5.6-5.3 0-3.4 2.7-5.6 6.2-5.3v3.2c-1.6-.2-2.8.6-2.8 2 0 1.2 1 2 2.2 2 1.4 0 2.2-.8 2.2-2.7V3h3.4z"/></svg></a>
+        <a href="/contact" aria-label="Contact"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg></a>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- CATEGORIES -->
-<section id="categories" class="sec">
-  <div class="doodle" style="width:85px;top:8%;right:10%;transform:rotate(-15deg);opacity:.4"><img src="heart2.png" alt="" /></div>
-  <div class="cats-hdr rv">
     <div>
-      <div class="sl">What we cover</div>
-      <h2 class="sh">Everything that makes you <em>glow.</em></h2>
+      <h4>Read</h4>
+      <a href="/blog">Latest articles</a>
+      <a href="/skincare">Skincare science</a>
+      <a href="/shop">Free resources</a>
+      <a href="/journal">Free journal</a>
     </div>
-    <a href="subscribe.html" class="btn btn-o">Join for free</a>
-  </div>
-  <div class="cats-grid">
-    <div class="cat tall dark rv">
-      <div class="cat-label">Deep dives</div>
-      <div class="cat-title">Skincare Science</div>
-      <div class="cat-desc">Ingredient breakdowns, routine guides, and the science behind serums, acids, and moisturisers -- explained simply.</div>
-      <a href="skincare.html" class="cat-arr">Read</a>
-    </div>
-    <div class="cat rv d1">
-      <div class="cat-label">Wellness</div>
-      <div class="cat-title">Habits and Health</div>
-      <div class="cat-desc">Sleep, hydration, movement, and mindset -- proven by science, brought to you simply.</div>
-      <a href="blog.html" class="cat-arr">Explore</a>
-    </div>
-    <div class="cat rv d2">
-      <div class="cat-label">Self-growth</div>
-      <div class="cat-title">Journaling and Mindset</div>
-      <div class="cat-desc">Prompts, frameworks, and reflections to help you think clearly and grow with intention.</div>
-      <a href="blog.html" class="cat-arr">Read</a>
-    </div>
-    <div class="cat pink-bg rv d1">
-      <div class="cat-label">Organisation</div>
-      <div class="cat-title">Systems and Planning</div>
-      <div class="cat-desc">Digital planners, habit trackers, and routine builders that make life feel calm and structured.</div>
-      <a href="shop.html" class="cat-arr">Explore</a>
-    </div>
-    <div class="cat rv d2">
-      <div class="cat-label">Aesthetic</div>
-      <div class="cat-title">Lifestyle and Routines</div>
-      <div class="cat-desc">Morning rituals, self-care routines, and building a life you genuinely love.</div>
-      <a href="blog.html" class="cat-arr">Read</a>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="doodle" style="width:95px;top:8%;left:5%;opacity:.4;transform:rotate(-10deg)"><img src="heart2.png" alt="" /></div>
-  <div class="rv">
-    <div class="sl">Kind words</div>
-    <h2 class="sh">Loved by people who want wellness<br>to feel <em>beautiful.</em></h2>
-  </div>
-  <div class="tg">
-    <div class="tc rv d1">
-      <div class="tc-stars">★★★★★</div>
-      <div class="tc-q">"The salicylic acid breakdown completely changed how I shop for skincare. I finally understand what I'm actually putting on my face."</div>
-      <div class="tc-auth"><div class="tc-av" style="background:var(--green)">M</div><div><div class="tc-name">Maya K.</div><div class="tc-handle">@mayaskinroutine</div></div></div>
-    </div>
-    <div class="tc rv d2">
-      <div class="tc-stars">★★★★★</div>
-      <div class="tc-q">"The weekly deepdive subscription is genuinely the only newsletter I open every single time. Smart, beautiful, and actually useful."</div>
-      <div class="tc-auth"><div class="tc-av" style="background:var(--pink-deep)">L</div><div><div class="tc-name">Lena P.</div><div class="tc-handle">@lenalovesskn</div></div></div>
-    </div>
-    <div class="tc rv d3">
-      <div class="tc-stars">★★★★★</div>
-      <div class="tc-q">"The planner download and the sticker pack made my skincare journaling feel like an actual hobby. I use it every morning."</div>
-      <div class="tc-auth"><div class="tc-av" style="background:var(--brown-lt)">A</div><div><div class="tc-name">Ana R.</div><div class="tc-handle">@anaathome</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- NEWSLETTER -->
-<section class="nw-strip">
-  <div class="doodle" style="width:120px;bottom:15%;right:8%;opacity:.3;transform:rotate(5deg)"><img src="heart3.png" alt="" /></div>
-  <div class="nw-strip-inner rv">
-    <div class="sl">Join the community</div>
-    <h2>Pretty routines, delivered to your <em>inbox.</em></h2>
-    <p>Free skincare guides, wellness tips, and exclusive downloads. No spam, ever.</p>
-    <form class="nw-form" onsubmit="handleNwSub(event)">
-      <input type="email" placeholder="your@email.com" required />
-      <button type="submit" class="btn btn-wh" style="padding:11px 26px;font-size:.87rem">Join free</button>
-    </form>
-    <p class="nw-note">No spam. Unsubscribe anytime.</p>
-  </div>
-</section>
-
-<footer>
-  <div class="ft-top">
     <div>
-      <div class="ft-logo">
-        <img src="logo_main.png" alt="S&H" />
-        <span>Stylishandhealthy<em>.</em></span>
-      </div>
-      <p class="ft-p">Pretty routines. Smarter choices. A soft corner of the internet for beauty, wellness, and self-improvement.</p>
-      <div class="ft-socs">
-        <a href="#" class="ft-s">P</a>
-        <a href="#" class="ft-s">I</a>
-        <a href="#" class="ft-s">T</a>
-        <a href="#" class="ft-s">Y</a>
-      </div>
+      <h4>Brand</h4>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/affiliate">Affiliate disclosure</a>
+      <a href="/privacy">Privacy policy</a>
     </div>
-    <div class="ft-col">
-      <h4>Shop</h4>
-      <a href="shop.html">All products</a>
-      <a href="shop.html">Sticker Packs</a>
-      <a href="shop.html">Digital Downloads</a>
-      <a href="shop.html">Clothing</a>
-      <a href="shop.html">Accessories</a>
-    </div>
-    <div class="ft-col">
-      <h4>Explore</h4>
-      <a href="blog.html">Blog</a>
-      <a href="skincare.html">Skincare Recs</a>
-      <a href="subscribe.html">Subscribe</a>
-      <a href="about.html">About</a>
-      <a href="journal.html">Free Journal</a>
-    </div>
-    <div class="ft-col">
-      <h4>Info</h4>
-      <a href="about.html">Our mission</a>
-      <a href="terms.html">Terms of service</a>
-      <a href="privacy.html">Privacy policy</a>
-      <a href="affiliate.html">Affiliate disclosure</a>
-      <a href="contact.html">Contact</a>
+    <div>
+      <h4>Useful note</h4>
+      <p class="footer-note">Content is educational and not a replacement for medical care. Product links may be affiliate links and are always disclosed.</p>
     </div>
   </div>
-  <div class="ft-bot">
-    <p>2025 Stylishandhealthy. All rights reserved.</p>
-    <span>Pretty routines. Smarter choices.</span>
+  <div class="footer-bottom">
+    <p>© 2026 Stylishandhealthy. All rights reserved.</p>
+    <span>Hot girls read the research.</span>
   </div>
 </footer>
-
-<script src="shared.js"></script>
+<script src="/assets/js/shared.js" defer></script>
 </body>
 </html>
